@@ -1,0 +1,345 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>mrCash_UI.My.MyApplication</StartupObject>
+    <RootNamespace>mrCash_UI</RootNamespace>
+    <AssemblyName>mrCash_UI</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>Resources\Dollar.ICO</ApplicationIcon>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>http://localhost/mrCash_UI/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>mrCash_UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DocumentationFile>mrCash_UI.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UltraDateTimePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UltraDateTimePicker\bin\UltraDateTimePicker.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Gestioni\frmInventario.Designer.vb">
+      <DependentUpon>frmInventario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmInventario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Speciale\frmGeneraMD5.Designer.vb">
+      <DependentUpon>frmGeneraMD5.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Speciale\frmGeneraMD5.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\frmGestione_Base.Designer.vb">
+      <DependentUpon>frmGestione_Base.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmGestione_Base.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Speciale\frmImportAcquisti.Designer.vb">
+      <DependentUpon>frmImportAcquisti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Speciale\frmImportAcquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmLogin.Designer.vb">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\frmLogin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\Inventario_Controller.vb">
+    </Compile>
+    <Compile Include="Ricerche\frmRicerca_Base.Designer.vb">
+      <DependentUpon>frmRicerca_Base.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmRicerca_Base.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\frmVendita.Designer.vb">
+      <DependentUpon>frmVendita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmVendita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaVendite.Designer.vb">
+      <DependentUpon>frmRicercaVendite.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaVendite.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\frmOggetto.Designer.vb">
+      <DependentUpon>frmOggetto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmOggetto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaOggetti.Designer.vb">
+      <DependentUpon>frmRicercaOggetti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaOggetti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaAcquisti.Designer.vb">
+      <DependentUpon>frmRicercaAcquisti.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaAcquisti.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\frmAcquisto.Designer.vb">
+      <DependentUpon>frmAcquisto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmAcquisto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Gestioni\frmFornitore.Designer.vb">
+      <DependentUpon>frmFornitore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Gestioni\frmFornitore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmMain.Designer.vb">
+      <DependentUpon>frmMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaFornitori.Designer.vb">
+      <DependentUpon>frmRicercaFornitori.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmRicercaFornitori.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Speciale\PrezzoTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Sistema\Tools.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Gestioni\frmInventario.resx">
+      <DependentUpon>frmInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Speciale\frmGeneraMD5.resx">
+      <DependentUpon>frmGeneraMD5.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestioni\frmGestione_Base.resx">
+      <DependentUpon>frmGestione_Base.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Speciale\frmImportAcquisti.resx">
+      <DependentUpon>frmImportAcquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmLogin.resx">
+      <DependentUpon>frmLogin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmRicerca_Base.resx">
+      <DependentUpon>frmRicerca_Base.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestioni\frmVendita.resx">
+      <DependentUpon>frmVendita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmRicercaVendite.resx">
+      <DependentUpon>frmRicercaVendite.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestioni\frmOggetto.resx">
+      <DependentUpon>frmOggetto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmRicercaOggetti.resx">
+      <DependentUpon>frmRicercaOggetti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmRicercaAcquisti.resx">
+      <DependentUpon>frmRicercaAcquisti.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestioni\frmAcquisto.resx">
+      <DependentUpon>frmAcquisto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Gestioni\frmFornitore.resx">
+      <DependentUpon>frmFornitore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmMain.resx">
+      <DependentUpon>frmMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmRicercaFornitori.resx">
+      <DependentUpon>frmRicercaFornitori.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\mrCash_DAL.Acquisti.datasource" />
+    <None Include="My Project\DataSources\mrCash_DAL.Fornitori.datasource" />
+    <None Include="My Project\DataSources\mrCash_DAL.Oggetti.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Excel\Inventario.xls">
+    </None>
+    <None Include="Excel\Margini.xls">
+    </None>
+    <None Include="My Project\DataSources\Inventario_Controller.datasource" />
+    <None Include="My Project\DataSources\mrCash_DAL.Data.Selezioni.datasource" />
+    <None Include="My Project\DataSources\mrCash_DAL.Vendite.datasource" />
+    <None Include="Resources\Dollar.ICO" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mrCash_DAL\mrCash_DAL.vbproj">
+      <Project>{17760FF2-2C0C-4FAB-9EC5-363375D889B1}</Project>
+      <Name>mrCash_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mrCash_STAMPA\mrCash_STAMPA.vbproj">
+      <Project>{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}</Project>
+      <Name>mrCash_STAMPA</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Documentazione\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

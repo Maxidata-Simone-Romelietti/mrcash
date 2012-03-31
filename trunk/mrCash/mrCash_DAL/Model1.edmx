@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+        <EntityContainer Name="MRCashModelStoreContainer">
+          <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri">
+            <DefiningQuery>SELECT 
+      [V_Giornalieri].[IDVendita] AS [IDVendita], 
+      [V_Giornalieri].[Totale] AS [Totale]
+      FROM [dbo].[V_Giornalieri] AS [V_Giornalieri]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Acquisti_Fornitori" Association="MRCashModel.Store.FK_Acquisti_Fornitori">
+            <End Role="Fornitori" EntitySet="Fornitori" />
+            <End Role="Acquisti" EntitySet="Acquisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Acquisti" Association="MRCashModel.Store.FK_Oggetti_Acquisti">
+            <End Role="Acquisti" EntitySet="Acquisti" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.Store.FK_Oggetti_Vendite">
+            <End Role="Vendite" EntitySet="Vendite" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Acquisti">
+          <Key>
+            <PropertyRef Name="IDAcquisto" />
+          </Key>
+          <Property Name="IDAcquisto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="IDFornitore" Type="int" Nullable="false" />
+          <Property Name="Transazione" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Fornitori">
+          <Key>
+            <PropertyRef Name="IDFornitore" />
+          </Key>
+          <Property Name="IDFornitore" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Cognome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="RifDoc" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Indirizzo" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Citta" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Provincia" Type="nvarchar" Nullable="false" MaxLength="2" />
+          <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cap" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="TipoDoc" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="DataRilascio" Type="datetime" Nullable="false" />
+          <Property Name="DataNascita" Type="datetime" Nullable="false" />
+          <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Oggetti">
+          <Key>
+            <PropertyRef Name="IDOggetto" />
+          </Key>
+          <Property Name="IDOggetto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codice" Type="nvarchar" Nullable="false" MaxLength="50" />
+          <Property Name="Descrizione" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PrezzoAcquisto" Type="money" Nullable="false" />
+          <Property Name="PrezzoStimato" Type="money" Nullable="false" />
+          <Property Name="PrezzoVendita" Type="money" Nullable="false" />
+          <Property Name="IDAcquisto" Type="int" Nullable="false" />
+          <Property Name="IDVendita" Type="int" />
+          <Property Name="Modello" Type="nvarchar" MaxLength="100" />
+          <Property Name="Serie" Type="nvarchar" MaxLength="100" />
+          <Property Name="DataRientro" Type="datetime" />
+          <Property Name="DataRiconsegna" Type="datetime" />
+          <Property Name="DataRottamazione" Type="datetime" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+          <Property Name="RigaVendita" Type="int" Nullable="false" />
+          <Property Name="RigaAcquisto" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Vendite">
+          <Key>
+            <PropertyRef Name="IDVendita" />
+          </Key>
+          <Property Name="IDVendita" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'mrCash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_Giornalieri">
+          <Key>
+            <PropertyRef Name="IDVendita" />
+          </Key>
+          <Property Name="IDVendita" Type="int" Nullable="false" />
+          <Property Name="Totale" Type="money" />
+        </EntityType>
+        <Association Name="FK_Acquisti_Fornitori">
+          <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
+          <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Fornitori">
+              <PropertyRef Name="IDFornitore" />
+            </Principal>
+            <Dependent Role="Acquisti">
+              <PropertyRef Name="IDFornitore" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oggetti_Acquisti">
+          <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="1" />
+          <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Acquisti">
+              <PropertyRef Name="IDAcquisto" />
+            </Principal>
+            <Dependent Role="Oggetti">
+              <PropertyRef Name="IDAcquisto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Oggetti_Vendite">
+          <End Role="Vendite" Type="MRCashModel.Store.Vendite" Multiplicity="0..1" />
+          <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Vendite">
+              <PropertyRef Name="IDVendita" />
+            </Principal>
+            <Dependent Role="Oggetti">
+              <PropertyRef Name="IDVendita" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="SP_Giornalieri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+        <EntityContainer Name="MRCashEntities">
+          <EntitySet Name="Acquisti" EntityType="MRCashModel.Acquisti" />
+          <EntitySet Name="Fornitori" EntityType="MRCashModel.Fornitori" />
+          <EntitySet Name="Oggetti" EntityType="MRCashModel.Oggetti" />
+          <EntitySet Name="Vendite" EntityType="MRCashModel.Vendite" />
+          <AssociationSet Name="FK_Acquisti_Fornitori" Association="MRCashModel.FK_Acquisti_Fornitori">
+            <End Role="Fornitori" EntitySet="Fornitori" />
+            <End Role="Acquisti" EntitySet="Acquisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Acquisti" Association="MRCashModel.FK_Oggetti_Acquisti">
+            <End Role="Acquisti" EntitySet="Acquisti" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.FK_Oggetti_Vendite">
+            <End Role="Vendite" EntitySet="Vendite" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+          <FunctionImport Name="Totali_Giornalieri" EntitySet="Oggetti" ReturnType="Collection(MRCashModel.Oggetti)" />
+          <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.V_Giornalieri" />
+          </EntityContainer>
+        <EntityType Name="Acquisti">
+          <Key>
+            <PropertyRef Name="IDAcquisto" />
+          </Key>
+          <Property Name="IDAcquisto" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Fornitori" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Acquisti" ToRole="Fornitori" />
+          <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Acquisti" ToRole="Oggetti" />
+          <Property Name="Transazione" Type="Int32" Nullable="false" /></EntityType>
+        <EntityType Name="Fornitori">
+          <Key>
+            <PropertyRef Name="IDFornitore" />
+          </Key>
+          <Property Name="IDFornitore" Type="Int32" Nullable="false" />
+          <Property Name="Cognome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="RifDoc" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Indirizzo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Citta" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Provincia" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Cap" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="TipoDoc" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="DataRilascio" Type="DateTime" Nullable="false" />
+          <Property Name="DataNascita" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Fornitori" ToRole="Acquisti" />
+          <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " /></EntityType>
+        <EntityType Name="Oggetti">
+          <Key>
+            <PropertyRef Name="IDOggetto" />
+          </Key>
+          <Property Name="IDOggetto" Type="Int32" Nullable="false" />
+          <Property Name="Codice" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="PrezzoAcquisto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PrezzoStimato" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="PrezzoVendita" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+          <Property Name="Modello" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Serie" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Oggetti" ToRole="Acquisti" />
+          <NavigationProperty Name="Vendite" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Oggetti" ToRole="Vendite" />
+          <Property Name="DataRientro" Type="DateTime" Nullable="true" />
+          <Property Name="DataRiconsegna" Type="DateTime" Nullable="true" />
+          <Property Name="DataRottamazione" Type="DateTime" Nullable="true" />
+          <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " />
+          <Property Name="RigaAcquisto" Type="Int32" Nullable="false" />
+          <Property Name="RigaVendita" Type="Int32" Nullable="false" /></EntityType>
+        <EntityType Name="Vendite">
+          <Key>
+            <PropertyRef Name="IDVendita" />
+          </Key>
+          <Property Name="IDVendita" Type="Int32" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Vendite" ToRole="Oggetti" />
+          </EntityType>
+        <Association Name="FK_Acquisti_Fornitori">
+          <End Role="Fornitori" Type="MRCashModel.Fornitori" Multiplicity="1" />
+          <End Role="Acquisti" Type="MRCashModel.Acquisti" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Oggetti_Acquisti">
+          <End Role="Acquisti" Type="MRCashModel.Acquisti" Multiplicity="1" />
+          <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
+        </Association>
+        <Association Name="FK_Oggetti_Vendite">
+          <End Role="Vendite" Type="MRCashModel.Vendite" Multiplicity="0..1" />
+          <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
+        </Association>
+        <EntityType Name="V_Giornalieri">
+          <Key>
+            <PropertyRef Name="IDVendita" /></Key>
+          <Property Name="IDVendita" Type="Int32" Nullable="false" />
+          <Property Name="Totale" Type="Decimal" Nullable="true" />
+          </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+        <EntityContainerMapping StorageEntityContainer="MRCashModelStoreContainer" CdmEntityContainer="MRCashEntities">
+          <EntitySetMapping Name="Acquisti">
+            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Acquisti)">
+              <MappingFragment StoreEntitySet="Acquisti">
+                <ScalarProperty Name="Transazione" ColumnName="Transazione" />
+                <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Fornitori">
+            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Fornitori)">
+              <MappingFragment StoreEntitySet="Fornitori">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="IDFornitore" ColumnName="IDFornitore" />
+                <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="RifDoc" ColumnName="RifDoc" />
+                <ScalarProperty Name="Indirizzo" ColumnName="Indirizzo" />
+                <ScalarProperty Name="Citta" ColumnName="Citta" />
+                <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Cap" ColumnName="Cap" />
+                <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+                <ScalarProperty Name="DataRilascio" ColumnName="DataRilascio" />
+                <ScalarProperty Name="DataNascita" ColumnName="DataNascita" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Oggetti">
+            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Oggetti)">
+              <MappingFragment StoreEntitySet="Oggetti">
+                <ScalarProperty Name="RigaVendita" ColumnName="RigaVendita" />
+                <ScalarProperty Name="RigaAcquisto" ColumnName="RigaAcquisto" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="DataRottamazione" ColumnName="DataRottamazione" />
+                <ScalarProperty Name="DataRiconsegna" ColumnName="DataRiconsegna" />
+                <ScalarProperty Name="DataRientro" ColumnName="DataRientro" />
+                <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+                <ScalarProperty Name="Codice" ColumnName="Codice" />
+                <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+                <ScalarProperty Name="PrezzoAcquisto" ColumnName="PrezzoAcquisto" />
+                <ScalarProperty Name="PrezzoStimato" ColumnName="PrezzoStimato" />
+                <ScalarProperty Name="PrezzoVendita" ColumnName="PrezzoVendita" />
+                <ScalarProperty Name="Modello" ColumnName="Modello" />
+                <ScalarProperty Name="Serie" ColumnName="Serie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vendite">
+            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Vendite)">
+              <MappingFragment StoreEntitySet="Vendite">
+                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="FK_Acquisti_Fornitori" TypeName="MRCashModel.FK_Acquisti_Fornitori" StoreEntitySet="Acquisti">
+            <EndProperty Name="Fornitori">
+              <ScalarProperty Name="IDFornitore" ColumnName="IDFornitore" />
+            </EndProperty>
+            <EndProperty Name="Acquisti">
+              <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Oggetti_Acquisti" TypeName="MRCashModel.FK_Oggetti_Acquisti" StoreEntitySet="Oggetti">
+            <EndProperty Name="Acquisti">
+              <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+            </EndProperty>
+            <EndProperty Name="Oggetti">
+              <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="FK_Oggetti_Vendite" TypeName="MRCashModel.FK_Oggetti_Vendite" StoreEntitySet="Oggetti">
+            <EndProperty Name="Vendite">
+              <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+            </EndProperty>
+            <EndProperty Name="Oggetti">
+              <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+            </EndProperty>
+            <Condition ColumnName="IDVendita" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="V_Giornalieri">
+            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.V_Giornalieri)">
+              <MappingFragment StoreEntitySet="V_Giornalieri">
+                <ScalarProperty Name="Totale" ColumnName="Totale" />
+                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2007/06/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram Name="Model1">
+        <EntityTypeShape EntityType="MRCashModel.Acquisti" Width="1.5" PointX="3" PointY="1.75" Height="1.5923063151041665" IsExpanded="true" />
+        <EntityTypeShape EntityType="MRCashModel.Fornitori" Width="1.5" PointX="0.75" PointY="1" Height="3.0714322916666661" IsExpanded="true" />
+        <EntityTypeShape EntityType="MRCashModel.Oggetti" Width="1.5" PointX="5.25" PointY="1.25" Height="2.5783902994791656" IsExpanded="true" />
+        <EntityTypeShape EntityType="MRCashModel.Vendite" Width="1.5" PointX="3" PointY="5.75" Height="1.4279589843749996" IsExpanded="true" />
+        <AssociationConnector Association="MRCashModel.FK_Acquisti_Fornitori" ManuallyRouted="false">
+          <ConnectorPoint PointX="2.25" PointY="2.6283268229166667" />
+          <ConnectorPoint PointX="3" PointY="2.6283268229166667" /></AssociationConnector>
+        <AssociationConnector Association="MRCashModel.FK_Oggetti_Acquisti" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.5461531575520833" />
+          <ConnectorPoint PointX="5.25" PointY="2.5461531575520833" /></AssociationConnector>
+        <AssociationConnector Association="MRCashModel.FK_Oggetti_Vendite" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="5.84375" />
+          <ConnectorPoint PointX="5.78125" PointY="5.84375" />
+          <ConnectorPoint PointX="5.78125" PointY="4.8144742838541656" />
+          </AssociationConnector>
+        <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="6.375" PointY="6" Height="1.4279589843749996" />
+        </Diagram></edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
