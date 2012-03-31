@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_UI", "mrCash_UI\mrCash_UI.vbproj", "{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}"
+	ProjectSection(ProjectDependencies) = postProject
+		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F} = {BB1694ED-5F1F-40D7-A521-BC0814A53A9F}
+	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_STAMPA", "mrCash_STAMPA\mrCash_STAMPA.vbproj", "{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_DAL", "mrCash_DAL\mrCash_DAL.vbproj", "{17760FF2-2C0C-4FAB-9EC5-363375D889B1}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_PISTOLA", "mrCash_PISTOLA\mrCash_PISTOLA.vbproj", "{2F8C733B-40AA-4AF6-9A21-3E512A25390D}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17760FF2-2C0C-4FAB-9EC5-363375D889B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17760FF2-2C0C-4FAB-9EC5-363375D889B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17760FF2-2C0C-4FAB-9EC5-363375D889B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17760FF2-2C0C-4FAB-9EC5-363375D889B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
