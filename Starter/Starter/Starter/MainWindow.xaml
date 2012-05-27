@@ -1,7 +1,7 @@
 ﻿<Window x:Class="MainWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    Title="MainWindow" MaxHeight="768" MaxWidth="1024"  WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    Title="MainWindow" MaxHeight="768" MaxWidth="1024"  WindowStyle="None" AllowsTransparency="True" Background="Transparent" WindowStartupLocation="CenterScreen" IsTabStop="False">
     <Grid Name="Grid1">
         <MediaElement  Name="mediaEL"  />
     </Grid>
