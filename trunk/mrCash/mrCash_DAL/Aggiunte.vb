@@ -42,6 +42,8 @@ Partial Public Class Acquisti
 End Class
 
 Partial Public Class Oggetti
+    Implements IComparable
+
     Public ReadOnly Property Codice_Numerico() As Integer
         Get
             Dim N As Integer
@@ -64,6 +66,25 @@ Partial Public Class Oggetti
         End Get
     End Property
 
+    Public Function CompareTo(obj As Object) As Integer Implements System.IComparable.CompareTo
+        If obj Is Nothing Then Return 1
+
+        Dim e1 = DirectCast(obj, Oggetti)
+        Dim e2 = DirectCast(Me, Oggetti)
+
+        If e1.Codice_Numerico < e2.Codice_Numerico Then
+            Return 1
+
+        ElseIf e1.Codice_Numerico > e2.Codice_Numerico Then
+            Return -1
+
+        Else
+            Return 0
+
+        End If
+
+
+    End Function
 End Class
 
 Partial Public Class Vendite
