@@ -88,6 +88,7 @@ Public Class Inventario_Controller
             CodiciSconosciuti.Add(N)
         Next
 
+        CodiciSconosciuti.Sort()
     End Sub
 
     Private Function CopiaOggetto(ByVal Origine As Oggetti) As Oggetti
