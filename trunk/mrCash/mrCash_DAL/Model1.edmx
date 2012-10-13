@@ -4,12 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+    <Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
         <EntityContainer Name="MRCashModelStoreContainer">
           <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.Store.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_AcquistiGiornalieri">
+            <DefiningQuery>SELECT 
+      [V_AcquistiGiornalieri].[Data] AS [Data], 
+      [V_AcquistiGiornalieri].[Totale] AS [Totale]
+      FROM [dbo].[V_AcquistiGiornalieri] AS [V_AcquistiGiornalieri]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri">
             <DefiningQuery>SELECT 
       [V_Giornalieri].[IDVendita] AS [IDVendita], 
@@ -85,7 +91,18 @@
           <Property Name="Data" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'mrCash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'mrcash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+        <EntityType Name="V_AcquistiGiornalieri">
+          <Key>
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="Totale" />
+          </Key>
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="Totale" Type="money" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+      warning 6002: The table/view 'mrcash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="V_Giornalieri">
           <Key>
@@ -130,7 +147,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="SP_Giornalieri" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -154,6 +170,7 @@
           </AssociationSet>
           <FunctionImport Name="Totali_Giornalieri" EntitySet="Oggetti" ReturnType="Collection(MRCashModel.Oggetti)" />
           <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.V_Giornalieri" />
+          <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.V_AcquistiGiornalieri" />
           </EntityContainer>
         <EntityType Name="Acquisti">
           <Key>
@@ -228,6 +245,14 @@
           <Property Name="IDVendita" Type="Int32" Nullable="false" />
           <Property Name="Totale" Type="Decimal" Nullable="true" />
           </EntityType>
+        <EntityType Name="V_AcquistiGiornalieri">
+          <Key>
+            <PropertyRef Name="Data" />
+            <PropertyRef Name="Totale" />
+          </Key>
+          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -319,7 +344,15 @@
             <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.V_Giornalieri)">
               <MappingFragment StoreEntitySet="V_Giornalieri">
                 <ScalarProperty Name="Totale" ColumnName="Totale" />
-                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" /></MappingFragment></EntityTypeMapping></EntitySetMapping></EntityContainerMapping>
+                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
+          <EntitySetMapping Name="V_AcquistiGiornalieri">
+            <EntityTypeMapping TypeName="MRCashModel.V_AcquistiGiornalieri">
+              <MappingFragment StoreEntitySet="V_AcquistiGiornalieri">
+                <ScalarProperty Name="Totale" ColumnName="Totale" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping></EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -333,6 +366,8 @@
     <edmx:Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
@@ -354,6 +389,7 @@
           <ConnectorPoint PointX="5.78125" PointY="4.8144742838541656" />
           </AssociationConnector>
         <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="6.375" PointY="6" Height="1.4279589843749996" />
+        <EntityTypeShape EntityType="MRCashModel.V_AcquistiGiornalieri" Width="1.5" PointX="7.375" PointY="2.625" Height="1.4033821614583317" />
         </Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

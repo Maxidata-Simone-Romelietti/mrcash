@@ -11,13 +11,13 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("d3710e61-2a20-4eba-aa68-4344a0a55274"),  _
+<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("f3c06ec4-1439-4706-8958-eb915d732efa"),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Acquisti_Fornitori", "Fornitori", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Fornitori), "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Acquisti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Acquisti", "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Acquisti), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Vendite", "Vendite", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Vendite), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti))> 
 
 'Original file name:
-'Generation date: 31/03/2012 14:24:43
+'Generation date: 13/10/2012 13:37:47
 '''<summary>
 '''There are no comments for MRCashEntities in the schema.
 '''</summary>
@@ -117,6 +117,20 @@ Partial Public Class MRCashEntities
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Private _V_Giornalieri As Global.System.Data.Objects.ObjectQuery(Of V_Giornalieri)
     '''<summary>
+    '''There are no comments for V_AcquistiGiornalieri in the schema.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public ReadOnly Property V_AcquistiGiornalieri() As Global.System.Data.Objects.ObjectQuery(Of V_AcquistiGiornalieri)
+        Get
+            If (Me._V_AcquistiGiornalieri Is Nothing) Then
+                Me._V_AcquistiGiornalieri = MyBase.CreateQuery(Of V_AcquistiGiornalieri)("[V_AcquistiGiornalieri]")
+            End If
+            Return Me._V_AcquistiGiornalieri
+        End Get
+    End Property
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Private _V_AcquistiGiornalieri As Global.System.Data.Objects.ObjectQuery(Of V_AcquistiGiornalieri)
+    '''<summary>
     '''There are no comments for Acquisti in the schema.
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
@@ -150,6 +164,13 @@ Partial Public Class MRCashEntities
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Public Sub AddToV_Giornalieri(ByVal v_Giornalieri As V_Giornalieri)
         MyBase.AddObject("V_Giornalieri", v_Giornalieri)
+    End Sub
+    '''<summary>
+    '''There are no comments for V_AcquistiGiornalieri in the schema.
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public Sub AddToV_AcquistiGiornalieri(ByVal v_AcquistiGiornalieri As V_AcquistiGiornalieri)
+        MyBase.AddObject("V_AcquistiGiornalieri", v_AcquistiGiornalieri)
     End Sub
     '''<summary>
     '''There are no comments for MRCashModel.Totali_Giornalieri in the schema.
@@ -1318,6 +1339,83 @@ Partial Public Class V_Giornalieri
     Private _Totale As Global.System.Nullable(Of Decimal)
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Partial Private Sub OnTotaleChanging(ByVal value As Global.System.Nullable(Of Decimal))
+        End Sub
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnTotaleChanged()
+        End Sub
+End Class
+'''<summary>
+'''There are no comments for MRCashModel.V_AcquistiGiornalieri in the schema.
+'''</summary>
+'''<KeyProperties>
+'''Data
+'''Totale
+'''</KeyProperties>
+<Global.System.Data.Objects.DataClasses.EdmEntityTypeAttribute(NamespaceName:="MRCashModel", Name:="V_AcquistiGiornalieri"),  _
+ Global.System.Runtime.Serialization.DataContractAttribute(IsReference:=true),  _
+ Global.System.Serializable()>  _
+Partial Public Class V_AcquistiGiornalieri
+    Inherits Global.System.Data.Objects.DataClasses.EntityObject
+    '''<summary>
+    '''Create a new V_AcquistiGiornalieri object.
+    '''</summary>
+    '''<param name="data">Initial value of Data.</param>
+    '''<param name="totale">Initial value of Totale.</param>
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public Shared Function CreateV_AcquistiGiornalieri(ByVal data As Date, ByVal totale As Decimal) As V_AcquistiGiornalieri
+        Dim v_AcquistiGiornalieri As V_AcquistiGiornalieri = New V_AcquistiGiornalieri()
+        v_AcquistiGiornalieri.Data = data
+        v_AcquistiGiornalieri.Totale = totale
+        Return v_AcquistiGiornalieri
+    End Function
+    '''<summary>
+    '''There are no comments for property Data in the schema.
+    '''</summary>
+    <Global.System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public Property Data() As Date
+        Get
+            Return Me._Data
+        End Get
+        Set
+            Me.OnDataChanging(value)
+            Me.ReportPropertyChanging("Data")
+            Me._Data = Global.System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value)
+            Me.ReportPropertyChanged("Data")
+            Me.OnDataChanged
+        End Set
+    End Property
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Private _Data As Date
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnDataChanging(ByVal value As Date)
+        End Sub
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnDataChanged()
+        End Sub
+    '''<summary>
+    '''There are no comments for property Totale in the schema.
+    '''</summary>
+    <Global.System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(EntityKeyProperty:=true, IsNullable:=false),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public Property Totale() As Decimal
+        Get
+            Return Me._Totale
+        End Get
+        Set
+            Me.OnTotaleChanging(value)
+            Me.ReportPropertyChanging("Totale")
+            Me._Totale = Global.System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value)
+            Me.ReportPropertyChanged("Totale")
+            Me.OnTotaleChanged
+        End Set
+    End Property
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Private _Totale As Decimal
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnTotaleChanging(ByVal value As Decimal)
         End Sub
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Partial Private Sub OnTotaleChanged()
