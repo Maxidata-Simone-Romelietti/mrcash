@@ -104,6 +104,12 @@
     <Compile Include="Gestioni\frmInventario.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Ricerche\frmTotAcq.Designer.vb">
+      <DependentUpon>frmTotAcq.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Ricerche\frmTotAcq.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Speciale\frmGeneraMD5.Designer.vb">
       <DependentUpon>frmGeneraMD5.vb</DependentUpon>
     </Compile>
@@ -214,6 +220,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Gestioni\frmInventario.resx">
       <DependentUpon>frmInventario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ricerche\frmTotAcq.resx">
+      <DependentUpon>frmTotAcq.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Speciale\frmGeneraMD5.resx">
       <DependentUpon>frmGeneraMD5.vb</DependentUpon>
