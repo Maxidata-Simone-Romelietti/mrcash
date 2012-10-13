@@ -282,6 +282,7 @@
     <None Include="My Project\DataSources\mrCash_DAL.Acquisti.datasource" />
     <None Include="My Project\DataSources\mrCash_DAL.Fornitori.datasource" />
     <None Include="My Project\DataSources\mrCash_DAL.Oggetti.datasource" />
+    <None Include="My Project\DataSources\mrCash_DAL.V_AcquistiGiornalieri.datasource" />
     <None Include="My Project\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <CustomToolNamespace>My</CustomToolNamespace>
