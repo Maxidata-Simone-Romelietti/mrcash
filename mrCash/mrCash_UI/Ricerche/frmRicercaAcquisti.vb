@@ -130,4 +130,9 @@ Public Class frmRicercaAcquisti
         End If
     End Sub
 
+    Private Sub Button1_Click(sender As System.Object, e As System.EventArgs) Handles Button1.Click
+        Dim fTot = New frmTotAcq
+        fTot.ShowDialog()
+    End Sub
+
 End Class

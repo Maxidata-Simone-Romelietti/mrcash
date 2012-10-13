@@ -22,29 +22,30 @@ Partial Class frmRicercaAcquisti
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRicercaAcquisti))
-        Me.lblWarning = New System.Windows.Forms.Label
-        Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.lblWarning = New System.Windows.Forms.Label()
+        Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AcquistiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.AcquistiDataGridView = New System.Windows.Forms.DataGridView
-        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog
-        Me.NomeTextBox1 = New System.Windows.Forms.TextBox
-        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox
-        Me.Panel2 = New System.Windows.Forms.Panel
-        DataLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
+        Me.AcquistiDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.NomeTextBox1 = New System.Windows.Forms.TextBox()
+        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Button1 = New System.Windows.Forms.Button()
+        DataLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.AcquistiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AcquistiDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -131,8 +132,8 @@ Partial Class frmRicercaAcquisti
         Me.AcquistiDataGridView.AllowUserToAddRows = False
         Me.AcquistiDataGridView.AllowUserToDeleteRows = False
         Me.AcquistiDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.AcquistiDataGridView.AutoGenerateColumns = False
         Me.AcquistiDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill
         Me.AcquistiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
@@ -212,12 +213,23 @@ Partial Class frmRicercaAcquisti
         '
         'Panel2
         '
+        Me.Panel2.Controls.Add(Me.Button1)
         Me.Panel2.Controls.Add(Me.lblWarning)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel2.Location = New System.Drawing.Point(0, 541)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(792, 25)
         Me.Panel2.TabIndex = 23
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(629, 0)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(160, 24)
+        Me.Button1.TabIndex = 26
+        Me.Button1.Text = "TOTALI GIORNALIERI"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmRicercaAcquisti
         '
@@ -257,4 +269,5 @@ Partial Class frmRicercaAcquisti
     Friend WithEvents IDAcquistoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Panel2 As System.Windows.Forms.Panel
     Friend WithEvents lblWarning As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class
