@@ -22,9 +22,7 @@ Partial Class frmTotAcq
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TotaliDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Totale = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.TotaliDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -33,7 +31,6 @@ Partial Class frmTotAcq
         Me.TotaliDataGridView.AllowUserToAddRows = False
         Me.TotaliDataGridView.AllowUserToDeleteRows = False
         Me.TotaliDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.TotaliDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Totale})
         Me.TotaliDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TotaliDataGridView.Location = New System.Drawing.Point(0, 0)
         Me.TotaliDataGridView.Name = "TotaliDataGridView"
@@ -41,15 +38,6 @@ Partial Class frmTotAcq
         Me.TotaliDataGridView.RowHeadersVisible = False
         Me.TotaliDataGridView.Size = New System.Drawing.Size(286, 377)
         Me.TotaliDataGridView.TabIndex = 23
-        '
-        'Totale
-        '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "0.00"
-        Me.Totale.DefaultCellStyle = DataGridViewCellStyle2
-        Me.Totale.HeaderText = "Totale"
-        Me.Totale.Name = "Totale"
-        Me.Totale.ReadOnly = True
         '
         'frmTotAcq
         '
@@ -64,5 +52,4 @@ Partial Class frmTotAcq
 
     End Sub
     Friend WithEvents TotaliDataGridView As System.Windows.Forms.DataGridView
-    Friend WithEvents Totale As System.Windows.Forms.DataGridViewTextBoxColumn
 End Class
