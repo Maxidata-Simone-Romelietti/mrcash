@@ -6,9 +6,10 @@
             Dim dati = (From x In context.Acquisti).ToList
 
             Dim acq = (From x In dati
-                  Group By x.Data _
+                  Group By Data = x.Data.Date _
                       Into TotaleGiornaliero = Sum(x.Totale)
-                    Select Data, TotaleGiornaliero).ToList
+                    Select Data, TotaleGiornaliero
+                    Order By Data Descending).ToList
 
             TotaliDataGridView.DataSource = acq
         End Using
