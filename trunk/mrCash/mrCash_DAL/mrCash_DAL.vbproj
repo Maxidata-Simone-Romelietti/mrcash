@@ -153,6 +153,16 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Creazione_DB.SQL" />
+    <Content Include="SalvaDB.SQL" />
+    <Content Include="Versione_002.sql" />
+    <Content Include="Versione_003.sql" />
+    <Content Include="Versione_004.sql" />
+    <Content Include="Versione_005.sql" />
+    <Content Include="Versione_006.sql" />
+    <Content Include="Versione_007.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
