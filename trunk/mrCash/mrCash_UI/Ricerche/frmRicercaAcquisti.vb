@@ -24,24 +24,21 @@ Public Class frmRicercaAcquisti
     End Sub
 
     Protected Overrides Function OP_Ricerca() As Boolean
-        Dim qry = From Q As Acquisti In context.Acquisti.Include("Fornitori") Select Q
 
-        If CognomeTextBox1.Text <> "" Then _
-           qry = qry.Where(Function(s) s.Fornitori.Cognome.Contains(CognomeTextBox1.Text))
-
-        If NomeTextBox1.Text <> "" Then _
-           qry = qry.Where(Function(s) s.Fornitori.Nome.Contains(NomeTextBox1.Text))
+        Dim Cognome = CognomeTextBox1.Text
+        Dim Nome = NomeTextBox1.Text
+        Dim IDRicAcquisto = 0
 
         If OggettoTextBox1.Text <> "" Then
             Dim c As String = OggettoTextBox1.Text.ToCodice
-            Dim objs = From o As Oggetti In context.Oggetti.Include("Acquisti") Where o.Codice = c Select o.Acquisti.IDAcquisto
-
-            Dim IDAcq As Integer = -1
-
-            If objs.Count > 0 Then IDAcq = objs.First
-
-            qry = qry.Where(Function(s) s.IDAcquisto = IDAcq)
+            Dim oggetto = (From o As Oggetti In context.Oggetti.Include("Acquisti") Where o.Codice = c).FirstOrDefault
+            If oggetto IsNot Nothing Then IDRicAcquisto = oggetto.Acquisti.IDAcquisto
         End If
+
+        Dim qry = From Q As Acquisti In context.Acquisti.Include("Fornitori") _
+                  Where (Cognome = "" Or Q.Fornitori.Cognome.Contains(Cognome)) _
+                    And (Nome = "" Or Q.Fornitori.Nome.Contains(Nome)) _
+                    And (IDRicAcquisto = 0 Or Q.IDAcquisto = IDRicAcquisto)
 
         Dim N As String = _ColonnaOrdinante.ToUpper
         If N = "DATA" And _Inversione Then qry = From z In qry Order By z.Data Descending
