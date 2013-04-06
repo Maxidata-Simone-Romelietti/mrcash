@@ -52,16 +52,12 @@ Public Class frmRicercaAcquisti
 
         ' Oggetti senza codice
         Dim TransazioniConCodiciMancanti = From o In context.Oggetti.Include("Acquisti") Where o.Codice = "" Select o.Acquisti
-        Dim Distinti = From x In TransazioniConCodiciMancanti Select x.Transazione Distinct
+        Dim Distinti = (From x In TransazioniConCodiciMancanti Select CStr(x.Transazione)).Distinct
 
-        Dim msg As String = "Transazioni in cui mancano dei codici : "
+        lblWarning.Text = ""
+
         If Distinti.Count > 0 Then
-            For Each t In Distinti
-                msg += "  " & t.ToString
-            Next
-            lblWarning.Text = msg
-        Else
-            lblWarning.Text = ""
+            lblWarning.Text = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
         End If
 
     End Function
