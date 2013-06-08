@@ -13,35 +13,28 @@ Public Class frmRicercaVendite
 
     Protected Overrides Function OP_Ricerca() As Boolean
 
-        Dim qry = From Q As Vendite In context.Vendite Select Q
+        Dim qry = (From Q In context.V_Giornalieri).ToList
 
+        ' Applica la where dell'oggetto
         If OggettoTextBox1.Text <> "" Then
             Dim c As String = OggettoTextBox1.Text.ToCodice
-            Dim objs = From o As Oggetti In context.Oggetti.Include("Vendite") Where o.Codice = c And o.Vendite IsNot Nothing Select o.Vendite.IDVendita
+            Dim obj = (From o In context.Oggetti Where o.Codice = c).FirstOrDefault
 
-            Dim IDVen As Integer = -1
+            Dim IDVendita As Integer = -1
+            If obj IsNot Nothing Then IDVendita = obj.RigaVendita
 
-            If objs.Count > 0 Then IDVen = objs.First
-
-            qry = qry.Where(Function(s) s.IDVendita = IDVen)
+            qry = qry.Where(Function(s) s.IDVendita = IDVendita).ToList
         End If
 
-        qry = From z In qry Order By z.Data Descending
+        'qry = (From z In qry Order By z.Data Descending).ToList
 
-        VenditeBindingSource1.DataSource = qry
+        'VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
 
-        Dim qry2 = From x In context.V_Giornalieri
-
-        'Dim n As New DataGridViewColumn(New DataGridViewTextBoxCell())
-        'n.Name = "Totale"
-        'n.ValueType = GetType(Decimal)
-        'VenditeDataGridView.Columns.Add(n)
-
-        For Each r As DataGridViewRow In VenditeDataGridView.Rows
-            Dim id As Integer = CInt(r.Cells("IDVenditaColonna").Value)
-            Dim t As Decimal = CDec((From z In qry2 Where z.IDVendita = id Select z.Totale).FirstOrDefault)
-            r.Cells("Totale").Value = t
-        Next
+        'For Each r As DataGridViewRow In VenditeDataGridView.Rows
+        '    Dim id As Integer = CInt(r.Cells("IDVenditaColonna").Value)
+        '    Dim t As Decimal = CDec((From z In qry2 Where z.IDVendita = id Select z.Totale).FirstOrDefault)
+        '    r.Cells("Totale").Value = t
+        'Next
     End Function
 
     Private Sub VenditeDataGridView_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles VenditeDataGridView.CellDoubleClick
