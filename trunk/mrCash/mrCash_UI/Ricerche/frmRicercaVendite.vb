@@ -26,9 +26,9 @@ Public Class frmRicercaVendite
             qry = qry.Where(Function(s) s.IDVendita = IDVendita).ToList
         End If
 
-        'qry = (From z In qry Order By z.Data Descending).ToList
+        qry = (From z In qry Order By z.Data Descending).ToList
 
-        'VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
+        VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
 
         'For Each r As DataGridViewRow In VenditeDataGridView.Rows
         '    Dim id As Integer = CInt(r.Cells("IDVenditaColonna").Value)

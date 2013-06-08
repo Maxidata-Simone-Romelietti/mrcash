@@ -22,23 +22,23 @@ Partial Class frmRicercaVendite
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim Label1 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VenditeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.VenditeDataGridView = New System.Windows.Forms.DataGridView
+        Me.VenditeDataGridView = New System.Windows.Forms.DataGridView()
         Me.VenditeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
-        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox
-        Me.IDVenditaColonna = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Totale = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Label1 = New System.Windows.Forms.Label
+        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.IDVenditaColonna = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Totale = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.VenditeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenditeDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,6 +141,7 @@ Partial Class frmRicercaVendite
         '
         'Totale
         '
+        Me.Totale.DataPropertyName = "Totale"
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle4.Format = "0.00"
         Me.Totale.DefaultCellStyle = DataGridViewCellStyle4
