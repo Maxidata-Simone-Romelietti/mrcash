@@ -108,12 +108,10 @@
         <EntityType Name="V_Giornalieri">
           <Key>
             <PropertyRef Name="IDVendita" />
-            <PropertyRef Name="Data" />
-            
           </Key>
           <Property Name="IDVendita" Type="int" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="Totale" Type="money" Nullable="false" />
+          <Property Name="Totale" Type="money" />
         </EntityType>
         <Association Name="FK_Acquisti_Fornitori">
           <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
@@ -246,7 +244,7 @@
         <EntityType Name="V_Giornalieri">
           <Key>
             <PropertyRef Name="IDVendita" />
-            <PropertyRef Name="Data" /></Key>
+            </Key>
           <Property Name="IDVendita" Type="Int32" Nullable="false" />
           <Property Name="Totale" Type="Decimal" Nullable="true" />
           <Property Type="DateTime" Name="Data" Nullable="false" />
