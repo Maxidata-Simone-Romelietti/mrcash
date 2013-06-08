@@ -19,6 +19,7 @@
           <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri">
             <DefiningQuery>SELECT 
       [V_Giornalieri].[IDVendita] AS [IDVendita], 
+      [V_Giornalieri].[Data] AS [Data], 
       [V_Giornalieri].[Totale] AS [Totale]
       FROM [dbo].[V_Giornalieri] AS [V_Giornalieri]</DefiningQuery>
           </EntitySet>
@@ -107,9 +108,12 @@
         <EntityType Name="V_Giornalieri">
           <Key>
             <PropertyRef Name="IDVendita" />
+            <PropertyRef Name="Data" />
+            
           </Key>
           <Property Name="IDVendita" Type="int" Nullable="false" />
-          <Property Name="Totale" Type="money" />
+          <Property Name="Data" Type="datetime" Nullable="false" />
+          <Property Name="Totale" Type="money" Nullable="false" />
         </EntityType>
         <Association Name="FK_Acquisti_Fornitori">
           <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
@@ -241,9 +245,11 @@
         </Association>
         <EntityType Name="V_Giornalieri">
           <Key>
-            <PropertyRef Name="IDVendita" /></Key>
+            <PropertyRef Name="IDVendita" />
+            <PropertyRef Name="Data" /></Key>
           <Property Name="IDVendita" Type="Int32" Nullable="false" />
           <Property Name="Totale" Type="Decimal" Nullable="true" />
+          <Property Type="DateTime" Name="Data" Nullable="false" />
           </EntityType>
         <EntityType Name="V_AcquistiGiornalieri">
           <Key>
@@ -343,6 +349,7 @@
           <EntitySetMapping Name="V_Giornalieri">
             <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.V_Giornalieri)">
               <MappingFragment StoreEntitySet="V_Giornalieri">
+                <ScalarProperty Name="Data" ColumnName="Data" />
                 <ScalarProperty Name="Totale" ColumnName="Totale" />
                 <ScalarProperty Name="IDVendita" ColumnName="IDVendita" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="V_AcquistiGiornalieri">
