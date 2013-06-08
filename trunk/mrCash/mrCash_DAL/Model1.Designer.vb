@@ -11,13 +11,13 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("d73b9b0c-f56b-4ef6-b173-7184d1272394"),  _
+<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("70a55848-77f8-47a0-8201-c16e7233c563"),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Acquisti_Fornitori", "Fornitori", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Fornitori), "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Acquisti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Acquisti", "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Acquisti), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Vendite", "Vendite", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Vendite), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti))> 
 
 'Original file name:
-'Generation date: 08/06/2013 11:18:31
+'Generation date: 08/06/2013 11:45:57
 '''<summary>
 '''There are no comments for MRCashEntities in the schema.
 '''</summary>
