@@ -154,6 +154,7 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Versione_008.sql" />
     <Content Include="Creazione_DB.SQL" />
     <Content Include="SalvaDB.SQL" />
     <Content Include="Versione_002.sql" />
