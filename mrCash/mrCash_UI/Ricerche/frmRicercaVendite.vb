@@ -18,12 +18,12 @@ Public Class frmRicercaVendite
         ' Applica la where dell'oggetto
         If OggettoTextBox1.Text <> "" Then
             Dim c As String = OggettoTextBox1.Text.ToCodice
-            Dim obj = (From o In context.Oggetti Where o.Codice = c).FirstOrDefault
+            Dim Vendita = (From o In context.Oggetti.Include("Vendite") Where o.Codice = c Select o.Vendite).FirstOrDefault
 
-            Dim DataVendita As New DateTime
-            If obj IsNot Nothing Then DataVendita = obj.Vendita_Data
+            Dim IDVend = -1
+            If Vendita IsNot Nothing Then IDVend = Vendita.IDVendita
 
-            qry = qry.Where(Function(s) s.Data = DataVendita).ToList
+            qry = qry.Where(Function(s) s.IDVendita = IDVend).ToList
         End If
 
         qry = (From z In qry Order By z.Data Descending).ToList
