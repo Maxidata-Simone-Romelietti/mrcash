@@ -108,10 +108,12 @@
         <EntityType Name="V_Giornalieri">
           <Key>
             <PropertyRef Name="IDVendita" />
+            
+            
           </Key>
           <Property Name="IDVendita" Type="int" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
-          <Property Name="Totale" Type="money" />
+          <Property Name="Totale" Type="money" Nullable="false" />
         </EntityType>
         <Association Name="FK_Acquisti_Fornitori">
           <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
@@ -171,8 +173,8 @@
             <End Role="Oggetti" EntitySet="Oggetti" />
           </AssociationSet>
           <FunctionImport Name="Totali_Giornalieri" EntitySet="Oggetti" ReturnType="Collection(MRCashModel.Oggetti)" />
-          <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.V_Giornalieri" />
           <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.V_AcquistiGiornalieri" />
+          <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.V_Giornalieri" />
           </EntityContainer>
         <EntityType Name="Acquisti">
           <Key>
@@ -241,19 +243,19 @@
           <End Role="Vendite" Type="MRCashModel.Vendite" Multiplicity="0..1" />
           <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
         </Association>
-        <EntityType Name="V_Giornalieri">
-          <Key>
-            <PropertyRef Name="IDVendita" />
-            </Key>
-          <Property Name="IDVendita" Type="Int32" Nullable="false" />
-          <Property Name="Totale" Type="Decimal" Nullable="true" />
-          <Property Type="DateTime" Name="Data" Nullable="false" />
-          </EntityType>
         <EntityType Name="V_AcquistiGiornalieri">
           <Key>
             <PropertyRef Name="Data" />
             <PropertyRef Name="Totale" />
           </Key>
+          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="V_Giornalieri">
+          <Key>
+            <PropertyRef Name="IDVendita" />
+          </Key>
+          <Property Type="Int32" Name="IDVendita" Nullable="false" />
           <Property Type="DateTime" Name="Data" Nullable="false" />
           <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
@@ -344,12 +346,6 @@
             </EndProperty>
             <Condition ColumnName="IDVendita" IsNull="false" />
           </AssociationSetMapping>
-          <EntitySetMapping Name="V_Giornalieri">
-            <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.V_Giornalieri)">
-              <MappingFragment StoreEntitySet="V_Giornalieri">
-                <ScalarProperty Name="Data" ColumnName="Data" />
-                <ScalarProperty Name="Totale" ColumnName="Totale" />
-                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" /></MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="V_AcquistiGiornalieri">
             <EntityTypeMapping TypeName="MRCashModel.V_AcquistiGiornalieri">
               <MappingFragment StoreEntitySet="V_AcquistiGiornalieri">
@@ -357,7 +353,17 @@
                 <ScalarProperty Name="Data" ColumnName="Data" />
               </MappingFragment>
             </EntityTypeMapping>
-          </EntitySetMapping></EntityContainerMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="V_Giornalieri">
+            <EntityTypeMapping TypeName="MRCashModel.V_Giornalieri">
+              <MappingFragment StoreEntitySet="V_Giornalieri">
+                <ScalarProperty Name="Totale" ColumnName="Totale" />
+                <ScalarProperty Name="Data" ColumnName="Data" />
+                <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
   </edmx:Runtime>
@@ -389,12 +395,12 @@
           <ConnectorPoint PointX="4.5" PointY="2.5461531575520833" />
           <ConnectorPoint PointX="5.25" PointY="2.5461531575520833" /></AssociationConnector>
         <AssociationConnector Association="MRCashModel.FK_Oggetti_Vendite" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="5.84375" />
-          <ConnectorPoint PointX="5.78125" PointY="5.84375" />
-          <ConnectorPoint PointX="5.78125" PointY="4.8144742838541656" />
+          <ConnectorPoint PointX="4.5" PointY="6.21875" />
+          <ConnectorPoint PointX="5.28125" PointY="6.21875" />
+          <ConnectorPoint PointX="5.28125" PointY="5.3456022135416656" />
           </AssociationConnector>
-        <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="6.375" PointY="6" Height="1.4279589843749996" />
         <EntityTypeShape EntityType="MRCashModel.V_AcquistiGiornalieri" Width="1.5" PointX="7.375" PointY="2.625" Height="1.4033821614583317" />
+        <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="5.375" PointY="6.75" Height="1.5956835937499996" />
         </Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
