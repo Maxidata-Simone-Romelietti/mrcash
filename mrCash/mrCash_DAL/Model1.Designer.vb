@@ -11,12 +11,13 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("1ab585cf-d431-4cdb-a9b8-8286e5c584be"),  _
+<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("d73b9b0c-f56b-4ef6-b173-7184d1272394"),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Acquisti_Fornitori", "Fornitori", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Fornitori), "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Acquisti)),  _
- Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Acquisti", "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Acquisti), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti))> 
+ Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Acquisti", "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Acquisti), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti)),  _
+ Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Vendite", "Vendite", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Vendite), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti))> 
 
 'Original file name:
-'Generation date: 08/06/2013 11:47:05
+'Generation date: 08/06/2013 11:18:31
 '''<summary>
 '''There are no comments for MRCashEntities in the schema.
 '''</summary>
@@ -1142,6 +1143,38 @@ Partial Public Class Oggetti
             End If
         End Set
     End Property
+    '''<summary>
+    '''There are no comments for Vendite in the schema.
+    '''</summary>
+    <Global.System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("MRCashModel", "FK_Oggetti_Vendite", "Vendite"),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0"),  _
+     Global.System.Xml.Serialization.XmlIgnoreAttribute(),  _
+     Global.System.Xml.Serialization.SoapIgnoreAttribute(),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute()>  _
+    Public Property Vendite() As Vendite
+        Get
+            Return CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of Vendite)("MRCashModel.FK_Oggetti_Vendite", "Vendite").Value
+        End Get
+        Set
+            CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of Vendite)("MRCashModel.FK_Oggetti_Vendite", "Vendite").Value = value
+        End Set
+    End Property
+    '''<summary>
+    '''There are no comments for Vendite in the schema.
+    '''</summary>
+    <Global.System.ComponentModel.BrowsableAttribute(false),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0"),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute()>  _
+    Public Property VenditeReference() As Global.System.Data.Objects.DataClasses.EntityReference(Of Vendite)
+        Get
+            Return CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.GetRelatedReference(Of Vendite)("MRCashModel.FK_Oggetti_Vendite", "Vendite")
+        End Get
+        Set
+            If (Not (value) Is Nothing) Then
+                CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.InitializeRelatedReference(Of Vendite)("MRCashModel.FK_Oggetti_Vendite", "Vendite", value)
+            End If
+        End Set
+    End Property
 End Class
 '''<summary>
 '''There are no comments for MRCashModel.Vendite in the schema.
@@ -1218,6 +1251,24 @@ Partial Public Class Vendite
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Partial Private Sub OnDataChanged()
         End Sub
+    '''<summary>
+    '''There are no comments for Oggetti in the schema.
+    '''</summary>
+    <Global.System.Data.Objects.DataClasses.EdmRelationshipNavigationPropertyAttribute("MRCashModel", "FK_Oggetti_Vendite", "Oggetti"),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0"),  _
+     Global.System.Xml.Serialization.XmlIgnoreAttribute(),  _
+     Global.System.Xml.Serialization.SoapIgnoreAttribute(),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute()>  _
+    Public Property Oggetti() As Global.System.Data.Objects.DataClasses.EntityCollection(Of Oggetti)
+        Get
+            Return CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.GetRelatedCollection(Of Oggetti)("MRCashModel.FK_Oggetti_Vendite", "Oggetti")
+        End Get
+        Set
+            If (Not (value) Is Nothing) Then
+                CType(Me,Global.System.Data.Objects.DataClasses.IEntityWithRelationships).RelationshipManager.InitializeRelatedCollection(Of Oggetti)("MRCashModel.FK_Oggetti_Vendite", "Oggetti", value)
+            End If
+        End Set
+    End Property
 End Class
 '''<summary>
 '''There are no comments for MRCashModel.V_AcquistiGiornalieri in the schema.
