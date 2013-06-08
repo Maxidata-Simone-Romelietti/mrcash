@@ -3,6 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_UI", "mrCash_UI\mrCash_UI.vbproj", "{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}"
 	ProjectSection(ProjectDependencies) = postProject
+		{2F8C733B-40AA-4AF6-9A21-3E512A25390D} = {2F8C733B-40AA-4AF6-9A21-3E512A25390D}
 		{BB1694ED-5F1F-40D7-A521-BC0814A53A9F} = {BB1694ED-5F1F-40D7-A521-BC0814A53A9F}
 	EndProjectSection
 EndProject
