@@ -20,28 +20,22 @@ Public Class frmRicercaVendite
             Dim c As String = OggettoTextBox1.Text.ToCodice
             Dim obj = (From o In context.Oggetti Where o.Codice = c).FirstOrDefault
 
-            Dim IDVendita As Integer = -1
-            If obj IsNot Nothing Then IDVendita = obj.RigaVendita
+            Dim DataVendita As New DateTime
+            If obj IsNot Nothing Then DataVendita = obj.Vendita_Data
 
-            qry = qry.Where(Function(s) s.IDVendita = IDVendita).ToList
+            qry = qry.Where(Function(s) s.Data = DataVendita).ToList
         End If
 
         qry = (From z In qry Order By z.Data Descending).ToList
 
         VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
 
-        'For Each r As DataGridViewRow In VenditeDataGridView.Rows
-        '    Dim id As Integer = CInt(r.Cells("IDVenditaColonna").Value)
-        '    Dim t As Decimal = CDec((From z In qry2 Where z.IDVendita = id Select z.Totale).FirstOrDefault)
-        '    r.Cells("Totale").Value = t
-        'Next
     End Function
 
     Private Sub VenditeDataGridView_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles VenditeDataGridView.CellDoubleClick
         If e.RowIndex < 0 Or e.ColumnIndex < 0 Then Exit Sub
 
-        Dim X As Vendite _
-        = DirectCast(VenditeDataGridView.Rows(e.RowIndex).DataBoundItem, Vendite)
+        Dim X = DirectCast(VenditeDataGridView.Rows(e.RowIndex).DataBoundItem, V_Giornalieri)
 
         If Selezione Then
             _IDVendita = X.IDVendita
@@ -57,17 +51,12 @@ Public Class frmRicercaVendite
     Protected Overrides Function OP_Nuovo() As Boolean
         Dim Dso As Date = Date.Now.SenzaOra
 
-        Dim V = From Q As Vendite In context.Vendite.Where(Function(s) s.Data = Dso) Select Q
-
-        Dim X As Vendite = Nothing
-
-        If V.Count > 0 Then X = V.First
-
-        ModificaRecord(X)
+        Dim V = (From Q In context.V_Giornalieri Where Q.Data = Dso).FirstOrDefault
+        ModificaRecord(V)
 
     End Function
 
-    Private Sub ModificaRecord(ByVal R As Vendite)
+    Private Sub ModificaRecord(ByVal R As V_Giornalieri)
 
         ' Controllo per non sbagliare a variare i giorni precedenti
         If R IsNot Nothing AndAlso R.Data < Now.Date Then
