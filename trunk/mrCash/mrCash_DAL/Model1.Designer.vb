@@ -11,13 +11,13 @@
 Option Strict Off
 Option Explicit On
 
-<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("a9c74a8e-1034-47cb-8b65-8952975d5807"),  _
+<Assembly: Global.System.Data.Objects.DataClasses.EdmSchemaAttribute("eae20a8f-89c7-4383-a91b-92e6aface893"),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Acquisti_Fornitori", "Fornitori", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Fornitori), "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Acquisti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Acquisti", "Acquisti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.One, GetType(Acquisti), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti)),  _
  Assembly: Global.System.Data.Objects.DataClasses.EdmRelationshipAttribute("MRCashModel", "FK_Oggetti_Vendite", "Vendite", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.ZeroOrOne, GetType(Vendite), "Oggetti", Global.System.Data.Metadata.Edm.RelationshipMultiplicity.Many, GetType(Oggetti))> 
 
 'Original file name:
-'Generation date: 13/10/2012 14:53:00
+'Generation date: 08/06/2013 10:24:08
 '''<summary>
 '''There are no comments for MRCashEntities in the schema.
 '''</summary>
@@ -1285,10 +1285,12 @@ Partial Public Class V_Giornalieri
     '''Create a new V_Giornalieri object.
     '''</summary>
     '''<param name="iDVendita">Initial value of IDVendita.</param>
+    '''<param name="data">Initial value of Data.</param>
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
-    Public Shared Function CreateV_Giornalieri(ByVal iDVendita As Integer) As V_Giornalieri
+    Public Shared Function CreateV_Giornalieri(ByVal iDVendita As Integer, ByVal data As Date) As V_Giornalieri
         Dim v_Giornalieri As V_Giornalieri = New V_Giornalieri()
         v_Giornalieri.IDVendita = iDVendita
+        v_Giornalieri.Data = data
         Return v_Giornalieri
     End Function
     '''<summary>
@@ -1342,6 +1344,32 @@ Partial Public Class V_Giornalieri
         End Sub
     <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
     Partial Private Sub OnTotaleChanged()
+        End Sub
+    '''<summary>
+    '''There are no comments for property Data in the schema.
+    '''</summary>
+    <Global.System.Data.Objects.DataClasses.EdmScalarPropertyAttribute(IsNullable:=false),  _
+     Global.System.Runtime.Serialization.DataMemberAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Public Property Data() As Date
+        Get
+            Return Me._Data
+        End Get
+        Set
+            Me.OnDataChanging(value)
+            Me.ReportPropertyChanging("Data")
+            Me._Data = Global.System.Data.Objects.DataClasses.StructuralObject.SetValidValue(value)
+            Me.ReportPropertyChanged("Data")
+            Me.OnDataChanged
+        End Set
+    End Property
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Private _Data As Date
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnDataChanging(ByVal value As Date)
+        End Sub
+    <Global.System.CodeDom.Compiler.GeneratedCode("System.Data.Entity.Design.EntityClassGenerator", "4.0.0.0")>  _
+    Partial Private Sub OnDataChanged()
         End Sub
 End Class
 '''<summary>
