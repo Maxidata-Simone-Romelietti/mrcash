@@ -169,8 +169,8 @@
             <End Role="Oggetti" EntitySet="Oggetti" />
           </AssociationSet>
           <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.FK_Oggetti_Vendite">
-            <End Role="Vendite" EntitySet="Vendite" />
-            <End Role="Oggetti" EntitySet="Oggetti" />
+            <End EntitySet="Vendite" Role="Vendite" />
+            <End EntitySet="Oggetti" Role="Oggetti" />
           </AssociationSet>
           <FunctionImport Name="Totali_Giornalieri" EntitySet="Oggetti" ReturnType="Collection(MRCashModel.Oggetti)" />
           <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.V_AcquistiGiornalieri" />
@@ -222,7 +222,8 @@
           <Property Name="DataRottamazione" Type="DateTime" Nullable="true" />
           <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " />
           <Property Name="RigaAcquisto" Type="Int32" Nullable="false" />
-          <Property Name="RigaVendita" Type="Int32" Nullable="false" /></EntityType>
+          <Property Name="RigaVendita" Type="Int32" Nullable="false" />
+          </EntityType>
         <EntityType Name="Vendite">
           <Key>
             <PropertyRef Name="IDVendita" />
@@ -240,8 +241,8 @@
           <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
         </Association>
         <Association Name="FK_Oggetti_Vendite">
-          <End Role="Vendite" Type="MRCashModel.Vendite" Multiplicity="0..1" />
-          <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
+          <End Type="MRCashModel.Vendite" Multiplicity="0..1" Role="Vendite" />
+          <End Type="MRCashModel.Oggetti" Multiplicity="*" Role="Oggetti" />
         </Association>
         <EntityType Name="V_AcquistiGiornalieri">
           <Key>
@@ -386,21 +387,21 @@
       <Diagram Name="Model1">
         <EntityTypeShape EntityType="MRCashModel.Acquisti" Width="1.5" PointX="3" PointY="1.75" Height="1.5923063151041665" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Fornitori" Width="1.5" PointX="0.75" PointY="1" Height="3.0714322916666661" IsExpanded="true" />
-        <EntityTypeShape EntityType="MRCashModel.Oggetti" Width="1.5" PointX="5.25" PointY="1.25" Height="2.5783902994791656" IsExpanded="true" />
+        <EntityTypeShape EntityType="MRCashModel.Oggetti" Width="1.5" PointX="5.25" PointY="1.25" Height="4.0956022135416656" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Vendite" Width="1.5" PointX="3" PointY="5.75" Height="1.4279589843749996" IsExpanded="true" />
         <AssociationConnector Association="MRCashModel.FK_Acquisti_Fornitori" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="2.6283268229166667" />
           <ConnectorPoint PointX="3" PointY="2.6283268229166667" /></AssociationConnector>
         <AssociationConnector Association="MRCashModel.FK_Oggetti_Acquisti" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.5461531575520833" />
-          <ConnectorPoint PointX="5.25" PointY="2.5461531575520833" /></AssociationConnector>
-        <AssociationConnector Association="MRCashModel.FK_Oggetti_Vendite" ManuallyRouted="false">
+          <ConnectorPoint PointX="4.5" PointY="2.7401432291666667" />
+          <ConnectorPoint PointX="5.25" PointY="2.7401432291666667" /></AssociationConnector>
+        <AssociationConnector ManuallyRouted="false" Association="MRCashModel.FK_Oggetti_Vendite">
           <ConnectorPoint PointX="4.5" PointY="6.21875" />
           <ConnectorPoint PointX="5.28125" PointY="6.21875" />
           <ConnectorPoint PointX="5.28125" PointY="5.3456022135416656" />
           </AssociationConnector>
         <EntityTypeShape EntityType="MRCashModel.V_AcquistiGiornalieri" Width="1.5" PointX="7.375" PointY="2.625" Height="1.4033821614583317" />
-        <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="5.375" PointY="6.75" Height="1.5956835937499996" />
+        <EntityTypeShape EntityType="MRCashModel.V_Giornalieri" Width="1.5" PointX="7.375" PointY="5" Height="1.5956835937499996" />
         </Diagram></edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>
