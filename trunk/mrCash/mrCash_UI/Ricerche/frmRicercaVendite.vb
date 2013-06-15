@@ -13,22 +13,25 @@ Public Class frmRicercaVendite
 
     Protected Overrides Function OP_Ricerca() As Boolean
 
-        Dim qry = (From Q In context.V_Giornalieri).ToList
+        ' uso un contesto nuovo perchè quello condiviso non vedeva le variazioni dell'ultima vendita
+        Using ctx = mrCash_DAL.MRCashEntities.Create
+            Dim qry = (From Q In ctx.V_Giornalieri).ToList
 
-        ' Applica la where dell'oggetto
-        If OggettoTextBox1.Text <> "" Then
-            Dim c As String = OggettoTextBox1.Text.ToCodice
-            Dim Vendita = (From o In context.Oggetti.Include("Vendite") Where o.Codice = c Select o.Vendite).FirstOrDefault
+            ' Applica la where dell'oggetto
+            If OggettoTextBox1.Text <> "" Then
+                Dim c As String = OggettoTextBox1.Text.ToCodice
+                Dim Vendita = (From o In ctx.Oggetti.Include("Vendite") Where o.Codice = c Select o.Vendite).FirstOrDefault
 
-            Dim IDVend = -1
-            If Vendita IsNot Nothing Then IDVend = Vendita.IDVendita
+                Dim IDVend = -1
+                If Vendita IsNot Nothing Then IDVend = Vendita.IDVendita
 
-            qry = qry.Where(Function(s) s.IDVendita = IDVend).ToList
-        End If
+                qry = qry.Where(Function(s) s.IDVendita = IDVend).ToList
+            End If
 
-        qry = (From z In qry Order By z.Data Descending).ToList
+            qry = (From z In qry Order By z.Data Descending).ToList
 
-        VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
+            VenditeBindingSource1.DataSource = (From z In qry Order By z.Data Descending).ToList
+        End Using
 
     End Function
 
