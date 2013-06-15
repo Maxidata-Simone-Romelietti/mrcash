@@ -1,4 +1,15 @@
-﻿
+﻿Imports mrCash_DAL
+Imports System.IO
+Imports System.Configuration
+Imports System
+Imports System.Security.Cryptography
+Imports System.Text
+Imports System.Runtime.CompilerServices
+Imports System.Collections.Generic
+Imports System.Linq
+Imports System.Data.Objects.DataClasses
+Imports System.Collections
+Imports System.Reflection
 
 Public Class frmLogin
 

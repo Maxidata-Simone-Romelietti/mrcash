@@ -17,25 +17,23 @@ Imports System.Reflection
 
 Module Tools
 
-    Private _ExcelConnectionString As String
     Public ReadOnly Property ExcelConnectionString() As String
         Get
-            Return _ExcelConnectionString
+            Return mrCash_DAL.Variabili.ExcelConnectionString
         End Get
     End Property
 
-    Private _ContextConnectionString As String
     Public ReadOnly Property ContextConnectionString() As String
         Get
-            Return _ContextConnectionString
+            Return mrCash_DAL.Variabili.ContextConnectionString
         End Get
     End Property
 
     Public Sub SettaConnessioni(ByVal password As String)
         password = password.ToLower
         Dim CS As ConnectionStringSettings = ConfigurationManager.ConnectionStrings("MRCashEntities")
-        _ContextConnectionString = CS.ConnectionString.Replace("User ID=sa", "User ID=sa;Password=" & password)
-        _ExcelConnectionString = My.Settings.ConnessioneExcel.Replace("User ID=sa", "User ID=sa;Password=" & password)
+        mrCash_DAL.Variabili.ContextConnectionString = CS.ConnectionString.Replace("User ID=sa", "User ID=sa;Password=" & password)
+        mrCash_DAL.Variabili.ExcelConnectionString = My.Settings.ConnessioneExcel.Replace("User ID=sa", "User ID=sa;Password=" & password)
     End Sub
 
     Public Sub AfterKeyDown(ByVal F As Form, ByVal e As System.Windows.Forms.KeyEventArgs)
