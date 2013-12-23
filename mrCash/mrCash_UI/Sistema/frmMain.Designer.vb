@@ -23,26 +23,27 @@ Partial Class frmMain
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmMain))
-        Me.cmdAcquisto = New System.Windows.Forms.Button
-        Me.cmdVendita = New System.Windows.Forms.Button
-        Me.cmdResoconto = New System.Windows.Forms.Button
-        Me.cmdInventario = New System.Windows.Forms.Button
-        Me.cmdProdotti = New System.Windows.Forms.Button
-        Me.cmdRicFor = New System.Windows.Forms.Button
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip
-        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton
-        Me.ScansioniInventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem
-        Me.GeneraPasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
-        Me.ImportaAcquistiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem
+        Me.cmdAcquisto = New System.Windows.Forms.Button()
+        Me.cmdVendita = New System.Windows.Forms.Button()
+        Me.cmdResoconto = New System.Windows.Forms.Button()
+        Me.cmdInventario = New System.Windows.Forms.Button()
+        Me.cmdProdotti = New System.Windows.Forms.Button()
+        Me.cmdRicFor = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.ToolStrip1 = New System.Windows.Forms.ToolStrip()
+        Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.ScansioniInventarioToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GeneraPasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ImportaAcquistiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmdAcquisto
         '
         Me.cmdAcquisto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdAcquisto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAcquisto.Location = New System.Drawing.Point(12, 0)
         Me.cmdAcquisto.Name = "cmdAcquisto"
@@ -54,7 +55,7 @@ Partial Class frmMain
         'cmdVendita
         '
         Me.cmdVendita.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdVendita.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdVendita.Location = New System.Drawing.Point(124, 0)
         Me.cmdVendita.Name = "cmdVendita"
@@ -66,7 +67,7 @@ Partial Class frmMain
         'cmdResoconto
         '
         Me.cmdResoconto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdResoconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdResoconto.Location = New System.Drawing.Point(683, 0)
         Me.cmdResoconto.Name = "cmdResoconto"
@@ -78,7 +79,7 @@ Partial Class frmMain
         'cmdInventario
         '
         Me.cmdInventario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdInventario.Location = New System.Drawing.Point(571, 0)
         Me.cmdInventario.Name = "cmdInventario"
@@ -112,7 +113,7 @@ Partial Class frmMain
         'Button1
         '
         Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(795, 0)
         Me.Button1.Name = "Button1"
@@ -125,9 +126,9 @@ Partial Class frmMain
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(901, 0)
+        Me.ToolStrip1.Location = New System.Drawing.Point(903, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(32, 68)
+        Me.ToolStrip1.Size = New System.Drawing.Size(30, 68)
         Me.ToolStrip1.TabIndex = 7
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -138,32 +139,44 @@ Partial Class frmMain
         Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(29, 20)
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(27, 20)
         Me.ToolStripDropDownButton1.Text = "ToolStripDropDownButton1"
         '
         'ScansioniInventarioToolStripMenuItem
         '
         Me.ScansioniInventarioToolStripMenuItem.Name = "ScansioniInventarioToolStripMenuItem"
-        Me.ScansioniInventarioToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ScansioniInventarioToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.ScansioniInventarioToolStripMenuItem.Text = "Scansioni Inventario"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(201, 22)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(219, 22)
         Me.ToolStripMenuItem2.Text = "-----------------------------"
         '
         'GeneraPasswordToolStripMenuItem
         '
         Me.GeneraPasswordToolStripMenuItem.Name = "GeneraPasswordToolStripMenuItem"
-        Me.GeneraPasswordToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.GeneraPasswordToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.GeneraPasswordToolStripMenuItem.Text = "Genera Password"
         '
         'ImportaAcquistiToolStripMenuItem
         '
         Me.ImportaAcquistiToolStripMenuItem.Name = "ImportaAcquistiToolStripMenuItem"
-        Me.ImportaAcquistiToolStripMenuItem.Size = New System.Drawing.Size(201, 22)
+        Me.ImportaAcquistiToolStripMenuItem.Size = New System.Drawing.Size(219, 22)
         Me.ImportaAcquistiToolStripMenuItem.Text = "Importa Acquisti"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Location = New System.Drawing.Point(236, 0)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(50, 68)
+        Me.Button2.TabIndex = 8
+        Me.Button2.Text = "VENDITE"
+        Me.Button2.UseVisualStyleBackColor = True
         '
         'frmMain
         '
@@ -171,6 +184,7 @@ Partial Class frmMain
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(933, 68)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.cmdRicFor)
@@ -202,5 +216,6 @@ Partial Class frmMain
     Friend WithEvents ImportaAcquistiToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ScansioniInventarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents Button2 As System.Windows.Forms.Button
 
 End Class

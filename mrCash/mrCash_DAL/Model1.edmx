@@ -92,7 +92,7 @@
           <Property Name="Data" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'mrcash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'MrCash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="V_AcquistiGiornalieri">
           <Key>
@@ -103,7 +103,7 @@
           <Property Name="Totale" Type="money" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'mrcash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      warning 6002: The table/view 'MrCash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
       -->
         <EntityType Name="V_Giornalieri">
           <Key>
@@ -181,7 +181,7 @@
             <PropertyRef Name="IDAcquisto" />
           </Key>
           <Property Name="IDAcquisto" Type="Int32" Nullable="false" />
-          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Fornitori" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Acquisti" ToRole="Fornitori" />
           <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Acquisti" ToRole="Oggetti" />
           <Property Name="Transazione" Type="Int32" Nullable="false" /></EntityType>
@@ -199,10 +199,10 @@
           <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
           <Property Name="Cap" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
           <Property Name="TipoDoc" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
-          <Property Name="DataRilascio" Type="DateTime" Nullable="false" />
-          <Property Name="DataNascita" Type="DateTime" Nullable="false" />
+          <Property Name="DataRilascio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="DataNascita" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Fornitori" ToRole="Acquisti" />
-          <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " /></EntityType>
+          <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " MaxLength="1000" Unicode="true" FixedLength="false" /></EntityType>
         <EntityType Name="Oggetti">
           <Key>
             <PropertyRef Name="IDOggetto" />
@@ -213,14 +213,14 @@
           <Property Name="PrezzoAcquisto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="PrezzoStimato" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
           <Property Name="PrezzoVendita" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
-          <Property Name="Modello" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
-          <Property Name="Serie" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Modello" Type="String" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+          <Property Name="Serie" Type="String" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
           <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Oggetti" ToRole="Acquisti" />
           <NavigationProperty Name="Vendite" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Oggetti" ToRole="Vendite" />
-          <Property Name="DataRientro" Type="DateTime" Nullable="true" />
-          <Property Name="DataRiconsegna" Type="DateTime" Nullable="true" />
-          <Property Name="DataRottamazione" Type="DateTime" Nullable="true" />
-          <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " />
+          <Property Name="DataRientro" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="DataRiconsegna" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="DataRottamazione" Type="DateTime" Nullable="true" Precision="3" />
+          <Property Name="Note" Type="String" DefaultValue=" " MaxLength="1000" Unicode="true" FixedLength="false" />
           <Property Name="RigaAcquisto" Type="Int32" Nullable="false" />
           <Property Name="RigaVendita" Type="Int32" Nullable="false" />
           </EntityType>
@@ -229,7 +229,7 @@
             <PropertyRef Name="IDVendita" />
           </Key>
           <Property Name="IDVendita" Type="Int32" Nullable="false" />
-          <Property Name="Data" Type="DateTime" Nullable="false" />
+          <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Vendite" ToRole="Oggetti" />
           </EntityType>
         <Association Name="FK_Acquisti_Fornitori">
@@ -249,7 +249,7 @@
             <PropertyRef Name="Data" />
             <PropertyRef Name="Totale" />
           </Key>
-          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
           <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         <EntityType Name="V_Giornalieri">
@@ -257,7 +257,7 @@
             <PropertyRef Name="IDVendita" />
           </Key>
           <Property Type="Int32" Name="IDVendita" Nullable="false" />
-          <Property Type="DateTime" Name="Data" Nullable="false" />
+          <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
           <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
         </EntityType>
         </Schema>
@@ -384,7 +384,7 @@
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Model1">
+      <Diagram Name="Model1" ZoomLevel="95">
         <EntityTypeShape EntityType="MRCashModel.Acquisti" Width="1.5" PointX="3" PointY="1.75" Height="1.5923063151041665" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Fornitori" Width="1.5" PointX="0.75" PointY="1" Height="3.0714322916666661" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Oggetti" Width="1.5" PointX="5.25" PointY="1.25" Height="4.0956022135416656" IsExpanded="true" />
