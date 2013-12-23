@@ -80,5 +80,11 @@ Public Class frmMain
         F.Show()
 
     End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Using F As New frmRicercaVendite2
+            F.ShowDialog()
+        End Using
+    End Sub
 End Class
 
