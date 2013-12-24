@@ -107,7 +107,7 @@ Partial Class frmMain
         'Button1
         '
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(12, 443)
+        Me.Button1.Location = New System.Drawing.Point(12, 457)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(466, 39)
         Me.Button1.TabIndex = 6
@@ -116,11 +116,11 @@ Partial Class frmMain
         '
         'ToolStrip1
         '
-        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Right
+        Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(497, 0)
+        Me.ToolStrip1.Location = New System.Drawing.Point(0, 526)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(30, 510)
+        Me.ToolStrip1.Size = New System.Drawing.Size(489, 25)
         Me.ToolStrip1.TabIndex = 7
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -131,7 +131,7 @@ Partial Class frmMain
         Me.ToolStripDropDownButton1.Image = CType(resources.GetObject("ToolStripDropDownButton1.Image"), System.Drawing.Image)
         Me.ToolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolStripDropDownButton1.Name = "ToolStripDropDownButton1"
-        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(27, 20)
+        Me.ToolStripDropDownButton1.Size = New System.Drawing.Size(29, 22)
         Me.ToolStripDropDownButton1.Text = "ToolStripDropDownButton1"
         '
         'ScansioniInventarioToolStripMenuItem
@@ -212,8 +212,7 @@ Partial Class frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(527, 510)
-        Me.ControlBox = False
+        Me.ClientSize = New System.Drawing.Size(489, 551)
         Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
@@ -230,7 +229,7 @@ Partial Class frmMain
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmMain"
-        Me.Text = "Mr. Cash"
+        Me.Text = "BENVENUTO in MR. CASH"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
