@@ -44,9 +44,9 @@
                                             <RowDefinition />
                                         </Grid.RowDefinitions>
 
-                                        <TextBlock Text="{Binding Data, StringFormat={}{0:dd/MM}}" FontSize="10" Grid.Row="0"/>
-                                        <TextBlock Text="{Binding Totale, StringFormat={}{0:F}}" FontSize="14" Grid.Row="1"/>
-                                        <ContentPresenter/>
+                                        <Label Content="{Binding Data, StringFormat={}{0:dd/MM/yyyy}}" FontSize="16" Grid.Row="0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                        <TextBlock Text="{Binding Totale, StringFormat={}{0:0.00;0.00;#}}" FontSize="24" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+                                        
                                     </Grid>
                                 </Border>
                             </ControlTemplate>
@@ -69,9 +69,9 @@
                                                     <RowDefinition />
                                                 </Grid.RowDefinitions>
 
-                                                <TextBlock Text="{Binding Data, StringFormat={}{0:dd/MM}}" FontSize="10" Grid.Row="0"/>
-                                                <TextBlock Text="{Binding Totale, StringFormat={}{0:F}}" FontSize="14" Grid.Row="1"/>
-                                                <ContentPresenter/>
+                                                <Label Content="{Binding Data, StringFormat={}{0:dd/MM/yyyy}}" FontSize="16" Grid.Row="0" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                                                <TextBlock Text="{Binding Totale, StringFormat={}{0:0.00;0.00;#}}" FontSize="24" Grid.Row="1" VerticalAlignment="Bottom" HorizontalAlignment="Right" />
+                                                
                                             </Grid>
                                         </Border>
                                     </ControlTemplate>
