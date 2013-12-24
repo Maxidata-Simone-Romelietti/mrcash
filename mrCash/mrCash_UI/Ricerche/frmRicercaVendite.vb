@@ -69,7 +69,11 @@ Public Class frmRicercaVendite
 
         Using F As New frmVendita
 
-            F.ID = -1 : If R IsNot Nothing Then F.ID = R.IDVendita
+            If R IsNot Nothing Then
+                F.DataVendita = R.Data.Date
+            Else
+                F.DataVendita = Now.Date
+            End If
 
             Me.Visible = False
             F.ShowDialog()
