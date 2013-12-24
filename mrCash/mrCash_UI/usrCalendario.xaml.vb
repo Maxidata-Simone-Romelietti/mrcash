@@ -1,8 +1,5 @@
 ﻿Public Class usrCalendario
 
-    Public WithEvents bUP As New System.Windows.Controls.Button With {.Content = "UP"}
-    Public WithEvents bDN As New System.Windows.Controls.Button With {.Content = "DOWN"}
-
     Private inizio As DateTime = New DateTime(2012, 10, 13)
 
     Public Sub Popola()
@@ -33,10 +30,14 @@
                 System.Windows.Controls.Grid.SetRow(b, r)
                 System.Windows.Controls.Grid.SetColumn(b, c)
 
-                Dim txt = base_data.ToString("dd/MM")
-                Dim soldi = (From q In qry Where q.Data = base_data).FirstOrDefault
-                If soldi IsNot Nothing Then txt += vbCrLf & soldi.Totale.ToString
-                b.Content = txt
+                Dim giorno = (From q In qry Where q.Data = base_data).FirstOrDefault
+                If giorno Is Nothing Then
+                    giorno = New mrCash_DAL.V_Giornalieri With {.Data = base_data}
+                End If
+
+                'b.Content = txt
+                b.DataContext = giorno
+                AddHandler b.Click, AddressOf Cliccato
 
                 Mygrd.Children.Add(b)
                 If base_data = Now.Date Then b.Focus()
@@ -45,16 +46,6 @@
             Next
         Next
 
-        System.Windows.Controls.Grid.SetRow(bUP, 0)
-        System.Windows.Controls.Grid.SetColumn(bUP, 7)
-        System.Windows.Controls.Grid.SetRowSpan(bUP, 2)
-
-        System.Windows.Controls.Grid.SetRow(bDN, 3)
-        System.Windows.Controls.Grid.SetColumn(bDN, 7)
-        System.Windows.Controls.Grid.SetRowSpan(bDN, 2)
-
-        Mygrd.Children.Add(bUP)
-        Mygrd.Children.Add(bDN)
     End Sub
 
     Private Sub bDN_Click(sender As Object, e As Windows.RoutedEventArgs) Handles bDN.Click
@@ -65,4 +56,25 @@
         inizio = inizio.AddDays(-7) : Popola()
     End Sub
 
+    Private Sub Cliccato(sender As Object, e As Windows.RoutedEventArgs)
+        Dim b = DirectCast(sender, System.Windows.Controls.Button)
+        Dim R = DirectCast(b.DataContext, mrCash_DAL.V_Giornalieri)
+
+        ' Controllo per non sbagliare a variare i giorni precedenti
+        If R IsNot Nothing AndAlso R.Data < Now.Date Then
+            If MsgBox("Si sta per variare la vendita di un giorno passato." & vbCrLf & vbCrLf & "Procedere con l'operazione ?", MsgBoxStyle.YesNo) <> MsgBoxResult.Yes _
+               Then Exit Sub
+        End If
+
+        Using F As New frmVendita
+
+            F.ID = -1 : If R IsNot Nothing Then F.ID = R.IDVendita
+
+            F.ShowDialog()
+
+            Popola()
+
+        End Using
+
+    End Sub
 End Class
