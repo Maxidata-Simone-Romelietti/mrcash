@@ -37,98 +37,90 @@ Partial Class frmMain
         Me.GeneraPasswordToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ImportaAcquistiToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.ToolStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'cmdAcquisto
         '
-        Me.cmdAcquisto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdAcquisto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdAcquisto.Location = New System.Drawing.Point(12, 0)
+        Me.cmdAcquisto.Location = New System.Drawing.Point(12, 182)
         Me.cmdAcquisto.Name = "cmdAcquisto"
-        Me.cmdAcquisto.Size = New System.Drawing.Size(106, 68)
+        Me.cmdAcquisto.Size = New System.Drawing.Size(230, 39)
         Me.cmdAcquisto.TabIndex = 0
         Me.cmdAcquisto.Text = "ACQUISTI"
         Me.cmdAcquisto.UseVisualStyleBackColor = True
         '
         'cmdVendita
         '
-        Me.cmdVendita.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.cmdVendita.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdVendita.Location = New System.Drawing.Point(124, 0)
+        Me.cmdVendita.Location = New System.Drawing.Point(248, 27)
         Me.cmdVendita.Name = "cmdVendita"
-        Me.cmdVendita.Size = New System.Drawing.Size(106, 68)
+        Me.cmdVendita.Size = New System.Drawing.Size(230, 96)
         Me.cmdVendita.TabIndex = 1
-        Me.cmdVendita.Text = "VENDITE"
+        Me.cmdVendita.Text = "VENDITA"
         Me.cmdVendita.UseVisualStyleBackColor = True
         '
         'cmdResoconto
         '
-        Me.cmdResoconto.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdResoconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdResoconto.Location = New System.Drawing.Point(683, 0)
+        Me.cmdResoconto.Location = New System.Drawing.Point(248, 370)
         Me.cmdResoconto.Name = "cmdResoconto"
-        Me.cmdResoconto.Size = New System.Drawing.Size(106, 68)
+        Me.cmdResoconto.Size = New System.Drawing.Size(230, 39)
         Me.cmdResoconto.TabIndex = 2
         Me.cmdResoconto.Text = "RESOCONTO"
         Me.cmdResoconto.UseVisualStyleBackColor = True
         '
         'cmdInventario
         '
-        Me.cmdInventario.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.cmdInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdInventario.Location = New System.Drawing.Point(571, 0)
+        Me.cmdInventario.Location = New System.Drawing.Point(12, 370)
         Me.cmdInventario.Name = "cmdInventario"
-        Me.cmdInventario.Size = New System.Drawing.Size(106, 68)
+        Me.cmdInventario.Size = New System.Drawing.Size(230, 39)
         Me.cmdInventario.TabIndex = 3
         Me.cmdInventario.Text = "INVENTARIO"
         Me.cmdInventario.UseVisualStyleBackColor = True
         '
         'cmdProdotti
         '
-        Me.cmdProdotti.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.cmdProdotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdProdotti.Location = New System.Drawing.Point(290, 0)
+        Me.cmdProdotti.Location = New System.Drawing.Point(12, 274)
         Me.cmdProdotti.Name = "cmdProdotti"
-        Me.cmdProdotti.Size = New System.Drawing.Size(106, 68)
+        Me.cmdProdotti.Size = New System.Drawing.Size(230, 39)
         Me.cmdProdotti.TabIndex = 4
         Me.cmdProdotti.Text = "OGGETTI"
         Me.cmdProdotti.UseVisualStyleBackColor = True
         '
         'cmdRicFor
         '
-        Me.cmdRicFor.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Me.cmdRicFor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdRicFor.Location = New System.Drawing.Point(402, 0)
+        Me.cmdRicFor.Location = New System.Drawing.Point(248, 274)
         Me.cmdRicFor.Name = "cmdRicFor"
-        Me.cmdRicFor.Size = New System.Drawing.Size(106, 68)
+        Me.cmdRicFor.Size = New System.Drawing.Size(230, 39)
         Me.cmdRicFor.TabIndex = 5
         Me.cmdRicFor.Text = "FORNITORI"
         Me.cmdRicFor.UseVisualStyleBackColor = True
         '
         'Button1
         '
-        Me.Button1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(795, 0)
+        Me.Button1.Location = New System.Drawing.Point(12, 443)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(106, 68)
+        Me.Button1.Size = New System.Drawing.Size(466, 39)
         Me.Button1.TabIndex = 6
-        Me.Button1.Text = "CHIUDI"
+        Me.Button1.Text = "ESCI"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ToolStrip1
         '
         Me.ToolStrip1.Dock = System.Windows.Forms.DockStyle.Right
         Me.ToolStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripDropDownButton1})
-        Me.ToolStrip1.Location = New System.Drawing.Point(903, 0)
+        Me.ToolStrip1.Location = New System.Drawing.Point(497, 0)
         Me.ToolStrip1.Name = "ToolStrip1"
-        Me.ToolStrip1.Size = New System.Drawing.Size(30, 68)
+        Me.ToolStrip1.Size = New System.Drawing.Size(30, 510)
         Me.ToolStrip1.TabIndex = 7
         Me.ToolStrip1.Text = "ToolStrip1"
         '
@@ -168,22 +160,64 @@ Partial Class frmMain
         '
         'Button2
         '
-        Me.Button2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.Location = New System.Drawing.Point(236, 0)
+        Me.Button2.Location = New System.Drawing.Point(248, 182)
         Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(50, 68)
+        Me.Button2.Size = New System.Drawing.Size(230, 39)
         Me.Button2.TabIndex = 8
         Me.Button2.Text = "VENDITE"
         Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Label1
+        '
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(12, 347)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(466, 20)
+        Me.Label1.TabIndex = 9
+        Me.Label1.Text = "FINE MESE"
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(12, 251)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(466, 20)
+        Me.Label2.TabIndex = 10
+        Me.Label2.Text = "ARCHIVI"
+        Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 15.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Location = New System.Drawing.Point(12, 159)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(466, 20)
+        Me.Label3.TabIndex = 11
+        Me.Label3.Text = "STORICI"
+        Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(12, 27)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(230, 96)
+        Me.Button3.TabIndex = 12
+        Me.Button3.Text = "ACQUISTO"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'frmMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(933, 68)
+        Me.ClientSize = New System.Drawing.Size(527, 510)
         Me.ControlBox = False
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.ToolStrip1)
         Me.Controls.Add(Me.Button1)
@@ -217,5 +251,9 @@ Partial Class frmMain
     Friend WithEvents ScansioniInventarioToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label3 As System.Windows.Forms.Label
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 
 End Class

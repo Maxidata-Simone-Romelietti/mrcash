@@ -88,7 +88,7 @@ Public Class frmRicercaAcquisti
 
         Using F As New frmAcquisto
 
-            F.ID = -1 : If R IsNot Nothing Then F.ID = R.IDAcquisto
+            If R IsNot Nothing Then F.ID = R.IDAcquisto
 
             Me.Visible = False
             Dim Ri As DialogResult = F.ShowDialog()
