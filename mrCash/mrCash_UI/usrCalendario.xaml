@@ -8,11 +8,32 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="5*"/>
+            <RowDefinition Height="0.5*"/>            
+            <RowDefinition Height="6*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Grid Name="Mygrd" Grid.Row="1">
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions >
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            
+            <Label Content="L" Grid.Column="0" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18"/>
+            <Label Content="M" Grid.Column="1" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18" />
+            <Label Content="M" Grid.Column="2" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18" />
+            <Label Content="G" Grid.Column="3" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18" />
+            <Label Content="V" Grid.Column="4" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18" />
+            <Label Content="S" Grid.Column="5" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,0,1" BorderBrush="Black" HorizontalContentAlignment="Center" FontSize="18" />
+            <Label Content="D" Grid.Column="6" Padding="0" HorizontalAlignment="Stretch" BorderThickness="1,1,1,1" BorderBrush="Red" HorizontalContentAlignment="Center"  FontSize="18"/>
+        </Grid>
+        
+        <Grid Name="Mygrd" Grid.Row="2">
             <Grid.ColumnDefinitions >
                 <ColumnDefinition/>
                 <ColumnDefinition/>
@@ -91,7 +112,7 @@
                          Stroke="Black" StrokeThickness="4" Fill="Yellow" />
             </Button.Content> 
         </Button>
-        <Button Grid.Row="2" Name="bDN" Focusable="False" >
+        <Button Grid.Row="3" Name="bDN" Focusable="False" >
         <Button.Content>
                 <Polygon Points="0, 0 100, 0 50, 20"
                          Stroke="Black" StrokeThickness="4" Fill="Yellow" />
