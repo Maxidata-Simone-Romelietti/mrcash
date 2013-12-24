@@ -37,7 +37,7 @@ Public Class frmMain
     End Sub
 
     Private Sub cmdVendita_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdVendita.Click
-        Using F As New frmRicercaVendite
+        Using F As New frmVendita
             F.ShowDialog()
         End Using
     End Sub
@@ -83,6 +83,12 @@ Public Class frmMain
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
         Using F As New frmRicercaVendite2
+            F.ShowDialog()
+        End Using
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Using F As New frmAcquisto
             F.ShowDialog()
         End Using
     End Sub

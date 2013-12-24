@@ -121,7 +121,7 @@ Public Class frmVendita
 
     End Sub
 
-    Public Property DataVendita As Date
+    Public Property DataVendita As Date = Now.Date
 
 End Class
 
