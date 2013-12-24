@@ -1,6 +1,6 @@
 ﻿Public Class usrCalendario
 
-    Private inizio As DateTime = New DateTime(2012, 10, 13)
+    Private inizio As DateTime = Now.Date
 
     Public Sub Popola()
 
