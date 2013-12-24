@@ -85,8 +85,18 @@
 
         </Grid>
 
-        <Button Grid.Row="0" Name="bUP" Focusable="False" >UP</Button>
-        <Button Grid.Row="2" Name="bDN" Focusable="False" >DOWN</Button>
+        <Button Grid.Row="0" Name="bUP" Focusable="False" >
+            <Button.Content>
+                <Polygon Points="0, 20 100, 20 50, 0"
+                         Stroke="Black" StrokeThickness="4" Fill="Yellow" />
+            </Button.Content> 
+        </Button>
+        <Button Grid.Row="2" Name="bDN" Focusable="False" >
+        <Button.Content>
+                <Polygon Points="0, 0 100, 0 50, 20"
+                         Stroke="Black" StrokeThickness="4" Fill="Yellow" />
+            </Button.Content>
+        </Button>
 
     </Grid>
 </UserControl>
