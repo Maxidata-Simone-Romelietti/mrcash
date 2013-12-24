@@ -46,7 +46,7 @@
 
     End Sub
 
-    Private _ID As Integer
+    Private _ID As Integer = -1
     Public Property ID() As Integer
         Get
             Return _ID
