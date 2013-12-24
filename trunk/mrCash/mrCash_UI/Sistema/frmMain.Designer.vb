@@ -46,7 +46,7 @@ Partial Class frmMain
         '
         'cmdAcquisto
         '
-        Me.cmdAcquisto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdAcquisto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdAcquisto.Location = New System.Drawing.Point(12, 182)
         Me.cmdAcquisto.Name = "cmdAcquisto"
         Me.cmdAcquisto.Size = New System.Drawing.Size(230, 39)
@@ -56,17 +56,17 @@ Partial Class frmMain
         '
         'cmdVendita
         '
-        Me.cmdVendita.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdVendita.Location = New System.Drawing.Point(248, 27)
+        Me.cmdVendita.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdVendita.Location = New System.Drawing.Point(248, 12)
         Me.cmdVendita.Name = "cmdVendita"
-        Me.cmdVendita.Size = New System.Drawing.Size(230, 96)
+        Me.cmdVendita.Size = New System.Drawing.Size(230, 113)
         Me.cmdVendita.TabIndex = 1
         Me.cmdVendita.Text = "VENDITA"
         Me.cmdVendita.UseVisualStyleBackColor = True
         '
         'cmdResoconto
         '
-        Me.cmdResoconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdResoconto.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdResoconto.Location = New System.Drawing.Point(248, 370)
         Me.cmdResoconto.Name = "cmdResoconto"
         Me.cmdResoconto.Size = New System.Drawing.Size(230, 39)
@@ -76,7 +76,7 @@ Partial Class frmMain
         '
         'cmdInventario
         '
-        Me.cmdInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdInventario.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdInventario.Location = New System.Drawing.Point(12, 370)
         Me.cmdInventario.Name = "cmdInventario"
         Me.cmdInventario.Size = New System.Drawing.Size(230, 39)
@@ -86,7 +86,7 @@ Partial Class frmMain
         '
         'cmdProdotti
         '
-        Me.cmdProdotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdProdotti.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdProdotti.Location = New System.Drawing.Point(12, 274)
         Me.cmdProdotti.Name = "cmdProdotti"
         Me.cmdProdotti.Size = New System.Drawing.Size(230, 39)
@@ -96,7 +96,7 @@ Partial Class frmMain
         '
         'cmdRicFor
         '
-        Me.cmdRicFor.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdRicFor.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.cmdRicFor.Location = New System.Drawing.Point(248, 274)
         Me.cmdRicFor.Name = "cmdRicFor"
         Me.cmdRicFor.Size = New System.Drawing.Size(230, 39)
@@ -106,7 +106,7 @@ Partial Class frmMain
         '
         'Button1
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.Location = New System.Drawing.Point(12, 457)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(466, 39)
@@ -160,7 +160,7 @@ Partial Class frmMain
         '
         'Button2
         '
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button2.Location = New System.Drawing.Point(248, 182)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(230, 39)
@@ -200,10 +200,10 @@ Partial Class frmMain
         '
         'Button3
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button3.Location = New System.Drawing.Point(12, 27)
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.Location = New System.Drawing.Point(12, 12)
         Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(230, 96)
+        Me.Button3.Size = New System.Drawing.Size(230, 113)
         Me.Button3.TabIndex = 12
         Me.Button3.Text = "ACQUISTO"
         Me.Button3.UseVisualStyleBackColor = True
