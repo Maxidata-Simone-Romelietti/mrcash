@@ -10,17 +10,16 @@ Public Class frmVendita
 
     Protected Overrides Sub OP_LOAD()
 
-        If ID = -1 Then
-            Dato = New Vendite
+        Dato = (From Q As Vendite In context.Vendite.Include("Oggetti") _
+                Where Q.Data = DataVendita).FirstOrDefault
+
+        If Dato Is Nothing Then
+            Dato = New Vendite With {.Data = DataVendita}
             context.AddToVendite(Dato)
-        Else
-            ' rileggo la vendita con inclusi gli oggetti
-            Dim V = From Q As Vendite In context.Vendite.Include("Oggetti") Where Q.IDVendita = ID
-            Dato = V.First
         End If
 
         If Dato.Data.Ticks = 0 Then _
-           Dato.Data = Date.Now.SenzaOra
+           Dato.Data = Date.Now.Date
 
         Ordinatore = New LinqEntityBinding(Of Oggetti)(context, Dato.Oggetti, Dato.Oggetti.OrderBy(Function(o) o.RigaVendita).ToList(), False)
 
@@ -121,4 +120,8 @@ Public Class frmVendita
         Next
 
     End Sub
+
+    Public Property DataVendita As Date
+
 End Class
+

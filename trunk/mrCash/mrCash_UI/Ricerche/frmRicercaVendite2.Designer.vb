@@ -33,7 +33,6 @@ Partial Class frmRicercaVendite2
         Me.VenditeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ElementHost2 = New System.Windows.Forms.Integration.ElementHost()
         Me.UsrCalendario1 = New mrCash_UI.usrCalendario()
-        Me.Button1 = New System.Windows.Forms.Button()
         Label1 = New System.Windows.Forms.Label()
         CType(Me.VenditeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenditeBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -93,28 +92,21 @@ Partial Class frmRicercaVendite2
         '
         'ElementHost2
         '
-        Me.ElementHost2.Location = New System.Drawing.Point(12, 12)
+        Me.ElementHost2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ElementHost2.Location = New System.Drawing.Point(2, 1)
         Me.ElementHost2.Name = "ElementHost2"
-        Me.ElementHost2.Size = New System.Drawing.Size(768, 433)
+        Me.ElementHost2.Size = New System.Drawing.Size(787, 567)
         Me.ElementHost2.TabIndex = 24
         Me.ElementHost2.Text = "ElementHost2"
         Me.ElementHost2.Child = Me.UsrCalendario1
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(476, 487)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(143, 49)
-        Me.Button1.TabIndex = 25
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'frmRicercaVendite2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(792, 566)
-        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ElementHost2)
         Me.Name = "frmRicercaVendite2"
         Me.Text = "Ricerca Vendite"
@@ -134,5 +126,4 @@ Partial Class frmRicercaVendite2
     Friend WithEvents VenditeBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents ElementHost2 As System.Windows.Forms.Integration.ElementHost
     Friend UsrCalendario1 As mrCash_UI.usrCalendario
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

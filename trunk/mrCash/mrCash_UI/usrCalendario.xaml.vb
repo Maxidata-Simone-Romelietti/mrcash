@@ -68,7 +68,7 @@
 
         Using F As New frmVendita
 
-            F.ID = -1 : If R IsNot Nothing Then F.ID = R.IDVendita
+            F.DataVendita = R.Data.Date
 
             F.ShowDialog()
 
