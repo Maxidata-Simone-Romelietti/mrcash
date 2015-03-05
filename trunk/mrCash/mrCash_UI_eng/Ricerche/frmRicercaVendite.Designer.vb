@@ -58,9 +58,9 @@ Partial Class frmRicercaVendite
         Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label1.Location = New System.Drawing.Point(397, 12)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(48, 13)
+        Label1.Size = New System.Drawing.Size(44, 13)
         Label1.TabIndex = 28
-        Label1.Text = "Oggetto:"
+        Label1.Text = "Object :"
         '
         'Fornitori
         '
@@ -135,7 +135,7 @@ Partial Class frmRicercaVendite
         Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
         DataGridViewCellStyle3.Format = "dd/MM/yyyy  HH:mm"
         Me.DataDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataDataGridViewTextBoxColumn.HeaderText = "Data"
+        Me.DataDataGridViewTextBoxColumn.HeaderText = "Date"
         Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
         Me.DataDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -145,7 +145,7 @@ Partial Class frmRicercaVendite
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle4.Format = "0.00"
         Me.Totale.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Totale.HeaderText = "Totale"
+        Me.Totale.HeaderText = "Total"
         Me.Totale.Name = "Totale"
         Me.Totale.ReadOnly = True
         '
@@ -156,7 +156,7 @@ Partial Class frmRicercaVendite
         Me.ClientSize = New System.Drawing.Size(792, 566)
         Me.Controls.Add(Me.VenditeDataGridView)
         Me.Name = "frmRicercaVendite"
-        Me.Text = "Ricerca Vendite"
+        Me.Text = "Selling search"
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Controls.SetChildIndex(Me.VenditeDataGridView, 0)
         Me.Panel1.ResumeLayout(False)

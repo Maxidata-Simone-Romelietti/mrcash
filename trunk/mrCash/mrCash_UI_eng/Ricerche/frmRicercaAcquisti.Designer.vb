@@ -26,24 +26,24 @@ Partial Class frmRicercaAcquisti
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRicercaAcquisti))
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.lblWarning = New System.Windows.Forms.Label()
         Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AcquistiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AcquistiDataGridView = New System.Windows.Forms.DataGridView()
-        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.NomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.OggettoTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
+        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DataLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -71,9 +71,9 @@ Partial Class frmRicercaAcquisti
         DataLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataLabel.Location = New System.Drawing.Point(12, 10)
         DataLabel.Name = "DataLabel"
-        DataLabel.Size = New System.Drawing.Size(51, 13)
+        DataLabel.Size = New System.Drawing.Size(48, 13)
         DataLabel.TabIndex = 24
-        DataLabel.Text = "Fornitore:"
+        DataLabel.Text = "Supplier:"
         '
         'Label1
         '
@@ -81,9 +81,9 @@ Partial Class frmRicercaAcquisti
         Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label1.Location = New System.Drawing.Point(381, 10)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(48, 13)
+        Label1.Size = New System.Drawing.Size(41, 13)
         Label1.TabIndex = 26
-        Label1.Text = "Oggetto:"
+        Label1.Text = "Object:"
         '
         'lblWarning
         '
@@ -146,40 +146,6 @@ Partial Class frmRicercaAcquisti
         Me.AcquistiDataGridView.Size = New System.Drawing.Size(792, 499)
         Me.AcquistiDataGridView.TabIndex = 22
         '
-        'DataDataGridViewTextBoxColumn
-        '
-        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy       HH:mm"
-        Me.DataDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataDataGridViewTextBoxColumn.FillWeight = 20.0!
-        Me.DataDataGridViewTextBoxColumn.HeaderText = "Data"
-        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
-        Me.DataDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Transazione
-        '
-        Me.Transazione.DataPropertyName = "Transazione"
-        Me.Transazione.FillWeight = 10.0!
-        Me.Transazione.HeaderText = "Transazione"
-        Me.Transazione.Name = "Transazione"
-        Me.Transazione.ReadOnly = True
-        '
-        'Fornitore
-        '
-        Me.Fornitore.DataPropertyName = "Fornitore_NomeCompleto"
-        Me.Fornitore.FillWeight = 68.0!
-        Me.Fornitore.HeaderText = "Fornitore"
-        Me.Fornitore.Name = "Fornitore"
-        Me.Fornitore.ReadOnly = True
-        '
-        'IDAcquistoDataGridViewTextBoxColumn
-        '
-        Me.IDAcquistoDataGridViewTextBoxColumn.DataPropertyName = "IDAcquisto"
-        Me.IDAcquistoDataGridViewTextBoxColumn.FillWeight = 2.0!
-        Me.IDAcquistoDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDAcquistoDataGridViewTextBoxColumn.Name = "IDAcquistoDataGridViewTextBoxColumn"
-        Me.IDAcquistoDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'CognomeTextBox1
         '
         Me.CognomeTextBox1.Location = New System.Drawing.Point(69, 10)
@@ -231,6 +197,40 @@ Partial Class frmRicercaAcquisti
         Me.Button1.Text = "TOTALI GIORNALIERI"
         Me.Button1.UseVisualStyleBackColor = True
         '
+        'DataDataGridViewTextBoxColumn
+        '
+        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy       HH:mm"
+        Me.DataDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataDataGridViewTextBoxColumn.FillWeight = 20.0!
+        Me.DataDataGridViewTextBoxColumn.HeaderText = "Date"
+        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
+        Me.DataDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Transazione
+        '
+        Me.Transazione.DataPropertyName = "Transazione"
+        Me.Transazione.FillWeight = 10.0!
+        Me.Transazione.HeaderText = "Transaction"
+        Me.Transazione.Name = "Transazione"
+        Me.Transazione.ReadOnly = True
+        '
+        'Fornitore
+        '
+        Me.Fornitore.DataPropertyName = "Fornitore_NomeCompleto"
+        Me.Fornitore.FillWeight = 68.0!
+        Me.Fornitore.HeaderText = "Supplier"
+        Me.Fornitore.Name = "Fornitore"
+        Me.Fornitore.ReadOnly = True
+        '
+        'IDAcquistoDataGridViewTextBoxColumn
+        '
+        Me.IDAcquistoDataGridViewTextBoxColumn.DataPropertyName = "IDAcquisto"
+        Me.IDAcquistoDataGridViewTextBoxColumn.FillWeight = 2.0!
+        Me.IDAcquistoDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDAcquistoDataGridViewTextBoxColumn.Name = "IDAcquistoDataGridViewTextBoxColumn"
+        Me.IDAcquistoDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'frmRicercaAcquisti
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -239,7 +239,7 @@ Partial Class frmRicercaAcquisti
         Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.AcquistiDataGridView)
         Me.Name = "frmRicercaAcquisti"
-        Me.Text = "Ricerca Acquisti"
+        Me.Text = "Purchase search"
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Controls.SetChildIndex(Me.AcquistiDataGridView, 0)
         Me.Controls.SetChildIndex(Me.Panel2, 0)
@@ -263,11 +263,11 @@ Partial Class frmRicercaAcquisti
     Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
     Friend WithEvents NomeTextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents OggettoTextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents Panel2 As System.Windows.Forms.Panel
+    Friend WithEvents lblWarning As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents DataDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Transazione As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Fornitore As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents IDAcquistoDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents Panel2 As System.Windows.Forms.Panel
-    Friend WithEvents lblWarning As System.Windows.Forms.Label
-    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

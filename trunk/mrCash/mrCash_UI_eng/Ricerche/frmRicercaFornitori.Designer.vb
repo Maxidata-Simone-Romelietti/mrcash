@@ -22,22 +22,22 @@ Partial Class frmRicercaFornitori
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
-        Me.FornitoriDataGridView = New System.Windows.Forms.DataGridView
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.FornitoriDataGridView = New System.Windows.Forms.DataGridView()
         Me.FornitoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.NomeTextBox1 = New System.Windows.Forms.TextBox
-        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox
-        DataLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
+        Me.NomeTextBox1 = New System.Windows.Forms.TextBox()
+        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        DataLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.FornitoriDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.FornitoriBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -61,9 +61,9 @@ Partial Class frmRicercaFornitori
         DataLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataLabel.Location = New System.Drawing.Point(3, 10)
         DataLabel.Name = "DataLabel"
-        DataLabel.Size = New System.Drawing.Size(55, 13)
+        DataLabel.Size = New System.Drawing.Size(52, 13)
         DataLabel.TabIndex = 27
-        DataLabel.Text = "Cognome:"
+        DataLabel.Text = "Surname:"
         '
         'Label1
         '
@@ -73,7 +73,7 @@ Partial Class frmRicercaFornitori
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(38, 13)
         Label1.TabIndex = 29
-        Label1.Text = "Nome:"
+        Label1.Text = "Name:"
         '
         'FornitoriDataGridView
         '
@@ -90,61 +90,6 @@ Partial Class frmRicercaFornitori
         Me.FornitoriDataGridView.RowHeadersVisible = False
         Me.FornitoriDataGridView.Size = New System.Drawing.Size(792, 524)
         Me.FornitoriDataGridView.TabIndex = 1
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Cognome"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "Cognome"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        Me.DataGridViewTextBoxColumn2.Width = 150
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Nome"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "Nome"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        Me.DataGridViewTextBoxColumn3.Width = 150
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Telefono"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "Telefono"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Indirizzo"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "Indirizzo"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Width = 70
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Citta"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "Città"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Width = 70
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Provincia"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "Prov."
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Width = 50
-        '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IDFornitore"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Width = 50
         '
         'FornitoriBindingSource
         '
@@ -164,6 +109,61 @@ Partial Class frmRicercaFornitori
         Me.CognomeTextBox1.Size = New System.Drawing.Size(143, 20)
         Me.CognomeTextBox1.TabIndex = 0
         '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "Cognome"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "Surname"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        Me.DataGridViewTextBoxColumn2.Width = 150
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "Nome"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "Name"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        Me.DataGridViewTextBoxColumn3.Width = 150
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "Telefono"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "Telephone"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "Indirizzo"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "Address"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 70
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "Citta"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "City"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Width = 70
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "Provincia"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "County"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Width = 50
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "IDFornitore"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "ID"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Width = 50
+        '
         'frmRicercaFornitori
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -171,7 +171,7 @@ Partial Class frmRicercaFornitori
         Me.ClientSize = New System.Drawing.Size(792, 566)
         Me.Controls.Add(Me.FornitoriDataGridView)
         Me.Name = "frmRicercaFornitori"
-        Me.Text = "Ricerca Fornitori"
+        Me.Text = "Suppliers search"
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Controls.SetChildIndex(Me.FornitoriDataGridView, 0)
         Me.Panel1.ResumeLayout(False)
@@ -183,6 +183,8 @@ Partial Class frmRicercaFornitori
     End Sub
     Friend WithEvents FornitoriBindingSource As System.Windows.Forms.BindingSource
     Friend WithEvents FornitoriDataGridView As System.Windows.Forms.DataGridView
+    Friend WithEvents NomeTextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents CognomeTextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn3 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn8 As System.Windows.Forms.DataGridViewTextBoxColumn
@@ -190,6 +192,4 @@ Partial Class frmRicercaFornitori
     Friend WithEvents DataGridViewTextBoxColumn6 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn7 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
-    Friend WithEvents NomeTextBox1 As System.Windows.Forms.TextBox
-    Friend WithEvents CognomeTextBox1 As System.Windows.Forms.TextBox
 End Class
