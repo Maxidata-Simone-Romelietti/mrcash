@@ -51,7 +51,7 @@ Partial Class frmMain
         Me.cmdAcquisto.Name = "cmdAcquisto"
         Me.cmdAcquisto.Size = New System.Drawing.Size(230, 39)
         Me.cmdAcquisto.TabIndex = 0
-        Me.cmdAcquisto.Text = "ACQUISTI"
+        Me.cmdAcquisto.Text = "PURCHASING"
         Me.cmdAcquisto.UseVisualStyleBackColor = True
         '
         'cmdVendita
@@ -61,7 +61,7 @@ Partial Class frmMain
         Me.cmdVendita.Name = "cmdVendita"
         Me.cmdVendita.Size = New System.Drawing.Size(230, 113)
         Me.cmdVendita.TabIndex = 1
-        Me.cmdVendita.Text = "VENDITA"
+        Me.cmdVendita.Text = "SELLING"
         Me.cmdVendita.UseVisualStyleBackColor = True
         '
         'cmdResoconto
@@ -71,7 +71,7 @@ Partial Class frmMain
         Me.cmdResoconto.Name = "cmdResoconto"
         Me.cmdResoconto.Size = New System.Drawing.Size(230, 39)
         Me.cmdResoconto.TabIndex = 2
-        Me.cmdResoconto.Text = "RESOCONTO"
+        Me.cmdResoconto.Text = "REPORT"
         Me.cmdResoconto.UseVisualStyleBackColor = True
         '
         'cmdInventario
@@ -81,7 +81,7 @@ Partial Class frmMain
         Me.cmdInventario.Name = "cmdInventario"
         Me.cmdInventario.Size = New System.Drawing.Size(230, 39)
         Me.cmdInventario.TabIndex = 3
-        Me.cmdInventario.Text = "INVENTARIO"
+        Me.cmdInventario.Text = "INVENTORY"
         Me.cmdInventario.UseVisualStyleBackColor = True
         '
         'cmdProdotti
@@ -91,7 +91,7 @@ Partial Class frmMain
         Me.cmdProdotti.Name = "cmdProdotti"
         Me.cmdProdotti.Size = New System.Drawing.Size(230, 39)
         Me.cmdProdotti.TabIndex = 4
-        Me.cmdProdotti.Text = "OGGETTI"
+        Me.cmdProdotti.Text = "OBJECTS"
         Me.cmdProdotti.UseVisualStyleBackColor = True
         '
         'cmdRicFor
@@ -101,7 +101,7 @@ Partial Class frmMain
         Me.cmdRicFor.Name = "cmdRicFor"
         Me.cmdRicFor.Size = New System.Drawing.Size(230, 39)
         Me.cmdRicFor.TabIndex = 5
-        Me.cmdRicFor.Text = "FORNITORI"
+        Me.cmdRicFor.Text = "SUPPLIERS"
         Me.cmdRicFor.UseVisualStyleBackColor = True
         '
         'Button1
@@ -111,7 +111,7 @@ Partial Class frmMain
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(466, 39)
         Me.Button1.TabIndex = 6
-        Me.Button1.Text = "ESCI"
+        Me.Button1.Text = "QUIT"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'ToolStrip1
@@ -165,7 +165,7 @@ Partial Class frmMain
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(230, 39)
         Me.Button2.TabIndex = 8
-        Me.Button2.Text = "VENDITE"
+        Me.Button2.Text = "SELLING"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'Label1
@@ -185,7 +185,7 @@ Partial Class frmMain
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(466, 20)
         Me.Label2.TabIndex = 10
-        Me.Label2.Text = "ARCHIVI"
+        Me.Label2.Text = "ARCHIVES"
         Me.Label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label3
@@ -195,7 +195,7 @@ Partial Class frmMain
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(466, 20)
         Me.Label3.TabIndex = 11
-        Me.Label3.Text = "STORICI"
+        Me.Label3.Text = "HISTORICAL ARCHIVES"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button3
@@ -205,7 +205,7 @@ Partial Class frmMain
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(230, 113)
         Me.Button3.TabIndex = 12
-        Me.Button3.Text = "ACQUISTO"
+        Me.Button3.Text = "PURCHASING"
         Me.Button3.UseVisualStyleBackColor = True
         '
         'frmMain
@@ -229,7 +229,7 @@ Partial Class frmMain
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmMain"
-        Me.Text = "BENVENUTO in MR. CASH"
+        Me.Text = "WELCOME in MR. CASH"
         Me.ToolStrip1.ResumeLayout(False)
         Me.ToolStrip1.PerformLayout()
         Me.ResumeLayout(False)
