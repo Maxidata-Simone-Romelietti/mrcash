@@ -22,9 +22,9 @@ Partial Class frmRicerca_Base
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmdNuovo = New System.Windows.Forms.Button
-        Me.cmdRicerca = New System.Windows.Forms.Button
-        Me.Panel1 = New System.Windows.Forms.Panel
+        Me.cmdNuovo = New System.Windows.Forms.Button()
+        Me.cmdRicerca = New System.Windows.Forms.Button()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Panel1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -36,7 +36,7 @@ Partial Class frmRicerca_Base
         Me.cmdNuovo.Name = "cmdNuovo"
         Me.cmdNuovo.Size = New System.Drawing.Size(92, 42)
         Me.cmdNuovo.TabIndex = 4
-        Me.cmdNuovo.Text = "Nuovo"
+        Me.cmdNuovo.Text = "New"
         Me.cmdNuovo.UseVisualStyleBackColor = True
         '
         'cmdRicerca
@@ -47,7 +47,7 @@ Partial Class frmRicerca_Base
         Me.cmdRicerca.Name = "cmdRicerca"
         Me.cmdRicerca.Size = New System.Drawing.Size(92, 42)
         Me.cmdRicerca.TabIndex = 18
-        Me.cmdRicerca.Text = "Ricerca"
+        Me.cmdRicerca.Text = "Search"
         Me.cmdRicerca.UseVisualStyleBackColor = True
         '
         'Panel1
@@ -68,7 +68,7 @@ Partial Class frmRicerca_Base
         Me.Controls.Add(Me.Panel1)
         Me.Name = "frmRicerca_Base"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Ricerca"
+        Me.Text = "Search"
         Me.Panel1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
