@@ -109,7 +109,7 @@ Partial Class frmRicercaVendite2
         Me.ClientSize = New System.Drawing.Size(792, 566)
         Me.Controls.Add(Me.ElementHost2)
         Me.Name = "frmRicercaVendite2"
-        Me.Text = "Ricerca Vendite"
+        Me.Text = "Selling search"
         CType(Me.VenditeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VenditeBindingSource1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)

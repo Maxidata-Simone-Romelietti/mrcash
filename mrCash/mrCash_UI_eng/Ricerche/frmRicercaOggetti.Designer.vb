@@ -22,37 +22,37 @@ Partial Class frmRicercaOggetti
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.OggettiDataGridView = New System.Windows.Forms.DataGridView
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.OggettiDataGridView = New System.Windows.Forms.DataGridView()
         Me.OggettiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.DescrizioneTextBox = New System.Windows.Forms.TextBox
-        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox
-        Me.cmbStatus = New System.Windows.Forms.ComboBox
-        Me.txtSeriale = New System.Windows.Forms.TextBox
-        Me.txtModello = New System.Windows.Forms.TextBox
-        Me.Codice = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DescrizioneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Modello = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PrezzoAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PrezzoStimatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PrezzoVenditaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Vendita_Data = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.IDOggettoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        DataLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
-        Label2 = New System.Windows.Forms.Label
-        Label3 = New System.Windows.Forms.Label
+        Me.DescrizioneTextBox = New System.Windows.Forms.TextBox()
+        Me.OggettoTextBox1 = New System.Windows.Forms.TextBox()
+        Me.cmbStatus = New System.Windows.Forms.ComboBox()
+        Me.txtSeriale = New System.Windows.Forms.TextBox()
+        Me.txtModello = New System.Windows.Forms.TextBox()
+        Me.Codice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DescrizioneDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modello = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoStimatoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoVenditaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Vendita_Data = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDOggettoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        DataLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         CType(Me.OggettiDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OggettiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -86,9 +86,9 @@ Partial Class frmRicercaOggetti
         DataLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         DataLabel.Location = New System.Drawing.Point(3, 9)
         DataLabel.Name = "DataLabel"
-        DataLabel.Size = New System.Drawing.Size(65, 13)
+        DataLabel.Size = New System.Drawing.Size(63, 13)
         DataLabel.TabIndex = 26
-        DataLabel.Text = "Descrizione:"
+        DataLabel.Text = "Description:"
         '
         'Label1
         '
@@ -96,9 +96,9 @@ Partial Class frmRicercaOggetti
         Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label1.Location = New System.Drawing.Point(479, 9)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(48, 13)
+        Label1.Size = New System.Drawing.Size(44, 13)
         Label1.TabIndex = 28
-        Label1.Text = "Oggetto:"
+        Label1.Text = "Object :"
         '
         'Label2
         '
@@ -106,9 +106,9 @@ Partial Class frmRicercaOggetti
         Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label2.Location = New System.Drawing.Point(348, 9)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(42, 13)
+        Label2.Size = New System.Drawing.Size(39, 13)
         Label2.TabIndex = 31
-        Label2.Text = "Seriale:"
+        Label2.Text = "Serial :"
         '
         'Label3
         '
@@ -116,9 +116,9 @@ Partial Class frmRicercaOggetti
         Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label3.Location = New System.Drawing.Point(213, 9)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(47, 13)
+        Label3.Size = New System.Drawing.Size(42, 13)
         Label3.TabIndex = 33
-        Label3.Text = "Modello:"
+        Label3.Text = "Model :"
         '
         'OggettiDataGridView
         '
@@ -191,14 +191,14 @@ Partial Class frmRicercaOggetti
         'Codice
         '
         Me.Codice.DataPropertyName = "Codice"
-        Me.Codice.HeaderText = "Codice"
+        Me.Codice.HeaderText = "Code"
         Me.Codice.Name = "Codice"
         Me.Codice.ReadOnly = True
         '
         'DescrizioneDataGridViewTextBoxColumn
         '
         Me.DescrizioneDataGridViewTextBoxColumn.DataPropertyName = "Descrizione"
-        Me.DescrizioneDataGridViewTextBoxColumn.HeaderText = "Descrizione"
+        Me.DescrizioneDataGridViewTextBoxColumn.HeaderText = "Description"
         Me.DescrizioneDataGridViewTextBoxColumn.Name = "DescrizioneDataGridViewTextBoxColumn"
         Me.DescrizioneDataGridViewTextBoxColumn.ReadOnly = True
         Me.DescrizioneDataGridViewTextBoxColumn.Width = 300
@@ -206,14 +206,14 @@ Partial Class frmRicercaOggetti
         'Modello
         '
         Me.Modello.DataPropertyName = "Modello"
-        Me.Modello.HeaderText = "Modello"
+        Me.Modello.HeaderText = "Model"
         Me.Modello.Name = "Modello"
         Me.Modello.ReadOnly = True
         '
         'Serie
         '
         Me.Serie.DataPropertyName = "Serie"
-        Me.Serie.HeaderText = "Serie"
+        Me.Serie.HeaderText = "Series"
         Me.Serie.Name = "Serie"
         Me.Serie.ReadOnly = True
         '
@@ -223,7 +223,7 @@ Partial Class frmRicercaOggetti
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle1.Format = "0.00"
         Me.PrezzoAcquistoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
-        Me.PrezzoAcquistoDataGridViewTextBoxColumn.HeaderText = "Acquisto"
+        Me.PrezzoAcquistoDataGridViewTextBoxColumn.HeaderText = "Bought at"
         Me.PrezzoAcquistoDataGridViewTextBoxColumn.Name = "PrezzoAcquistoDataGridViewTextBoxColumn"
         Me.PrezzoAcquistoDataGridViewTextBoxColumn.ReadOnly = True
         Me.PrezzoAcquistoDataGridViewTextBoxColumn.Width = 60
@@ -234,7 +234,7 @@ Partial Class frmRicercaOggetti
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle2.Format = "0.00"
         Me.PrezzoStimatoDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
-        Me.PrezzoStimatoDataGridViewTextBoxColumn.HeaderText = "Stimato"
+        Me.PrezzoStimatoDataGridViewTextBoxColumn.HeaderText = "Estimation"
         Me.PrezzoStimatoDataGridViewTextBoxColumn.Name = "PrezzoStimatoDataGridViewTextBoxColumn"
         Me.PrezzoStimatoDataGridViewTextBoxColumn.ReadOnly = True
         Me.PrezzoStimatoDataGridViewTextBoxColumn.Width = 60
@@ -245,7 +245,7 @@ Partial Class frmRicercaOggetti
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle3.Format = "0.00"
         Me.PrezzoVenditaDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
-        Me.PrezzoVenditaDataGridViewTextBoxColumn.HeaderText = "Vendita"
+        Me.PrezzoVenditaDataGridViewTextBoxColumn.HeaderText = "Sold at"
         Me.PrezzoVenditaDataGridViewTextBoxColumn.Name = "PrezzoVenditaDataGridViewTextBoxColumn"
         Me.PrezzoVenditaDataGridViewTextBoxColumn.ReadOnly = True
         Me.PrezzoVenditaDataGridViewTextBoxColumn.Width = 60
@@ -264,7 +264,7 @@ Partial Class frmRicercaOggetti
         Me.Vendita_Data.DataPropertyName = "Vendita_Data"
         DataGridViewCellStyle4.NullValue = "-"
         Me.Vendita_Data.DefaultCellStyle = DataGridViewCellStyle4
-        Me.Vendita_Data.HeaderText = "Vend. il"
+        Me.Vendita_Data.HeaderText = "Selling date"
         Me.Vendita_Data.Name = "Vendita_Data"
         Me.Vendita_Data.ReadOnly = True
         Me.Vendita_Data.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
@@ -285,7 +285,7 @@ Partial Class frmRicercaOggetti
         Me.ClientSize = New System.Drawing.Size(923, 566)
         Me.Controls.Add(Me.OggettiDataGridView)
         Me.Name = "frmRicercaOggetti"
-        Me.Text = "Ricerca Oggetti"
+        Me.Text = "Objects search"
         Me.Controls.SetChildIndex(Me.Panel1, 0)
         Me.Controls.SetChildIndex(Me.OggettiDataGridView, 0)
         Me.Panel1.ResumeLayout(False)
