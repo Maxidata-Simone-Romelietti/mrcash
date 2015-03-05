@@ -22,7 +22,7 @@ Partial Class frmFornitore
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim IDFornitoreLabel As System.Windows.Forms.Label
         Dim CognomeLabel As System.Windows.Forms.Label
         Dim NomeLabel As System.Windows.Forms.Label
@@ -34,31 +34,31 @@ Partial Class frmFornitore
         Dim Label2 As System.Windows.Forms.Label
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
-        Me.IDFornitoreTextBox = New System.Windows.Forms.TextBox
+        Me.IDFornitoreTextBox = New System.Windows.Forms.TextBox()
         Me.FornitoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.CognomeTextBox = New System.Windows.Forms.TextBox
-        Me.NomeTextBox = New System.Windows.Forms.TextBox
-        Me.ProvinciaTextBox = New System.Windows.Forms.TextBox
-        Me.RifDocTextBox = New System.Windows.Forms.TextBox
-        Me.TelefonoTextBox = New System.Windows.Forms.TextBox
-        Me.IndirizzoTextBox = New System.Windows.Forms.TextBox
-        Me.txtCap = New System.Windows.Forms.TextBox
-        Me.CittaTextBox = New System.Windows.Forms.TextBox
-        Me.txtDataRilascio = New System.Windows.Forms.DateTimePicker
-        Me.txtDataNascita = New System.Windows.Forms.DateTimePicker
-        Me.NoteTextBox1 = New System.Windows.Forms.TextBox
-        Me.cmbTipoDoc = New System.Windows.Forms.ComboBox
-        IDFornitoreLabel = New System.Windows.Forms.Label
-        CognomeLabel = New System.Windows.Forms.Label
-        NomeLabel = New System.Windows.Forms.Label
-        RifDocLabel = New System.Windows.Forms.Label
-        CittaLabel = New System.Windows.Forms.Label
-        TelefonoLabel = New System.Windows.Forms.Label
-        IndirizzoLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
-        Label2 = New System.Windows.Forms.Label
-        Label3 = New System.Windows.Forms.Label
-        Label4 = New System.Windows.Forms.Label
+        Me.CognomeTextBox = New System.Windows.Forms.TextBox()
+        Me.NomeTextBox = New System.Windows.Forms.TextBox()
+        Me.ProvinciaTextBox = New System.Windows.Forms.TextBox()
+        Me.RifDocTextBox = New System.Windows.Forms.TextBox()
+        Me.TelefonoTextBox = New System.Windows.Forms.TextBox()
+        Me.IndirizzoTextBox = New System.Windows.Forms.TextBox()
+        Me.txtCap = New System.Windows.Forms.TextBox()
+        Me.CittaTextBox = New System.Windows.Forms.TextBox()
+        Me.txtDataRilascio = New System.Windows.Forms.DateTimePicker()
+        Me.txtDataNascita = New System.Windows.Forms.DateTimePicker()
+        Me.NoteTextBox1 = New System.Windows.Forms.TextBox()
+        Me.cmbTipoDoc = New System.Windows.Forms.ComboBox()
+        IDFornitoreLabel = New System.Windows.Forms.Label()
+        CognomeLabel = New System.Windows.Forms.Label()
+        NomeLabel = New System.Windows.Forms.Label()
+        RifDocLabel = New System.Windows.Forms.Label()
+        CittaLabel = New System.Windows.Forms.Label()
+        TelefonoLabel = New System.Windows.Forms.Label()
+        IndirizzoLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        Label3 = New System.Windows.Forms.Label()
+        Label4 = New System.Windows.Forms.Label()
         CType(Me.FornitoriBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -81,11 +81,11 @@ Partial Class frmFornitore
         '
         IDFornitoreLabel.AutoSize = True
         IDFornitoreLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        IDFornitoreLabel.Location = New System.Drawing.Point(522, 6)
+        IDFornitoreLabel.Location = New System.Drawing.Point(586, 6)
         IDFornitoreLabel.Name = "IDFornitoreLabel"
-        IDFornitoreLabel.Size = New System.Drawing.Size(90, 20)
+        IDFornitoreLabel.Size = New System.Drawing.Size(26, 20)
         IDFornitoreLabel.TabIndex = 25
-        IDFornitoreLabel.Text = "IDFornitore"
+        IDFornitoreLabel.Text = "ID"
         '
         'CognomeLabel
         '
@@ -93,9 +93,9 @@ Partial Class frmFornitore
         CognomeLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CognomeLabel.Location = New System.Drawing.Point(8, 9)
         CognomeLabel.Name = "CognomeLabel"
-        CognomeLabel.Size = New System.Drawing.Size(78, 20)
+        CognomeLabel.Size = New System.Drawing.Size(74, 20)
         CognomeLabel.TabIndex = 23
-        CognomeLabel.Text = "Cognome"
+        CognomeLabel.Text = "Surname"
         '
         'NomeLabel
         '
@@ -105,7 +105,7 @@ Partial Class frmFornitore
         NomeLabel.Name = "NomeLabel"
         NomeLabel.Size = New System.Drawing.Size(51, 20)
         NomeLabel.TabIndex = 24
-        NomeLabel.Text = "Nome"
+        NomeLabel.Text = "Name"
         '
         'RifDocLabel
         '
@@ -113,9 +113,9 @@ Partial Class frmFornitore
         RifDocLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         RifDocLabel.Location = New System.Drawing.Point(247, 126)
         RifDocLabel.Name = "RifDocLabel"
-        RifDocLabel.Size = New System.Drawing.Size(73, 20)
+        RifDocLabel.Size = New System.Drawing.Size(76, 20)
         RifDocLabel.TabIndex = 18
-        RifDocLabel.Text = "Tipo doc."
+        RifDocLabel.Text = "Doc. type"
         '
         'CittaLabel
         '
@@ -123,9 +123,9 @@ Partial Class frmFornitore
         CittaLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         CittaLabel.Location = New System.Drawing.Point(345, 67)
         CittaLabel.Name = "CittaLabel"
-        CittaLabel.Size = New System.Drawing.Size(130, 20)
+        CittaLabel.Size = New System.Drawing.Size(166, 20)
         CittaLabel.TabIndex = 21
-        CittaLabel.Text = "Cap / Città / Prov."
+        CittaLabel.Text = "Zipcode / City / County"
         '
         'TelefonoLabel
         '
@@ -133,9 +133,9 @@ Partial Class frmFornitore
         TelefonoLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         TelefonoLabel.Location = New System.Drawing.Point(8, 195)
         TelefonoLabel.Name = "TelefonoLabel"
-        TelefonoLabel.Size = New System.Drawing.Size(71, 20)
+        TelefonoLabel.Size = New System.Drawing.Size(84, 20)
         TelefonoLabel.TabIndex = 16
-        TelefonoLabel.Text = "Telefono"
+        TelefonoLabel.Text = "Telephone"
         '
         'IndirizzoLabel
         '
@@ -145,7 +145,7 @@ Partial Class frmFornitore
         IndirizzoLabel.Name = "IndirizzoLabel"
         IndirizzoLabel.Size = New System.Drawing.Size(68, 20)
         IndirizzoLabel.TabIndex = 22
-        IndirizzoLabel.Text = "Indirizzo"
+        IndirizzoLabel.Text = "Address"
         '
         'Label1
         '
@@ -153,9 +153,9 @@ Partial Class frmFornitore
         Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label1.Location = New System.Drawing.Point(8, 126)
         Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(115, 20)
+        Label1.Size = New System.Drawing.Size(97, 20)
         Label1.TabIndex = 17
-        Label1.Text = "Data di nascita"
+        Label1.Text = "Date of birth"
         '
         'Label2
         '
@@ -165,7 +165,7 @@ Partial Class frmFornitore
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(109, 20)
         Label2.TabIndex = 19
-        Label2.Text = "Documento n."
+        Label2.Text = "Document no."
         '
         'Label3
         '
@@ -173,9 +173,9 @@ Partial Class frmFornitore
         Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label3.Location = New System.Drawing.Point(531, 126)
         Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(96, 20)
+        Label3.Size = New System.Drawing.Size(104, 20)
         Label3.TabIndex = 20
-        Label3.Text = "Data rilascio"
+        Label3.Text = "Release date"
         '
         'Label4
         '
@@ -183,9 +183,9 @@ Partial Class frmFornitore
         Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label4.Location = New System.Drawing.Point(8, 251)
         Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(43, 20)
+        Label4.Size = New System.Drawing.Size(87, 20)
         Label4.TabIndex = 15
-        Label4.Text = "Note"
+        Label4.Text = "Annotation"
         '
         'IDFornitoreTextBox
         '
@@ -360,7 +360,7 @@ Partial Class frmFornitore
         Me.KeyPreview = True
         Me.Name = "frmFornitore"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Fornitore"
+        Me.Text = "Purchaser"
         Me.Controls.SetChildIndex(Me.IDFornitoreTextBox, 0)
         Me.Controls.SetChildIndex(IDFornitoreLabel, 0)
         Me.Controls.SetChildIndex(Me.CognomeTextBox, 0)
