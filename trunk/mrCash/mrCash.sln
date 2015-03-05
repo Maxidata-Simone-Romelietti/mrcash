@@ -1,6 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_UI", "mrCash_UI\mrCash_UI.vbproj", "{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}"
 	ProjectSection(ProjectDependencies) = postProject
 		{2F8C733B-40AA-4AF6-9A21-3E512A25390D} = {2F8C733B-40AA-4AF6-9A21-3E512A25390D}
@@ -12,6 +12,8 @@ EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_DAL", "mrCash_DAL\mrCash_DAL.vbproj", "{17760FF2-2C0C-4FAB-9EC5-363375D889B1}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_PISTOLA", "mrCash_PISTOLA\mrCash_PISTOLA.vbproj", "{2F8C733B-40AA-4AF6-9A21-3E512A25390D}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "mrCash_UI_eng", "mrCash_UI_eng\mrCash_UI_eng.vbproj", "{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}"
 EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
@@ -39,6 +41,10 @@ Global
 		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8C733B-40AA-4AF6-9A21-3E512A25390D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
