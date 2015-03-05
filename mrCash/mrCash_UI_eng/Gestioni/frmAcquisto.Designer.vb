@@ -22,39 +22,39 @@ Partial Class frmAcquisto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim lblpezzi As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAcquisto))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.DataDateTimePicker = New System.Windows.Forms.DateTimePicker
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.DataDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.AcquistiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OggettiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.OggettiDataGridView = New System.Windows.Forms.DataGridView
-        Me.cmdRicerca = New System.Windows.Forms.Button
-        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox
+        Me.OggettiDataGridView = New System.Windows.Forms.DataGridView()
+        Me.cmdRicerca = New System.Windows.Forms.Button()
+        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.FornitoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog
-        Me.cmdStampa = New System.Windows.Forms.Button
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker
-        Me.PrezzoTextBox1 = New mrCash_UI_eng.PrezzoTextBox
-        Me.txtTotale = New mrCash_UI_eng.PrezzoTextBox
-        Me.txtPezzi = New mrCash_UI_eng.PrezzoTextBox
-        Me.Descrizione = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Modello = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PrezzoAcquisto = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.PrezzoStimato = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Codice = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.Copia = New System.Windows.Forms.DataGridViewButtonColumn
-        DataLabel = New System.Windows.Forms.Label
-        Label1 = New System.Windows.Forms.Label
-        Label2 = New System.Windows.Forms.Label
-        lblpezzi = New System.Windows.Forms.Label
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.cmdStampa = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.PrezzoTextBox1 = New mrCash_UI_eng.PrezzoTextBox()
+        Me.txtTotale = New mrCash_UI_eng.PrezzoTextBox()
+        Me.txtPezzi = New mrCash_UI_eng.PrezzoTextBox()
+        Me.Descrizione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Modello = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoAcquisto = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PrezzoStimato = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Codice = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Copia = New System.Windows.Forms.DataGridViewButtonColumn()
+        DataLabel = New System.Windows.Forms.Label()
+        Label1 = New System.Windows.Forms.Label()
+        Label2 = New System.Windows.Forms.Label()
+        lblpezzi = New System.Windows.Forms.Label()
         CType(Me.AcquistiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OggettiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.OggettiDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -81,7 +81,7 @@ Partial Class frmAcquisto
         DataLabel.Name = "DataLabel"
         DataLabel.Size = New System.Drawing.Size(48, 20)
         DataLabel.TabIndex = 1
-        DataLabel.Text = "Data:"
+        DataLabel.Text = "Date:"
         '
         'Label1
         '
@@ -98,11 +98,11 @@ Partial Class frmAcquisto
         Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Label2.AutoSize = True
         Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label2.Location = New System.Drawing.Point(344, 461)
+        Label2.Location = New System.Drawing.Point(387, 461)
         Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(95, 20)
+        Label2.Size = New System.Drawing.Size(52, 20)
         Label2.TabIndex = 22
-        Label2.Text = "Totale Euro:"
+        Label2.Text = "Total :"
         '
         'lblpezzi
         '
@@ -111,9 +111,9 @@ Partial Class frmAcquisto
         lblpezzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         lblpezzi.Location = New System.Drawing.Point(187, 461)
         lblpezzi.Name = "lblpezzi"
-        lblpezzi.Size = New System.Drawing.Size(51, 20)
+        lblpezzi.Size = New System.Drawing.Size(50, 20)
         lblpezzi.TabIndex = 24
-        lblpezzi.Text = "Pezzi:"
+        lblpezzi.Text = "Units:"
         '
         'DataDateTimePicker
         '
@@ -138,8 +138,8 @@ Partial Class frmAcquisto
         'OggettiDataGridView
         '
         Me.OggettiDataGridView.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.OggettiDataGridView.AutoGenerateColumns = False
         Me.OggettiDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.OggettiDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Descrizione, Me.Modello, Me.Serie, Me.PrezzoAcquisto, Me.PrezzoStimato, Me.Codice, Me.Copia})
@@ -191,7 +191,7 @@ Partial Class frmAcquisto
         Me.cmdStampa.Name = "cmdStampa"
         Me.cmdStampa.Size = New System.Drawing.Size(92, 35)
         Me.cmdStampa.TabIndex = 5
-        Me.cmdStampa.Text = "Stampa"
+        Me.cmdStampa.Text = "Print"
         Me.cmdStampa.UseVisualStyleBackColor = True
         '
         'DateTimePicker1
@@ -243,7 +243,7 @@ Partial Class frmAcquisto
         'Descrizione
         '
         Me.Descrizione.DataPropertyName = "Descrizione"
-        Me.Descrizione.HeaderText = "Descrizione"
+        Me.Descrizione.HeaderText = "Description"
         Me.Descrizione.Name = "Descrizione"
         Me.Descrizione.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.Descrizione.Width = 200
@@ -251,7 +251,7 @@ Partial Class frmAcquisto
         'Modello
         '
         Me.Modello.DataPropertyName = "Modello"
-        Me.Modello.HeaderText = "Modello"
+        Me.Modello.HeaderText = "Model"
         Me.Modello.Name = "Modello"
         Me.Modello.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         '
@@ -268,7 +268,7 @@ Partial Class frmAcquisto
         DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle1.Format = "0.00"
         Me.PrezzoAcquisto.DefaultCellStyle = DataGridViewCellStyle1
-        Me.PrezzoAcquisto.HeaderText = "Acquistato a"
+        Me.PrezzoAcquisto.HeaderText = "Sold at"
         Me.PrezzoAcquisto.Name = "PrezzoAcquisto"
         Me.PrezzoAcquisto.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.PrezzoAcquisto.Width = 80
@@ -279,7 +279,7 @@ Partial Class frmAcquisto
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
         DataGridViewCellStyle2.Format = "0.00"
         Me.PrezzoStimato.DefaultCellStyle = DataGridViewCellStyle2
-        Me.PrezzoStimato.HeaderText = "Stimato"
+        Me.PrezzoStimato.HeaderText = "Estimated"
         Me.PrezzoStimato.Name = "PrezzoStimato"
         Me.PrezzoStimato.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.PrezzoStimato.Width = 80
@@ -289,14 +289,14 @@ Partial Class frmAcquisto
         Me.Codice.DataPropertyName = "Codice"
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
         Me.Codice.DefaultCellStyle = DataGridViewCellStyle3
-        Me.Codice.HeaderText = "Codice"
+        Me.Codice.HeaderText = "Code"
         Me.Codice.Name = "Codice"
         Me.Codice.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.Codice.Width = 80
         '
         'Copia
         '
-        Me.Copia.HeaderText = "Copia"
+        Me.Copia.HeaderText = "Copy"
         Me.Copia.Name = "Copia"
         Me.Copia.ReadOnly = True
         Me.Copia.Width = 50
@@ -322,7 +322,7 @@ Partial Class frmAcquisto
         Me.KeyPreview = True
         Me.Name = "frmAcquisto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Acquisto"
+        Me.Text = "Purchase"
         Me.Controls.SetChildIndex(Me.DataDateTimePicker, 0)
         Me.Controls.SetChildIndex(DataLabel, 0)
         Me.Controls.SetChildIndex(Me.OggettiDataGridView, 0)

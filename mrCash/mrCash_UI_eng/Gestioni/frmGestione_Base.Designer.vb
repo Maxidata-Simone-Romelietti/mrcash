@@ -22,9 +22,9 @@ Partial Class frmGestione_Base
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.cmdElimina = New System.Windows.Forms.Button
-        Me.cmdAnnulla = New System.Windows.Forms.Button
-        Me.cmdConferma = New System.Windows.Forms.Button
+        Me.cmdElimina = New System.Windows.Forms.Button()
+        Me.cmdAnnulla = New System.Windows.Forms.Button()
+        Me.cmdConferma = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'cmdElimina
@@ -35,7 +35,7 @@ Partial Class frmGestione_Base
         Me.cmdElimina.Name = "cmdElimina"
         Me.cmdElimina.Size = New System.Drawing.Size(92, 35)
         Me.cmdElimina.TabIndex = 9
-        Me.cmdElimina.Text = "Elimina"
+        Me.cmdElimina.Text = "Delete"
         Me.cmdElimina.UseVisualStyleBackColor = True
         '
         'cmdAnnulla
@@ -46,7 +46,7 @@ Partial Class frmGestione_Base
         Me.cmdAnnulla.Name = "cmdAnnulla"
         Me.cmdAnnulla.Size = New System.Drawing.Size(92, 35)
         Me.cmdAnnulla.TabIndex = 8
-        Me.cmdAnnulla.Text = "Annulla"
+        Me.cmdAnnulla.Text = "Cancel"
         Me.cmdAnnulla.UseVisualStyleBackColor = True
         '
         'cmdConferma
@@ -57,7 +57,7 @@ Partial Class frmGestione_Base
         Me.cmdConferma.Name = "cmdConferma"
         Me.cmdConferma.Size = New System.Drawing.Size(92, 35)
         Me.cmdConferma.TabIndex = 7
-        Me.cmdConferma.Text = "Conferma"
+        Me.cmdConferma.Text = "Save"
         Me.cmdConferma.UseVisualStyleBackColor = True
         '
         'frmGestione_Base
