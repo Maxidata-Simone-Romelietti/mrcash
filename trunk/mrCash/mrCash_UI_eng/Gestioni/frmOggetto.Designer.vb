@@ -21,35 +21,35 @@ Partial Class frmOggetto
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
+        Me.components = New System.ComponentModel.Container()
         Dim Label7 As System.Windows.Forms.Label
-        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox
+        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.OggettiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.TextBox2 = New System.Windows.Forms.TextBox
-        Me.TextBox3 = New mrCash_UI_eng.PrezzoTextBox
-        Me.TextBox4 = New mrCash_UI_eng.PrezzoTextBox
-        Me.TextBox5 = New mrCash_UI_eng.PrezzoTextBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.Label6 = New System.Windows.Forms.Label
-        Me.Label8 = New System.Windows.Forms.Label
-        Me.txtModello = New System.Windows.Forms.TextBox
-        Me.Label9 = New System.Windows.Forms.Label
-        Me.txtSerie = New System.Windows.Forms.TextBox
-        Me.DataDateTimePicker = New UltraDateTimePicker.UltraDateTimePicker
-        Me.Label11 = New System.Windows.Forms.Label
-        Me.Label12 = New System.Windows.Forms.Label
-        Me.DateTimePicker1 = New UltraDateTimePicker.UltraDateTimePicker
-        Me.Label13 = New System.Windows.Forms.Label
-        Me.DateTimePicker2 = New UltraDateTimePicker.UltraDateTimePicker
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.NoteTextBox1 = New System.Windows.Forms.TextBox
-        Label7 = New System.Windows.Forms.Label
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.TextBox2 = New System.Windows.Forms.TextBox()
+        Me.TextBox3 = New mrCash_UI_eng.PrezzoTextBox()
+        Me.TextBox4 = New mrCash_UI_eng.PrezzoTextBox()
+        Me.TextBox5 = New mrCash_UI_eng.PrezzoTextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.txtModello = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtSerie = New System.Windows.Forms.TextBox()
+        Me.DataDateTimePicker = New UltraDateTimePicker.UltraDateTimePicker()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.DateTimePicker1 = New UltraDateTimePicker.UltraDateTimePicker()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.DateTimePicker2 = New UltraDateTimePicker.UltraDateTimePicker()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.NoteTextBox1 = New System.Windows.Forms.TextBox()
+        Label7 = New System.Windows.Forms.Label()
         CType(Me.OggettiBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataDateTimePicker, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DateTimePicker1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -77,14 +77,14 @@ Partial Class frmOggetto
         Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Label7.Location = New System.Drawing.Point(9, 247)
         Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(43, 20)
+        Label7.Size = New System.Drawing.Size(87, 20)
         Label7.TabIndex = 44
-        Label7.Text = "Note"
+        Label7.Text = "Annotation"
         '
         'CognomeTextBox1
         '
         Me.CognomeTextBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.CognomeTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OggettiBindingSource, "Descrizione", True))
         Me.CognomeTextBox1.Location = New System.Drawing.Point(93, 38)
         Me.CognomeTextBox1.Name = "CognomeTextBox1"
@@ -116,6 +116,7 @@ Partial Class frmOggetto
         'TextBox3
         '
         Me.TextBox3.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OggettiBindingSource, "PrezzoAcquisto", True))
+        Me.TextBox3.Format = "0.00"
         Me.TextBox3.Location = New System.Drawing.Point(81, 19)
         Me.TextBox3.Name = "TextBox3"
         Me.TextBox3.Size = New System.Drawing.Size(60, 20)
@@ -125,6 +126,7 @@ Partial Class frmOggetto
         'TextBox4
         '
         Me.TextBox4.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OggettiBindingSource, "PrezzoStimato", True))
+        Me.TextBox4.Format = "0.00"
         Me.TextBox4.Location = New System.Drawing.Point(81, 45)
         Me.TextBox4.Name = "TextBox4"
         Me.TextBox4.Size = New System.Drawing.Size(60, 20)
@@ -134,6 +136,7 @@ Partial Class frmOggetto
         'TextBox5
         '
         Me.TextBox5.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OggettiBindingSource, "PrezzoVendita", True))
+        Me.TextBox5.Format = "0.00"
         Me.TextBox5.Location = New System.Drawing.Point(81, 71)
         Me.TextBox5.Name = "TextBox5"
         Me.TextBox5.Size = New System.Drawing.Size(60, 20)
@@ -145,18 +148,18 @@ Partial Class frmOggetto
         Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(12, 15)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.Size = New System.Drawing.Size(32, 13)
         Me.Label1.TabIndex = 23
-        Me.Label1.Text = "Codice"
+        Me.Label1.Text = "Code"
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(12, 41)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(62, 13)
+        Me.Label2.Size = New System.Drawing.Size(60, 13)
         Me.Label2.TabIndex = 24
-        Me.Label2.Text = "Descrizione"
+        Me.Label2.Text = "Description"
         '
         'Label3
         '
@@ -173,36 +176,36 @@ Partial Class frmOggetto
         Me.Label4.AutoSize = True
         Me.Label4.Location = New System.Drawing.Point(6, 22)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 13)
+        Me.Label4.Size = New System.Drawing.Size(52, 13)
         Me.Label4.TabIndex = 26
-        Me.Label4.Text = "Acquisto"
+        Me.Label4.Text = "Purchase"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(6, 48)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(46, 13)
+        Me.Label5.Size = New System.Drawing.Size(55, 13)
         Me.Label5.TabIndex = 27
-        Me.Label5.Text = "Valutato"
+        Me.Label5.Text = "Estimation"
         '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.Location = New System.Drawing.Point(6, 74)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(69, 13)
+        Me.Label6.Size = New System.Drawing.Size(40, 13)
         Me.Label6.TabIndex = 28
-        Me.Label6.Text = "Vendita reale"
+        Me.Label6.Text = "Sold at"
         '
         'Label8
         '
         Me.Label8.AutoSize = True
         Me.Label8.Location = New System.Drawing.Point(12, 67)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(44, 13)
+        Me.Label8.Size = New System.Drawing.Size(36, 13)
         Me.Label8.TabIndex = 31
-        Me.Label8.Text = "Modello"
+        Me.Label8.Text = "Model"
         '
         'txtModello
         '
@@ -216,11 +219,11 @@ Partial Class frmOggetto
         '
         Me.Label9.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(322, 67)
+        Me.Label9.Location = New System.Drawing.Point(302, 67)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(54, 13)
+        Me.Label9.Size = New System.Drawing.Size(74, 13)
         Me.Label9.TabIndex = 33
-        Me.Label9.Text = "N. di serie"
+        Me.Label9.Text = "Series number"
         '
         'txtSerie
         '
@@ -241,25 +244,25 @@ Partial Class frmOggetto
         Me.DataDateTimePicker.Name = "DataDateTimePicker"
         Me.DataDateTimePicker.Size = New System.Drawing.Size(145, 26)
         Me.DataDateTimePicker.TabIndex = 34
-        Me.DataDateTimePicker.Value = New Date(2010, 12, 5, 0, 0, 0, 0)
+        Me.DataDateTimePicker.Value = New Date(2015, 3, 5, 0, 0, 0, 0)
         '
         'Label11
         '
         Me.Label11.AutoSize = True
         Me.Label11.Location = New System.Drawing.Point(6, 27)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(41, 13)
+        Me.Label11.Size = New System.Drawing.Size(39, 13)
         Me.Label11.TabIndex = 36
-        Me.Label11.Text = "Rientro"
+        Me.Label11.Text = "Return"
         '
         'Label12
         '
         Me.Label12.AutoSize = True
         Me.Label12.Location = New System.Drawing.Point(6, 59)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(64, 13)
+        Me.Label12.Size = New System.Drawing.Size(57, 13)
         Me.Label12.TabIndex = 38
-        Me.Label12.Text = "Riconsegna"
+        Me.Label12.Text = "Redelivery"
         '
         'DateTimePicker1
         '
@@ -271,16 +274,16 @@ Partial Class frmOggetto
         Me.DateTimePicker1.Name = "DateTimePicker1"
         Me.DateTimePicker1.Size = New System.Drawing.Size(145, 26)
         Me.DateTimePicker1.TabIndex = 37
-        Me.DateTimePicker1.Value = New Date(2010, 12, 5, 0, 0, 0, 0)
+        Me.DateTimePicker1.Value = New Date(2015, 3, 5, 0, 0, 0, 0)
         '
         'Label13
         '
         Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(6, 91)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(72, 13)
+        Me.Label13.Size = New System.Drawing.Size(55, 13)
         Me.Label13.TabIndex = 40
-        Me.Label13.Text = "Rottamazione"
+        Me.Label13.Text = "Scrapping"
         '
         'DateTimePicker2
         '
@@ -292,7 +295,7 @@ Partial Class frmOggetto
         Me.DateTimePicker2.Name = "DateTimePicker2"
         Me.DateTimePicker2.Size = New System.Drawing.Size(145, 26)
         Me.DateTimePicker2.TabIndex = 39
-        Me.DateTimePicker2.Value = New Date(2010, 12, 5, 0, 0, 0, 0)
+        Me.DateTimePicker2.Value = New Date(2015, 3, 5, 0, 0, 0, 0)
         '
         'GroupBox1
         '
@@ -323,16 +326,16 @@ Partial Class frmOggetto
         Me.GroupBox2.Size = New System.Drawing.Size(153, 104)
         Me.GroupBox2.TabIndex = 42
         Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Prezzo"
+        Me.GroupBox2.Text = "Prices"
         '
         'NoteTextBox1
         '
         Me.NoteTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.OggettiBindingSource, "Note", True))
         Me.NoteTextBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NoteTextBox1.Location = New System.Drawing.Point(93, 244)
+        Me.NoteTextBox1.Location = New System.Drawing.Point(12, 274)
         Me.NoteTextBox1.Multiline = True
         Me.NoteTextBox1.Name = "NoteTextBox1"
-        Me.NoteTextBox1.Size = New System.Drawing.Size(402, 120)
+        Me.NoteTextBox1.Size = New System.Drawing.Size(483, 90)
         Me.NoteTextBox1.TabIndex = 43
         '
         'frmOggetto
