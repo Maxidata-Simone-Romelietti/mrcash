@@ -360,7 +360,7 @@ Partial Class frmOggetto
         Me.KeyPreview = True
         Me.Name = "frmOggetto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = "Oggetto"
+        Me.Text = "Objects"
         Me.Controls.SetChildIndex(Me.CognomeTextBox1, 0)
         Me.Controls.SetChildIndex(Me.TextBox1, 0)
         Me.Controls.SetChildIndex(Me.TextBox2, 0)
