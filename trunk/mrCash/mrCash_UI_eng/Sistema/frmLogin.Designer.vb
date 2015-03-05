@@ -22,9 +22,9 @@ Partial Class frmLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.TextBox1 = New System.Windows.Forms.TextBox
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.OK_Button = New System.Windows.Forms.Button
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.OK_Button = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'TextBox1
@@ -44,7 +44,7 @@ Partial Class frmLogin
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(320, 32)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Inserire la password di accesso al programma"
+        Me.Label1.Text = "Insert your password"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'OK_Button
