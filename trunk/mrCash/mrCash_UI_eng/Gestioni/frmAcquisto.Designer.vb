@@ -27,23 +27,14 @@ Partial Class frmAcquisto
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
         Dim lblpezzi As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAcquisto))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmAcquisto))
         Me.DataDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.AcquistiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OggettiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.OggettiDataGridView = New System.Windows.Forms.DataGridView()
-        Me.cmdRicerca = New System.Windows.Forms.Button()
-        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
-        Me.FornitoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
-        Me.cmdStampa = New System.Windows.Forms.Button()
-        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
-        Me.PrezzoTextBox1 = New mrCash_UI_eng.PrezzoTextBox()
-        Me.txtTotale = New mrCash_UI_eng.PrezzoTextBox()
-        Me.txtPezzi = New mrCash_UI_eng.PrezzoTextBox()
         Me.Descrizione = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Modello = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Serie = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -51,6 +42,15 @@ Partial Class frmAcquisto
         Me.PrezzoStimato = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Codice = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Copia = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.cmdRicerca = New System.Windows.Forms.Button()
+        Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
+        Me.FornitoriBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
+        Me.cmdStampa = New System.Windows.Forms.Button()
+        Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
+        Me.PrezzoTextBox1 = New mrCash_UI.PrezzoTextBox()
+        Me.txtTotale = New mrCash_UI.PrezzoTextBox()
+        Me.txtPezzi = New mrCash_UI.PrezzoTextBox()
         DataLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Label2 = New System.Windows.Forms.Label()
@@ -123,7 +123,7 @@ Partial Class frmAcquisto
         Me.DataDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
         Me.DataDateTimePicker.Location = New System.Drawing.Point(66, 12)
         Me.DataDateTimePicker.Name = "DataDateTimePicker"
-        Me.DataDateTimePicker.Size = New System.Drawing.Size(130, 26)
+        Me.DataDateTimePicker.Size = New System.Drawing.Size(149, 26)
         Me.DataDateTimePicker.TabIndex = 0
         '
         'AcquistiBindingSource
@@ -148,97 +148,6 @@ Partial Class frmAcquisto
         Me.OggettiDataGridView.Name = "OggettiDataGridView"
         Me.OggettiDataGridView.Size = New System.Drawing.Size(821, 404)
         Me.OggettiDataGridView.TabIndex = 2
-        '
-        'cmdRicerca
-        '
-        Me.cmdRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdRicerca.Location = New System.Drawing.Point(806, 12)
-        Me.cmdRicerca.Name = "cmdRicerca"
-        Me.cmdRicerca.Size = New System.Drawing.Size(27, 26)
-        Me.cmdRicerca.TabIndex = 3
-        Me.cmdRicerca.Text = "..."
-        Me.cmdRicerca.UseVisualStyleBackColor = True
-        '
-        'CognomeTextBox1
-        '
-        Me.CognomeTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CognomeTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FornitoriBindingSource, "NomeCompleto", True))
-        Me.CognomeTextBox1.Location = New System.Drawing.Point(545, 12)
-        Me.CognomeTextBox1.Name = "CognomeTextBox1"
-        Me.CognomeTextBox1.ReadOnly = True
-        Me.CognomeTextBox1.Size = New System.Drawing.Size(255, 20)
-        Me.CognomeTextBox1.TabIndex = 1
-        '
-        'FornitoriBindingSource
-        '
-        Me.FornitoriBindingSource.DataSource = GetType(mrCash_DAL.Fornitori)
-        '
-        'PrintPreviewDialog1
-        '
-        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
-        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
-        Me.PrintPreviewDialog1.Enabled = True
-        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
-        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
-        Me.PrintPreviewDialog1.Visible = False
-        '
-        'cmdStampa
-        '
-        Me.cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.cmdStampa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.cmdStampa.Location = New System.Drawing.Point(545, 454)
-        Me.cmdStampa.Name = "cmdStampa"
-        Me.cmdStampa.Size = New System.Drawing.Size(92, 35)
-        Me.cmdStampa.TabIndex = 5
-        Me.cmdStampa.Text = "Print"
-        Me.cmdStampa.UseVisualStyleBackColor = True
-        '
-        'DateTimePicker1
-        '
-        Me.DateTimePicker1.CustomFormat = "HH:mm"
-        Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AcquistiBindingSource, "Data", True))
-        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.DateTimePicker1.Location = New System.Drawing.Point(202, 12)
-        Me.DateTimePicker1.Name = "DateTimePicker1"
-        Me.DateTimePicker1.ShowUpDown = True
-        Me.DateTimePicker1.Size = New System.Drawing.Size(76, 26)
-        Me.DateTimePicker1.TabIndex = 7
-        '
-        'PrezzoTextBox1
-        '
-        Me.PrezzoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Valore", Me.AcquistiBindingSource, "Transazione", True))
-        Me.PrezzoTextBox1.Format = "#"
-        Me.PrezzoTextBox1.Location = New System.Drawing.Point(372, 12)
-        Me.PrezzoTextBox1.Name = "PrezzoTextBox1"
-        Me.PrezzoTextBox1.Size = New System.Drawing.Size(57, 20)
-        Me.PrezzoTextBox1.TabIndex = 11
-        Me.PrezzoTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtTotale
-        '
-        Me.txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtTotale.Format = "0.00"
-        Me.txtTotale.Location = New System.Drawing.Point(445, 458)
-        Me.txtTotale.Name = "txtTotale"
-        Me.txtTotale.ReadOnly = True
-        Me.txtTotale.Size = New System.Drawing.Size(94, 26)
-        Me.txtTotale.TabIndex = 23
-        Me.txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'txtPezzi
-        '
-        Me.txtPezzi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.txtPezzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtPezzi.Format = "#"
-        Me.txtPezzi.Location = New System.Drawing.Point(244, 458)
-        Me.txtPezzi.Name = "txtPezzi"
-        Me.txtPezzi.ReadOnly = True
-        Me.txtPezzi.Size = New System.Drawing.Size(53, 26)
-        Me.txtPezzi.TabIndex = 25
-        Me.txtPezzi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Descrizione
         '
@@ -301,6 +210,97 @@ Partial Class frmAcquisto
         Me.Copia.ReadOnly = True
         Me.Copia.Width = 50
         '
+        'cmdRicerca
+        '
+        Me.cmdRicerca.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdRicerca.Location = New System.Drawing.Point(806, 12)
+        Me.cmdRicerca.Name = "cmdRicerca"
+        Me.cmdRicerca.Size = New System.Drawing.Size(27, 26)
+        Me.cmdRicerca.TabIndex = 3
+        Me.cmdRicerca.Text = "..."
+        Me.cmdRicerca.UseVisualStyleBackColor = True
+        '
+        'CognomeTextBox1
+        '
+        Me.CognomeTextBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.CognomeTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.FornitoriBindingSource, "NomeCompleto", True))
+        Me.CognomeTextBox1.Location = New System.Drawing.Point(545, 12)
+        Me.CognomeTextBox1.Name = "CognomeTextBox1"
+        Me.CognomeTextBox1.ReadOnly = True
+        Me.CognomeTextBox1.Size = New System.Drawing.Size(255, 20)
+        Me.CognomeTextBox1.TabIndex = 1
+        '
+        'FornitoriBindingSource
+        '
+        Me.FornitoriBindingSource.DataSource = GetType(mrCash_DAL.Fornitori)
+        '
+        'PrintPreviewDialog1
+        '
+        Me.PrintPreviewDialog1.AutoScrollMargin = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.AutoScrollMinSize = New System.Drawing.Size(0, 0)
+        Me.PrintPreviewDialog1.ClientSize = New System.Drawing.Size(400, 300)
+        Me.PrintPreviewDialog1.Enabled = True
+        Me.PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), System.Drawing.Icon)
+        Me.PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        Me.PrintPreviewDialog1.Visible = False
+        '
+        'cmdStampa
+        '
+        Me.cmdStampa.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.cmdStampa.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.cmdStampa.Location = New System.Drawing.Point(545, 454)
+        Me.cmdStampa.Name = "cmdStampa"
+        Me.cmdStampa.Size = New System.Drawing.Size(92, 35)
+        Me.cmdStampa.TabIndex = 5
+        Me.cmdStampa.Text = "Print"
+        Me.cmdStampa.UseVisualStyleBackColor = True
+        '
+        'DateTimePicker1
+        '
+        Me.DateTimePicker1.CustomFormat = "HH:mm"
+        Me.DateTimePicker1.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.AcquistiBindingSource, "Data", True))
+        Me.DateTimePicker1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.DateTimePicker1.Location = New System.Drawing.Point(221, 12)
+        Me.DateTimePicker1.Name = "DateTimePicker1"
+        Me.DateTimePicker1.ShowUpDown = True
+        Me.DateTimePicker1.Size = New System.Drawing.Size(76, 26)
+        Me.DateTimePicker1.TabIndex = 7
+        '
+        'PrezzoTextBox1
+        '
+        Me.PrezzoTextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Valore", Me.AcquistiBindingSource, "Transazione", True))
+        Me.PrezzoTextBox1.Format = "#"
+        Me.PrezzoTextBox1.Location = New System.Drawing.Point(372, 12)
+        Me.PrezzoTextBox1.Name = "PrezzoTextBox1"
+        Me.PrezzoTextBox1.Size = New System.Drawing.Size(57, 20)
+        Me.PrezzoTextBox1.TabIndex = 11
+        Me.PrezzoTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtTotale
+        '
+        Me.txtTotale.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtTotale.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtTotale.Format = "0.00"
+        Me.txtTotale.Location = New System.Drawing.Point(445, 458)
+        Me.txtTotale.Name = "txtTotale"
+        Me.txtTotale.ReadOnly = True
+        Me.txtTotale.Size = New System.Drawing.Size(94, 26)
+        Me.txtTotale.TabIndex = 23
+        Me.txtTotale.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'txtPezzi
+        '
+        Me.txtPezzi.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.txtPezzi.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.txtPezzi.Format = "#"
+        Me.txtPezzi.Location = New System.Drawing.Point(244, 458)
+        Me.txtPezzi.Name = "txtPezzi"
+        Me.txtPezzi.ReadOnly = True
+        Me.txtPezzi.Size = New System.Drawing.Size(53, 26)
+        Me.txtPezzi.TabIndex = 25
+        Me.txtPezzi.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
         'frmAcquisto
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,9 +357,9 @@ Partial Class frmAcquisto
     Friend WithEvents PrintPreviewDialog1 As System.Windows.Forms.PrintPreviewDialog
     Friend WithEvents cmdStampa As System.Windows.Forms.Button
     Friend WithEvents DateTimePicker1 As System.Windows.Forms.DateTimePicker
-    Friend WithEvents PrezzoTextBox1 As mrCash_UI_eng.PrezzoTextBox
-    Friend WithEvents txtTotale As mrCash_UI_eng.PrezzoTextBox
-    Friend WithEvents txtPezzi As mrCash_UI_eng.PrezzoTextBox
+    Friend WithEvents PrezzoTextBox1 As mrCash_UI.PrezzoTextBox
+    Friend WithEvents txtTotale As mrCash_UI.PrezzoTextBox
+    Friend WithEvents txtPezzi As mrCash_UI.PrezzoTextBox
     Friend WithEvents Descrizione As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Modello As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents Serie As System.Windows.Forms.DataGridViewTextBoxColumn

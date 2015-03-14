@@ -36,8 +36,8 @@ Partial Class frmVendita
         Me.OggettiDataGridView = New System.Windows.Forms.DataGridView()
         Me.txtCodice = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.txtTotale = New mrCash_UI_eng.PrezzoTextBox()
-        Me.txtParziale = New mrCash_UI_eng.PrezzoTextBox()
+        Me.txtTotale = New mrCash_UI.PrezzoTextBox()
+        Me.txtParziale = New mrCash_UI.PrezzoTextBox()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RigaVendita = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PrezzoStimato = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -281,8 +281,8 @@ Partial Class frmVendita
     Friend WithEvents OggettiDataGridView As System.Windows.Forms.DataGridView
     Friend WithEvents txtCodice As System.Windows.Forms.TextBox
     Friend WithEvents Button1 As System.Windows.Forms.Button
-    Friend WithEvents txtTotale As mrCash_UI_eng.PrezzoTextBox
-    Friend WithEvents txtParziale As mrCash_UI_eng.PrezzoTextBox
+    Friend WithEvents txtTotale As mrCash_UI.PrezzoTextBox
+    Friend WithEvents txtParziale As mrCash_UI.PrezzoTextBox
     Friend WithEvents DataGridViewTextBoxColumn2 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents RigaVendita As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents PrezzoStimato As System.Windows.Forms.DataGridViewTextBoxColumn

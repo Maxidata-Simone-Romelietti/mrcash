@@ -175,7 +175,7 @@ Partial Class frmMain
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(466, 20)
         Me.Label1.TabIndex = 9
-        Me.Label1.Text = "FINE MESE"
+        Me.Label1.Text = "END OF THE MONTH"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Label2

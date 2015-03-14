@@ -26,24 +26,24 @@ Partial Class frmRicercaAcquisti
         Dim DataLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRicercaAcquisti))
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmRicercaAcquisti))
         Me.lblWarning = New System.Windows.Forms.Label()
         Me.Fornitori = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.AcquistiBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.AcquistiDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CognomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.PrintPreviewDialog1 = New System.Windows.Forms.PrintPreviewDialog()
         Me.NomeTextBox1 = New System.Windows.Forms.TextBox()
         Me.OggettoTextBox1 = New System.Windows.Forms.TextBox()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.DataDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Transazione = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Fornitore = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.IDAcquistoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         DataLabel = New System.Windows.Forms.Label()
         Label1 = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
@@ -146,6 +146,40 @@ Partial Class frmRicercaAcquisti
         Me.AcquistiDataGridView.Size = New System.Drawing.Size(792, 499)
         Me.AcquistiDataGridView.TabIndex = 22
         '
+        'DataDataGridViewTextBoxColumn
+        '
+        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
+        DataGridViewCellStyle2.Format = "dd/MM/yyyy       HH:mm"
+        Me.DataDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        Me.DataDataGridViewTextBoxColumn.FillWeight = 20.0!
+        Me.DataDataGridViewTextBoxColumn.HeaderText = "Date"
+        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
+        Me.DataDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'Transazione
+        '
+        Me.Transazione.DataPropertyName = "Transazione"
+        Me.Transazione.FillWeight = 10.0!
+        Me.Transazione.HeaderText = "Transaction"
+        Me.Transazione.Name = "Transazione"
+        Me.Transazione.ReadOnly = True
+        '
+        'Fornitore
+        '
+        Me.Fornitore.DataPropertyName = "Fornitore_NomeCompleto"
+        Me.Fornitore.FillWeight = 68.0!
+        Me.Fornitore.HeaderText = "Supplier"
+        Me.Fornitore.Name = "Fornitore"
+        Me.Fornitore.ReadOnly = True
+        '
+        'IDAcquistoDataGridViewTextBoxColumn
+        '
+        Me.IDAcquistoDataGridViewTextBoxColumn.DataPropertyName = "IDAcquisto"
+        Me.IDAcquistoDataGridViewTextBoxColumn.FillWeight = 2.0!
+        Me.IDAcquistoDataGridViewTextBoxColumn.HeaderText = "ID"
+        Me.IDAcquistoDataGridViewTextBoxColumn.Name = "IDAcquistoDataGridViewTextBoxColumn"
+        Me.IDAcquistoDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'CognomeTextBox1
         '
         Me.CognomeTextBox1.Location = New System.Drawing.Point(69, 10)
@@ -194,42 +228,8 @@ Partial Class frmRicercaAcquisti
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(160, 24)
         Me.Button1.TabIndex = 26
-        Me.Button1.Text = "TOTALI GIORNALIERI"
+        Me.Button1.Text = "DAILY TOTALS"
         Me.Button1.UseVisualStyleBackColor = True
-        '
-        'DataDataGridViewTextBoxColumn
-        '
-        Me.DataDataGridViewTextBoxColumn.DataPropertyName = "Data"
-        DataGridViewCellStyle2.Format = "dd/MM/yyyy       HH:mm"
-        Me.DataDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataDataGridViewTextBoxColumn.FillWeight = 20.0!
-        Me.DataDataGridViewTextBoxColumn.HeaderText = "Date"
-        Me.DataDataGridViewTextBoxColumn.Name = "DataDataGridViewTextBoxColumn"
-        Me.DataDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'Transazione
-        '
-        Me.Transazione.DataPropertyName = "Transazione"
-        Me.Transazione.FillWeight = 10.0!
-        Me.Transazione.HeaderText = "Transaction"
-        Me.Transazione.Name = "Transazione"
-        Me.Transazione.ReadOnly = True
-        '
-        'Fornitore
-        '
-        Me.Fornitore.DataPropertyName = "Fornitore_NomeCompleto"
-        Me.Fornitore.FillWeight = 68.0!
-        Me.Fornitore.HeaderText = "Supplier"
-        Me.Fornitore.Name = "Fornitore"
-        Me.Fornitore.ReadOnly = True
-        '
-        'IDAcquistoDataGridViewTextBoxColumn
-        '
-        Me.IDAcquistoDataGridViewTextBoxColumn.DataPropertyName = "IDAcquisto"
-        Me.IDAcquistoDataGridViewTextBoxColumn.FillWeight = 2.0!
-        Me.IDAcquistoDataGridViewTextBoxColumn.HeaderText = "ID"
-        Me.IDAcquistoDataGridViewTextBoxColumn.Name = "IDAcquistoDataGridViewTextBoxColumn"
-        Me.IDAcquistoDataGridViewTextBoxColumn.ReadOnly = True
         '
         'frmRicercaAcquisti
         '

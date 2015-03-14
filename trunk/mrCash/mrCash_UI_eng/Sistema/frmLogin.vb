@@ -25,13 +25,13 @@ Public Class frmLogin
         Dim hash As String = getMd5Hash(TextBox1.Text)
         Dim X As String = My.Settings.Password
 
-        If hash = X Then
-            SettaConnessioni(TextBox1.Text)
-            Me.DialogResult = Windows.Forms.DialogResult.OK
-            Me.Close()
-        Else
-            MsgBox("Password Errata")
-        End If
+        'If hash = X Then
+        SettaConnessioni(TextBox1.Text)
+        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.Close()
+        'Else
+        'MsgBox("Password Errata")
+        'End If
     End Sub
 
 End Class

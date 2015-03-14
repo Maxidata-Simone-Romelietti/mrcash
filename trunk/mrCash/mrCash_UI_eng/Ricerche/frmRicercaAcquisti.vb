@@ -57,7 +57,7 @@ Public Class frmRicercaAcquisti
         lblWarning.Text = ""
 
         If Distinti.Count > 0 Then
-            lblWarning.Text = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
+            lblWarning.Text = "Transactions with missing codes : " & String.Join(" ", Distinti.ToArray)
         End If
 
     End Function
