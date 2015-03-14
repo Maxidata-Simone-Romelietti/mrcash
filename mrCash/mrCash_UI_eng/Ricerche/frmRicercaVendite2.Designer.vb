@@ -32,7 +32,7 @@ Partial Class frmRicercaVendite2
         Me.VenditeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VenditeBindingSource1 = New System.Windows.Forms.BindingSource(Me.components)
         Me.ElementHost2 = New System.Windows.Forms.Integration.ElementHost()
-        Me.UsrCalendario1 = New mrCash_UI_eng.usrCalendario()
+        Me.UsrCalendario1 = New mrCash_UI.usrCalendario()
         Label1 = New System.Windows.Forms.Label()
         CType(Me.VenditeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VenditeBindingSource1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,5 +125,5 @@ Partial Class frmRicercaVendite2
     Friend WithEvents OggettoTextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents VenditeBindingSource1 As System.Windows.Forms.BindingSource
     Friend WithEvents ElementHost2 As System.Windows.Forms.Integration.ElementHost
-    Friend UsrCalendario1 As mrCash_UI_eng.usrCalendario
+    Friend UsrCalendario1 As mrCash_UI.usrCalendario
 End Class

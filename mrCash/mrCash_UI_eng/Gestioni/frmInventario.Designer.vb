@@ -198,7 +198,7 @@ Partial Class frmInventario
         '
         'Inventario_ControllerBindingSource
         '
-        Me.Inventario_ControllerBindingSource.DataSource = GetType(mrCash_UI_eng.Inventario_Controller)
+        Me.Inventario_ControllerBindingSource.DataSource = GetType(mrCash_UI.Inventario_Controller)
         '
         'CodiceDataGridViewTextBoxColumn2
         '

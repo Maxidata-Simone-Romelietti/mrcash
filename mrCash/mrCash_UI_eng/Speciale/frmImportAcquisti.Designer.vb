@@ -23,7 +23,7 @@ Partial Class frmImportAcquisti
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container
-        Me.TextBox3 = New mrCash_UI_eng.PrezzoTextBox
+        Me.TextBox3 = New mrCash_UI.PrezzoTextBox
         Me.SelezioniBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.CognomeTextBox1 = New System.Windows.Forms.TextBox
         Me.Label1 = New System.Windows.Forms.Label
@@ -99,7 +99,7 @@ Partial Class frmImportAcquisti
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents TextBox3 As mrCash_UI_eng.PrezzoTextBox
+    Friend WithEvents TextBox3 As mrCash_UI.PrezzoTextBox
     Friend WithEvents CognomeTextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents Label2 As System.Windows.Forms.Label

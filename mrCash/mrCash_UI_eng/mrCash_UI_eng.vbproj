@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}</ProjectGuid>
+    <ProjectGuid>{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <StartupObject>mrCash_UI_eng.My.MyApplication</StartupObject>
-    <RootNamespace>mrCash_UI_eng</RootNamespace>
-    <AssemblyName>mrCash_UI_eng</AssemblyName>
+    <StartupObject>mrCash_UI.My.MyApplication</StartupObject>
+    <RootNamespace>mrCash_UI</RootNamespace>
+    <AssemblyName>mrCash_UI</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>WindowsForms</MyType>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
@@ -45,7 +45,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>mrCash_UI_eng.xml</DocumentationFile>
+    <DocumentationFile>mrCash_UI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -55,7 +55,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\</OutputPath>
-    <DocumentationFile>mrCash_UI_eng.xml</DocumentationFile>
+    <DocumentationFile>mrCash_UI.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
@@ -349,16 +349,6 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\mrCash_DAL\mrCash_DAL.vbproj">
-      <Project>{17760FF2-2C0C-4FAB-9EC5-363375D889B1}</Project>
-      <Name>mrCash_DAL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\mrCash_STAMPA\mrCash_STAMPA.vbproj">
-      <Project>{BB1694ED-5F1F-40D7-A521-BC0814A53A9F}</Project>
-      <Name>mrCash_STAMPA</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <Folder Include="Documentazione\" />
   </ItemGroup>
   <ItemGroup>
@@ -366,6 +356,16 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\mrCash_DAL\mrCash_DAL.vbproj">
+      <Project>{17760ff2-2c0c-4fab-9ec5-363375d889b1}</Project>
+      <Name>mrCash_DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mrCash_STAMPA\mrCash_STAMPA.vbproj">
+      <Project>{bb1694ed-5f1f-40d7-a521-bc0814a53a9f}</Project>
+      <Name>mrCash_STAMPA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

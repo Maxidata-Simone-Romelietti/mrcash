@@ -44,7 +44,7 @@ Partial Class frmLogin
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(320, 32)
         Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Insert your password"
+        Me.Label1.Text = "Insert password"
         Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'OK_Button
