@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>9.0.30729</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{BEE3ABC5-16C3-40D8-B6F0-4C63BAD5C566}</ProjectGuid>
+    <ProjectGuid>{2D23867F-B9BB-4F11-8214-44DB9DF6FA27}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <StartupObject>mrCash_UI.My.MyApplication</StartupObject>
     <RootNamespace>mrCash_UI</RootNamespace>
