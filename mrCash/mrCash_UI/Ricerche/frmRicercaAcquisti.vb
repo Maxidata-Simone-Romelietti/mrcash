@@ -49,16 +49,7 @@ Public Class frmRicercaAcquisti
 
         AcquistiBindingSource.DataSource = qry
 
-
-        ' Oggetti senza codice
-        Dim TransazioniConCodiciMancanti = From o In context.Oggetti.Include("Acquisti") Where o.Codice = "" Select o.Acquisti
-        Dim Distinti = (From x In TransazioniConCodiciMancanti Select CStr(x.Transazione)).Distinct
-
-        lblWarning.Text = ""
-
-        If Distinti.Count > 0 Then
-            lblWarning.Text = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
-        End If
+        lblWarning.Text = frmMain.CodiciMancanti()
 
     End Function
 

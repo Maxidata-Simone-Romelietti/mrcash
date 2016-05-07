@@ -121,6 +121,12 @@
     <Compile Include="Ricerche\frmTotAcq.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Sistema\frmChiediData.Designer.vb">
+      <DependentUpon>frmChiediData.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\frmChiediData.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Speciale\frmGeneraMD5.Designer.vb">
       <DependentUpon>frmGeneraMD5.vb</DependentUpon>
     </Compile>
@@ -240,6 +246,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Ricerche\frmTotAcq.resx">
       <DependentUpon>frmTotAcq.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmChiediData.resx">
+      <DependentUpon>frmChiediData.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Speciale\frmGeneraMD5.resx">
       <DependentUpon>frmGeneraMD5.vb</DependentUpon>

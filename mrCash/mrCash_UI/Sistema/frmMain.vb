@@ -47,7 +47,11 @@ Public Class frmMain
     End Sub
 
     Private Sub cmdInventario_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdInventario.Click
-        creaTMP(False)
+        'creaTMP(False)
+
+        Dim f = New frmChiediData
+        f.ShowDialog()
+        CreaCSV(f.DataDateTimePicker.Value)
     End Sub
 
     Private Sub cmdResoconto_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles cmdResoconto.Click
@@ -92,5 +96,79 @@ Public Class frmMain
             F.ShowDialog()
         End Using
     End Sub
+
+    Public Shared Function CodiciMancanti() As String
+        ' Oggetti senza codice
+        Using c = MRCashEntities.Create
+
+            Dim TransazioniConCodiciMancanti = From o In c.Oggetti.Include("Acquisti") Where o.Codice = "" Select o.Acquisti
+            Dim Distinti = (From x In TransazioniConCodiciMancanti Select CStr(x.Transazione)).Distinct
+
+            Dim s = ""
+
+            If Distinti.Count > 0 Then
+                s = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
+            End If
+
+            Return s
+        End Using
+    End Function
+
+    Private Sub frmMain_Activated(sender As Object, e As EventArgs) Handles Me.Activated
+        lblWarning.Text = CodiciMancanti()
+    End Sub
+
+    Private Sub CreaCSV(DataLimite As DateTime)
+        Using c = MRCashEntities.Create
+
+            Dim o1 = (From x In c.Oggetti.Include("Acquisti")).ToList
+
+            Dim o = (From x In o1 Where x.DataRottamazione Is Nothing _
+                                    And (x.Vendita_Data = Nothing Or x.Vendita_Data >= DataLimite) _
+                                    And (x.Acquisti.Data <= DataLimite)
+                                      ).ToList
+
+            Dim sb As New System.Text.StringBuilder
+            Dim l As New List(Of String)
+
+            l.Add("Data")
+            l.Add("Prezzo")
+            l.Add("Codice")
+            l.Add("Oggetto")
+            sb.AppendLine(CreateCSVRow(l))
+
+            For Each x In o
+                l.Clear()
+                l.Add(x.Acquisti.Data.ToString("dd/MM/yyyy"))
+                l.Add(x.PrezzoAcquisto.ToString)
+                l.Add(x.Codice)
+                l.Add(x.Descrizione)
+
+
+                sb.AppendLine(CreateCSVRow(l))
+            Next
+
+            Dim NomeFile = System.IO.Path.GetTempFileName().Replace(".tmp", ".csv")
+            My.Computer.FileSystem.WriteAllText(NomeFile, sb.ToString, False, System.Text.Encoding.Default)
+            Process.Start(NomeFile)
+        End Using
+    End Sub
+
+    Function CreateCSVRow(strArray As List(Of String)) As String
+        Const Separator = ";"c
+        Dim csvCols As New List(Of String)
+        Dim csvValue As String
+        Dim needQuotes As Boolean
+        For i As Integer = 0 To strArray.Count() - 1
+            csvValue = strArray(i)
+            needQuotes = (csvValue.IndexOf(",", StringComparison.InvariantCulture) >= 0 _
+                          OrElse csvValue.IndexOf("""", StringComparison.InvariantCulture) >= 0 _
+                          OrElse csvValue.IndexOf(vbCrLf, StringComparison.InvariantCulture) >= 0)
+            csvValue = csvValue.Replace("""", """""")
+            csvCols.Add(If(needQuotes, """" & csvValue & """", csvValue))
+        Next
+        Return String.Join(Separator, csvCols.ToArray())
+    End Function
+
 End Class
 

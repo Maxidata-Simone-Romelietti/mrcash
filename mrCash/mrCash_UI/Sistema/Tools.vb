@@ -139,22 +139,22 @@ End Module
 
 Module Extensions
 
-    <Extension()> _
+    <Extension()>
     Public Function SenzaOra(ByVal d As Date) As Date
         Return New Date(d.Year, d.Month, d.Day, 0, 0, 0)
     End Function
 
-    <Extension()> _
+    <Extension()>
     Public Function ToCodice(ByVal S As String) As String
         Return Integer.Parse("0" + S.Trim).ToString("00000")
     End Function
 
-    <Extension()> _
+    <Extension()>
     Public Function ToReal(ByVal S As String) As String
         If S Is Nothing Then Return "" Else Return S
     End Function
 
-    <Extension()> _
+    <Extension()>
     Public Function ToReal(ByVal D As Decimal?) As Decimal
         If D Is Nothing Then Return 0D Else Return CDec(D)
     End Function

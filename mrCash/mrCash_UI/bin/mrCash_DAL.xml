@@ -1,0 +1,453 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+mrCash_DAL
+</name>
+</assembly>
+<members>
+<member name="T:mrCash_DAL.Fornitori">
+<summary>
+There are no comments for MRCashModel.Fornitori in the schema.
+</summary>
+<KeyProperties>
+IDFornitore
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.Fornitori.CreateFornitori(System.Int32,System.DateTime,System.DateTime)">
+<summary>
+Create a new Fornitori object.
+</summary>
+<param name="iDFornitore">Initial value of IDFornitore.</param>
+<param name="dataRilascio">Initial value of DataRilascio.</param>
+<param name="dataNascita">Initial value of DataNascita.</param>
+</member>
+<member name="P:mrCash_DAL.Fornitori.IDFornitore">
+<summary>
+There are no comments for property IDFornitore in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Cognome">
+<summary>
+There are no comments for property Cognome in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Nome">
+<summary>
+There are no comments for property Nome in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.RifDoc">
+<summary>
+There are no comments for property RifDoc in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Indirizzo">
+<summary>
+There are no comments for property Indirizzo in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Citta">
+<summary>
+There are no comments for property Citta in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Provincia">
+<summary>
+There are no comments for property Provincia in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Telefono">
+<summary>
+There are no comments for property Telefono in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Cap">
+<summary>
+There are no comments for property Cap in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.TipoDoc">
+<summary>
+There are no comments for property TipoDoc in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.DataRilascio">
+<summary>
+There are no comments for property DataRilascio in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.DataNascita">
+<summary>
+There are no comments for property DataNascita in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Note">
+<summary>
+There are no comments for property Note in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Fornitori.Acquisti">
+<summary>
+There are no comments for Acquisti in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.Acquisti">
+<summary>
+There are no comments for MRCashModel.Acquisti in the schema.
+</summary>
+<KeyProperties>
+IDAcquisto
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.Acquisti.CreateAcquisti(System.Int32,System.DateTime,System.Int32)">
+<summary>
+Create a new Acquisti object.
+</summary>
+<param name="iDAcquisto">Initial value of IDAcquisto.</param>
+<param name="data">Initial value of Data.</param>
+<param name="transazione">Initial value of Transazione.</param>
+</member>
+<member name="P:mrCash_DAL.Acquisti.IDAcquisto">
+<summary>
+There are no comments for property IDAcquisto in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Acquisti.Data">
+<summary>
+There are no comments for property Data in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Acquisti.Transazione">
+<summary>
+There are no comments for property Transazione in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Acquisti.Fornitori">
+<summary>
+There are no comments for Fornitori in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Acquisti.FornitoriReference">
+<summary>
+There are no comments for Fornitori in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Acquisti.Oggetti">
+<summary>
+There are no comments for Oggetti in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.Oggetti">
+<summary>
+There are no comments for MRCashModel.Oggetti in the schema.
+</summary>
+<KeyProperties>
+IDOggetto
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.Oggetti.CreateOggetti(System.Int32,System.Decimal,System.Decimal,System.Decimal,System.Int32,System.Int32)">
+<summary>
+Create a new Oggetti object.
+</summary>
+<param name="iDOggetto">Initial value of IDOggetto.</param>
+<param name="prezzoAcquisto">Initial value of PrezzoAcquisto.</param>
+<param name="prezzoStimato">Initial value of PrezzoStimato.</param>
+<param name="prezzoVendita">Initial value of PrezzoVendita.</param>
+<param name="rigaAcquisto">Initial value of RigaAcquisto.</param>
+<param name="rigaVendita">Initial value of RigaVendita.</param>
+</member>
+<member name="P:mrCash_DAL.Oggetti.IDOggetto">
+<summary>
+There are no comments for property IDOggetto in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Codice">
+<summary>
+There are no comments for property Codice in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Descrizione">
+<summary>
+There are no comments for property Descrizione in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.PrezzoAcquisto">
+<summary>
+There are no comments for property PrezzoAcquisto in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.PrezzoStimato">
+<summary>
+There are no comments for property PrezzoStimato in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.PrezzoVendita">
+<summary>
+There are no comments for property PrezzoVendita in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Modello">
+<summary>
+There are no comments for property Modello in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Serie">
+<summary>
+There are no comments for property Serie in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.DataRientro">
+<summary>
+There are no comments for property DataRientro in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.DataRiconsegna">
+<summary>
+There are no comments for property DataRiconsegna in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.DataRottamazione">
+<summary>
+There are no comments for property DataRottamazione in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Note">
+<summary>
+There are no comments for property Note in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.RigaAcquisto">
+<summary>
+There are no comments for property RigaAcquisto in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.RigaVendita">
+<summary>
+There are no comments for property RigaVendita in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Acquisti">
+<summary>
+There are no comments for Acquisti in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.AcquistiReference">
+<summary>
+There are no comments for Acquisti in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.Vendite">
+<summary>
+There are no comments for Vendite in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Oggetti.VenditeReference">
+<summary>
+There are no comments for Vendite in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.Vendite">
+<summary>
+There are no comments for MRCashModel.Vendite in the schema.
+</summary>
+<KeyProperties>
+IDVendita
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.Vendite.CreateVendite(System.Int32,System.DateTime)">
+<summary>
+Create a new Vendite object.
+</summary>
+<param name="iDVendita">Initial value of IDVendita.</param>
+<param name="data">Initial value of Data.</param>
+</member>
+<member name="P:mrCash_DAL.Vendite.IDVendita">
+<summary>
+There are no comments for property IDVendita in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Vendite.Data">
+<summary>
+There are no comments for property Data in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.Vendite.Oggetti">
+<summary>
+There are no comments for Oggetti in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.LinqEntityBinding`1">
+ <summary>
+ Classe PEr ottenere EntityCollection Ordinabili
+ </summary>
+ <typeparam name="T"></typeparam>
+ <remarks></remarks>
+</member>
+<member name="M:mrCash_DAL.LinqEntityBinding`1.AddCorretto(`0)">
+ <summary>
+ Uso questa versione perche Add normale non era overridable
+ </summary>
+ <param name="item"></param>
+ <remarks></remarks>
+</member>
+<member name="T:mrCash_DAL.MRCashEntities">
+<summary>
+There are no comments for MRCashEntities in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.#ctor">
+<summary>
+Initializes a new MRCashEntities object using the connection string found in the 'MRCashEntities' section of the application configuration file.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.#ctor(System.String)">
+<summary>
+Initialize a new MRCashEntities object.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.#ctor(System.Data.EntityClient.EntityConnection)">
+<summary>
+Initialize a new MRCashEntities object.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.Acquisti">
+<summary>
+There are no comments for Acquisti in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.Fornitori">
+<summary>
+There are no comments for Fornitori in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.Oggetti">
+<summary>
+There are no comments for Oggetti in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.Vendite">
+<summary>
+There are no comments for Vendite in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.V_AcquistiGiornalieri">
+<summary>
+There are no comments for V_AcquistiGiornalieri in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.MRCashEntities.V_Giornalieri">
+<summary>
+There are no comments for V_Giornalieri in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToAcquisti(mrCash_DAL.Acquisti)">
+<summary>
+There are no comments for Acquisti in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToFornitori(mrCash_DAL.Fornitori)">
+<summary>
+There are no comments for Fornitori in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToOggetti(mrCash_DAL.Oggetti)">
+<summary>
+There are no comments for Oggetti in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToVendite(mrCash_DAL.Vendite)">
+<summary>
+There are no comments for Vendite in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToV_AcquistiGiornalieri(mrCash_DAL.V_AcquistiGiornalieri)">
+<summary>
+There are no comments for V_AcquistiGiornalieri in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.AddToV_Giornalieri(mrCash_DAL.V_Giornalieri)">
+<summary>
+There are no comments for V_Giornalieri in the schema.
+</summary>
+</member>
+<member name="M:mrCash_DAL.MRCashEntities.Totali_Giornalieri">
+<summary>
+There are no comments for MRCashEntities.Totali_Giornalieri in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.V_AcquistiGiornalieri">
+<summary>
+There are no comments for MRCashModel.V_AcquistiGiornalieri in the schema.
+</summary>
+<KeyProperties>
+Data
+Totale
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.V_AcquistiGiornalieri.CreateV_AcquistiGiornalieri(System.DateTime,System.Decimal)">
+<summary>
+Create a new V_AcquistiGiornalieri object.
+</summary>
+<param name="data">Initial value of Data.</param>
+<param name="totale">Initial value of Totale.</param>
+</member>
+<member name="P:mrCash_DAL.V_AcquistiGiornalieri.Data">
+<summary>
+There are no comments for property Data in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.V_AcquistiGiornalieri.Totale">
+<summary>
+There are no comments for property Totale in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.V_Giornalieri">
+<summary>
+There are no comments for MRCashModel.V_Giornalieri in the schema.
+</summary>
+<KeyProperties>
+IDVendita
+</KeyProperties>
+</member>
+<member name="M:mrCash_DAL.V_Giornalieri.CreateV_Giornalieri(System.Int32,System.DateTime,System.Decimal)">
+<summary>
+Create a new V_Giornalieri object.
+</summary>
+<param name="iDVendita">Initial value of IDVendita.</param>
+<param name="data">Initial value of Data.</param>
+<param name="totale">Initial value of Totale.</param>
+</member>
+<member name="P:mrCash_DAL.V_Giornalieri.IDVendita">
+<summary>
+There are no comments for property IDVendita in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.V_Giornalieri.Data">
+<summary>
+There are no comments for property Data in the schema.
+</summary>
+</member>
+<member name="P:mrCash_DAL.V_Giornalieri.Totale">
+<summary>
+There are no comments for property Totale in the schema.
+</summary>
+</member>
+<member name="T:mrCash_DAL.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:mrCash_DAL.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:mrCash_DAL.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+</members>
+</doc>
