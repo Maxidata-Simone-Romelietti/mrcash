@@ -1,0 +1,10 @@
+C:\GitHub\mrcash\mrCash\mrCash_DAL\bin\Debug\mrCash_DAL.dll.config
+C:\GitHub\mrcash\mrCash\mrCash_DAL\bin\Debug\mrCash_DAL.dll
+C:\GitHub\mrcash\mrCash\mrCash_DAL\bin\Debug\mrCash_DAL.pdb
+C:\GitHub\mrcash\mrCash\mrCash_DAL\bin\Debug\mrCash_DAL.xml
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.vbprojResolveAssemblyReference.cache
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.Resources.resources
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.vbproj.GenerateResource.Cache
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.dll
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.xml
+C:\GitHub\mrcash\mrCash\mrCash_DAL\obj\Debug\mrCash_DAL.pdb
