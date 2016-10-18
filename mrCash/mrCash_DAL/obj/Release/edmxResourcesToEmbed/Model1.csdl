@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+  <EntityContainer Name="MRCashEntities">
+    <EntitySet Name="Acquisti" EntityType="MRCashModel.Acquisti" />
+    <EntitySet Name="Fornitori" EntityType="MRCashModel.Fornitori" />
+    <EntitySet Name="Oggetti" EntityType="MRCashModel.Oggetti" />
+    <EntitySet Name="Vendite" EntityType="MRCashModel.Vendite" />
+    <AssociationSet Name="FK_Acquisti_Fornitori" Association="MRCashModel.FK_Acquisti_Fornitori">
+      <End Role="Fornitori" EntitySet="Fornitori" />
+      <End Role="Acquisti" EntitySet="Acquisti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oggetti_Acquisti" Association="MRCashModel.FK_Oggetti_Acquisti">
+      <End Role="Acquisti" EntitySet="Acquisti" />
+      <End Role="Oggetti" EntitySet="Oggetti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.FK_Oggetti_Vendite">
+      <End EntitySet="Vendite" Role="Vendite" />
+      <End EntitySet="Oggetti" Role="Oggetti" />
+    </AssociationSet>
+    <FunctionImport Name="Totali_Giornalieri" EntitySet="Oggetti" ReturnType="Collection(MRCashModel.Oggetti)" />
+    <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.V_AcquistiGiornalieri" />
+    <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.V_Giornalieri" />
+  </EntityContainer>
+  <EntityType Name="Acquisti">
+    <Key>
+      <PropertyRef Name="IDAcquisto" />
+    </Key>
+    <Property Name="IDAcquisto" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Fornitori" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Acquisti" ToRole="Fornitori" />
+    <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Acquisti" ToRole="Oggetti" />
+    <Property Name="Transazione" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fornitori">
+    <Key>
+      <PropertyRef Name="IDFornitore" />
+    </Key>
+    <Property Name="IDFornitore" Type="Int32" Nullable="false" />
+    <Property Name="Cognome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="RifDoc" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Indirizzo" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Citta" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Provincia" Type="String" Nullable="false" MaxLength="2" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Telefono" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Cap" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="TipoDoc" Type="String" Nullable="false" MaxLength="10" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="DataRilascio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataNascita" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Acquisti_Fornitori" FromRole="Fornitori" ToRole="Acquisti" />
+    <Property Name="Note" Type="String" Nullable="false" DefaultValue=" " MaxLength="1000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Oggetti">
+    <Key>
+      <PropertyRef Name="IDOggetto" />
+    </Key>
+    <Property Name="IDOggetto" Type="Int32" Nullable="false" />
+    <Property Name="Codice" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Descrizione" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="PrezzoAcquisto" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PrezzoStimato" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="PrezzoVendita" Type="Decimal" Nullable="false" Precision="19" Scale="4" />
+    <Property Name="Modello" Type="String" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <Property Name="Serie" Type="String" MaxLength="100" Unicode="true" FixedLength="false" DefaultValue=" " />
+    <NavigationProperty Name="Acquisti" Relationship="MRCashModel.FK_Oggetti_Acquisti" FromRole="Oggetti" ToRole="Acquisti" />
+    <NavigationProperty Name="Vendite" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Oggetti" ToRole="Vendite" />
+    <Property Name="DataRientro" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="DataRiconsegna" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="DataRottamazione" Type="DateTime" Nullable="true" Precision="3" />
+    <Property Name="Note" Type="String" DefaultValue=" " MaxLength="1000" Unicode="true" FixedLength="false" />
+    <Property Name="RigaAcquisto" Type="Int32" Nullable="false" />
+    <Property Name="RigaVendita" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendite">
+    <Key>
+      <PropertyRef Name="IDVendita" />
+    </Key>
+    <Property Name="IDVendita" Type="Int32" Nullable="false" />
+    <Property Name="Data" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Oggetti" Relationship="MRCashModel.FK_Oggetti_Vendite" FromRole="Vendite" ToRole="Oggetti" />
+  </EntityType>
+  <Association Name="FK_Acquisti_Fornitori">
+    <End Role="Fornitori" Type="MRCashModel.Fornitori" Multiplicity="1" />
+    <End Role="Acquisti" Type="MRCashModel.Acquisti" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Oggetti_Acquisti">
+    <End Role="Acquisti" Type="MRCashModel.Acquisti" Multiplicity="1" />
+    <End Role="Oggetti" Type="MRCashModel.Oggetti" Multiplicity="*" />
+  </Association>
+  <Association Name="FK_Oggetti_Vendite">
+    <End Type="MRCashModel.Vendite" Multiplicity="0..1" Role="Vendite" />
+    <End Type="MRCashModel.Oggetti" Multiplicity="*" Role="Oggetti" />
+  </Association>
+  <EntityType Name="V_AcquistiGiornalieri">
+    <Key>
+      <PropertyRef Name="Data" />
+      <PropertyRef Name="Totale" />
+    </Key>
+    <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
+    <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+  <EntityType Name="V_Giornalieri">
+    <Key>
+      <PropertyRef Name="IDVendita" />
+    </Key>
+    <Property Type="Int32" Name="IDVendita" Nullable="false" />
+    <Property Type="DateTime" Name="Data" Nullable="false" Precision="3" />
+    <Property Type="Decimal" Name="Totale" Nullable="false" Precision="19" Scale="4" />
+  </EntityType>
+</Schema>

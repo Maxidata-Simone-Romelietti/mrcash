@@ -38,7 +38,9 @@ Public Class AcquistiPrinter
         scritta("Il tuo usato ... rivalutato!", fTITOLO, Brushes.Red, 75, 130)
 
         Dim s As String _
-        = "Via Palestrina, 22" & vbCrLf _
+        = "Ditta individuale" & vbCrLf _
+        & "Mister Cash di ILAQUA NICOLA" & vbCrLf _
+        & "Via Palestrina, 22" & vbCrLf _
         & "20124 Milano" & vbCrLf _
         & "Tel. 02/6705661" & vbCrLf _
         & "P.IVA 11078500151"
@@ -68,7 +70,7 @@ Public Class AcquistiPrinter
         valore(auto, 50, 450)
 
         auto _
-        = "- Che i beni sotto elencati e ceduti alla International View S.r.l., sono di mia proprietà e non sono soggetti a vincoli di nessun genere" _
+        = "- Che i beni sotto elencati e ceduti alla ditta individuale Mister Cash, sono di mia proprietà e non sono soggetti a vincoli di nessun genere" _
         & vbCrLf & "- Di essere maggiorenne" _
         & vbCrLf & "- Di vendervi i beni sotto indicati, per il prezzo accanto riportato" _
         & vbCrLf & "- Che le informazioni fornite circa la natura e lo stato del bene, sono esaustive e veritiere" _

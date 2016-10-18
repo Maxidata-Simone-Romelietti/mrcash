@@ -10,3 +10,15 @@ C:\mrcash-master\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.vbproj.GenerateRes
 C:\mrcash-master\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.dll
 C:\mrcash-master\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.xml
 C:\mrcash-master\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.pdb
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_STAMPA.dll
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_STAMPA.pdb
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_STAMPA.xml
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_DAL.dll
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_DAL.pdb
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\bin\mrCash_DAL.xml
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.vbprojResolveAssemblyReference.cache
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.Resources.resources
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.vbproj.GenerateResource.Cache
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.dll
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.xml
+C:\GitHub\mrcash\mrCash\mrCash_STAMPA\obj\Debug\mrCash_STAMPA.pdb

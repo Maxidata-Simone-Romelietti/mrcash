@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+  <EntityContainer Name="MRCashModelStoreContainer">
+    <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.Store.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_AcquistiGiornalieri">
+      <DefiningQuery>SELECT 
+      [V_AcquistiGiornalieri].[Data] AS [Data], 
+      [V_AcquistiGiornalieri].[Totale] AS [Totale]
+      FROM [dbo].[V_AcquistiGiornalieri] AS [V_AcquistiGiornalieri]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri">
+      <DefiningQuery>SELECT 
+      [V_Giornalieri].[IDVendita] AS [IDVendita], 
+      [V_Giornalieri].[Data] AS [Data], 
+      [V_Giornalieri].[Totale] AS [Totale]
+      FROM [dbo].[V_Giornalieri] AS [V_Giornalieri]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_Acquisti_Fornitori" Association="MRCashModel.Store.FK_Acquisti_Fornitori">
+      <End Role="Fornitori" EntitySet="Fornitori" />
+      <End Role="Acquisti" EntitySet="Acquisti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oggetti_Acquisti" Association="MRCashModel.Store.FK_Oggetti_Acquisti">
+      <End Role="Acquisti" EntitySet="Acquisti" />
+      <End Role="Oggetti" EntitySet="Oggetti" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.Store.FK_Oggetti_Vendite">
+      <End Role="Vendite" EntitySet="Vendite" />
+      <End Role="Oggetti" EntitySet="Oggetti" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Acquisti">
+    <Key>
+      <PropertyRef Name="IDAcquisto" />
+    </Key>
+    <Property Name="IDAcquisto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="IDFornitore" Type="int" Nullable="false" />
+    <Property Name="Transazione" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Fornitori">
+    <Key>
+      <PropertyRef Name="IDFornitore" />
+    </Key>
+    <Property Name="IDFornitore" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Cognome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="RifDoc" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Indirizzo" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Citta" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Provincia" Type="nvarchar" Nullable="false" MaxLength="2" />
+    <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cap" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="TipoDoc" Type="nvarchar" Nullable="false" MaxLength="10" />
+    <Property Name="DataRilascio" Type="datetime" Nullable="false" />
+    <Property Name="DataNascita" Type="datetime" Nullable="false" />
+    <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Oggetti">
+    <Key>
+      <PropertyRef Name="IDOggetto" />
+    </Key>
+    <Property Name="IDOggetto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Codice" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descrizione" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PrezzoAcquisto" Type="money" Nullable="false" />
+    <Property Name="PrezzoStimato" Type="money" Nullable="false" />
+    <Property Name="PrezzoVendita" Type="money" Nullable="false" />
+    <Property Name="IDAcquisto" Type="int" Nullable="false" />
+    <Property Name="IDVendita" Type="int" />
+    <Property Name="Modello" Type="nvarchar" MaxLength="100" />
+    <Property Name="Serie" Type="nvarchar" MaxLength="100" />
+    <Property Name="DataRientro" Type="datetime" />
+    <Property Name="DataRiconsegna" Type="datetime" />
+    <Property Name="DataRottamazione" Type="datetime" />
+    <Property Name="Note" Type="nvarchar" MaxLength="1000" />
+    <Property Name="RigaVendita" Type="int" Nullable="false" />
+    <Property Name="RigaAcquisto" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Vendite">
+    <Key>
+      <PropertyRef Name="IDVendita" />
+    </Key>
+    <Property Name="IDVendita" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MrCash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_AcquistiGiornalieri">
+    <Key>
+      <PropertyRef Name="Totale" />
+      <PropertyRef Name="Data" />
+    </Key>
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Totale" Type="money" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'MrCash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="V_Giornalieri">
+    <Key>
+      <PropertyRef Name="IDVendita" />
+    </Key>
+    <Property Name="IDVendita" Type="int" Nullable="false" />
+    <Property Name="Data" Type="datetime" Nullable="false" />
+    <Property Name="Totale" Type="money" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Acquisti_Fornitori">
+    <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
+    <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Fornitori">
+        <PropertyRef Name="IDFornitore" />
+      </Principal>
+      <Dependent Role="Acquisti">
+        <PropertyRef Name="IDFornitore" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oggetti_Acquisti">
+    <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="1" />
+    <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Acquisti">
+        <PropertyRef Name="IDAcquisto" />
+      </Principal>
+      <Dependent Role="Oggetti">
+        <PropertyRef Name="IDAcquisto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Oggetti_Vendite">
+    <End Role="Vendite" Type="MRCashModel.Store.Vendite" Multiplicity="0..1" />
+    <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Vendite">
+        <PropertyRef Name="IDVendita" />
+      </Principal>
+      <Dependent Role="Oggetti">
+        <PropertyRef Name="IDVendita" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

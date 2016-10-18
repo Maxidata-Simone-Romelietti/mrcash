@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="urn:schemas-microsoft-com:windows:storage:mapping:CS">
+  <EntityContainerMapping StorageEntityContainer="MRCashModelStoreContainer" CdmEntityContainer="MRCashEntities">
+    <EntitySetMapping Name="Acquisti">
+      <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Acquisti)">
+        <MappingFragment StoreEntitySet="Acquisti">
+          <ScalarProperty Name="Transazione" ColumnName="Transazione" />
+          <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fornitori">
+      <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Fornitori)">
+        <MappingFragment StoreEntitySet="Fornitori">
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="IDFornitore" ColumnName="IDFornitore" />
+          <ScalarProperty Name="Cognome" ColumnName="Cognome" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="RifDoc" ColumnName="RifDoc" />
+          <ScalarProperty Name="Indirizzo" ColumnName="Indirizzo" />
+          <ScalarProperty Name="Citta" ColumnName="Citta" />
+          <ScalarProperty Name="Provincia" ColumnName="Provincia" />
+          <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+          <ScalarProperty Name="Cap" ColumnName="Cap" />
+          <ScalarProperty Name="TipoDoc" ColumnName="TipoDoc" />
+          <ScalarProperty Name="DataRilascio" ColumnName="DataRilascio" />
+          <ScalarProperty Name="DataNascita" ColumnName="DataNascita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Oggetti">
+      <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Oggetti)">
+        <MappingFragment StoreEntitySet="Oggetti">
+          <ScalarProperty Name="RigaVendita" ColumnName="RigaVendita" />
+          <ScalarProperty Name="RigaAcquisto" ColumnName="RigaAcquisto" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="DataRottamazione" ColumnName="DataRottamazione" />
+          <ScalarProperty Name="DataRiconsegna" ColumnName="DataRiconsegna" />
+          <ScalarProperty Name="DataRientro" ColumnName="DataRientro" />
+          <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+          <ScalarProperty Name="Codice" ColumnName="Codice" />
+          <ScalarProperty Name="Descrizione" ColumnName="Descrizione" />
+          <ScalarProperty Name="PrezzoAcquisto" ColumnName="PrezzoAcquisto" />
+          <ScalarProperty Name="PrezzoStimato" ColumnName="PrezzoStimato" />
+          <ScalarProperty Name="PrezzoVendita" ColumnName="PrezzoVendita" />
+          <ScalarProperty Name="Modello" ColumnName="Modello" />
+          <ScalarProperty Name="Serie" ColumnName="Serie" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Vendite">
+      <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Vendite)">
+        <MappingFragment StoreEntitySet="Vendite">
+          <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="FK_Acquisti_Fornitori" TypeName="MRCashModel.FK_Acquisti_Fornitori" StoreEntitySet="Acquisti">
+      <EndProperty Name="Fornitori">
+        <ScalarProperty Name="IDFornitore" ColumnName="IDFornitore" />
+      </EndProperty>
+      <EndProperty Name="Acquisti">
+        <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Oggetti_Acquisti" TypeName="MRCashModel.FK_Oggetti_Acquisti" StoreEntitySet="Oggetti">
+      <EndProperty Name="Acquisti">
+        <ScalarProperty Name="IDAcquisto" ColumnName="IDAcquisto" />
+      </EndProperty>
+      <EndProperty Name="Oggetti">
+        <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="FK_Oggetti_Vendite" TypeName="MRCashModel.FK_Oggetti_Vendite" StoreEntitySet="Oggetti">
+      <EndProperty Name="Vendite">
+        <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+      </EndProperty>
+      <EndProperty Name="Oggetti">
+        <ScalarProperty Name="IDOggetto" ColumnName="IDOggetto" />
+      </EndProperty>
+      <Condition ColumnName="IDVendita" IsNull="false" />
+    </AssociationSetMapping>
+    <EntitySetMapping Name="V_AcquistiGiornalieri">
+      <EntityTypeMapping TypeName="MRCashModel.V_AcquistiGiornalieri">
+        <MappingFragment StoreEntitySet="V_AcquistiGiornalieri">
+          <ScalarProperty Name="Totale" ColumnName="Totale" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="V_Giornalieri">
+      <EntityTypeMapping TypeName="MRCashModel.V_Giornalieri">
+        <MappingFragment StoreEntitySet="V_Giornalieri">
+          <ScalarProperty Name="Totale" ColumnName="Totale" />
+          <ScalarProperty Name="Data" ColumnName="Data" />
+          <ScalarProperty Name="IDVendita" ColumnName="IDVendita" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
