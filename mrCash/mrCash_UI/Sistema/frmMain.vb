@@ -121,7 +121,7 @@ Public Class frmMain
     Private Sub CreaCSV(DataLimite As DateTime)
         Using c = MRCashEntities.Create
 
-            Dim o1 = (From x In c.Oggetti.Include("Acquisti")).ToList
+            Dim o1 = (From x In c.Oggetti.Include("Acquisti").Include("Vendite")).ToList
 
             Dim o = (From x In o1 Where x.DataRottamazione Is Nothing _
                                     And (x.Vendita_Data = Nothing Or x.Vendita_Data >= DataLimite) _
