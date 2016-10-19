@@ -39,11 +39,12 @@ Public Class AcquistiPrinter
 
         Dim s As String _
         = "Ditta individuale" & vbCrLf _
-        & "Mister Cash di ILAQUA NICOLA" & vbCrLf _
-        & "Via Palestrina, 22" & vbCrLf _
-        & "20124 Milano" & vbCrLf _
+        & "Mister Cash di ILACQUA NICOLA" & vbCrLf _
+        & "Via P.L. da Palestrina, 22" & vbCrLf _
+        & "20124 MILANO" & vbCrLf _
         & "Tel. 02/6705661" & vbCrLf _
-        & "P.IVA 11078500151"
+        & "P.I. 09039040960" & vbCrLf _
+        & "C.F. LCQNCL73C16F205B"
 
         Dim fRS As New Font("Times New Roman", 9, FontStyle.Bold)
         scritta(s, fRS, Brushes.Black, 400, 100)
