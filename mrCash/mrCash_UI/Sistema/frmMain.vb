@@ -102,13 +102,21 @@ Public Class frmMain
         Using c = MRCashEntities.Create
 
             Dim TransazioniConCodiciMancanti = From o In c.Oggetti.Include("Acquisti") Where o.Codice = "" Select o.Acquisti
-            Dim Distinti = (From x In TransazioniConCodiciMancanti Select CStr(x.Transazione)).Distinct
-
             Dim s = ""
 
-            If Distinti.Count > 0 Then
-                s = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
-            End If
+            Try
+                Dim Distinti = (From x In TransazioniConCodiciMancanti Select CStr(x.Transazione)).ToList.Distinct
+
+                If Distinti.Count > 0 Then
+
+                    s = "Transazioni in cui mancano dei codici : " & String.Join(" ", Distinti.ToArray)
+                End If
+
+            Catch ex As Exception
+                MsgBox(ex.Message)
+            End Try
+
+
 
             Return s
         End Using

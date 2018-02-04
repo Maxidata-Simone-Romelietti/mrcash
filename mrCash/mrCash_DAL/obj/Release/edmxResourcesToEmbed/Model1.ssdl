@@ -66,6 +66,8 @@ warning 6002: The table/view 'mrcash.dbo.V_AcquistiGiornalieri' does not have a 
     <Property Name="Totale" Type="money" Nullable="false" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'mrcash.dbo.v_ciao' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'mrcash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="V_Giornalieri">
     <Key>

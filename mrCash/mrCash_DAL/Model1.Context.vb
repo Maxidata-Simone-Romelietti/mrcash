@@ -18,8 +18,6 @@ Partial Public Class MRCashEntities
 
     Public Sub New()
         MyBase.New(Variabili.ContextConnectionString)
-        'MyBase.New
-        'MyBase.Database.Connection.ConnectionString = Variabili.ExcelConnectionString
     End Sub
 
     Protected Overrides Sub OnModelCreating(modelBuilder As DbModelBuilder)
