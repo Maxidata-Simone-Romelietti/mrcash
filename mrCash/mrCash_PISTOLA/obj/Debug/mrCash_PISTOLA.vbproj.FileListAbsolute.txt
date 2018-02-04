@@ -11,12 +11,17 @@ C:\mrcash-master\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.vbproj.GenerateR
 C:\mrcash-master\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.exe
 C:\mrcash-master\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.xml
 C:\mrcash-master\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.pdb
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.exe.config
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.exe
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.pdb
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.xml
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.dll
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.SqlServer.dll
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_DAL.dll
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_DAL.pdb
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_DAL.xml
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.xml
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.SqlServer.xml
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.vbprojResolveAssemblyReference.cache
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.frmPISTOLA.resources
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Debug\mrCash_PISTOLA.Resources.resources

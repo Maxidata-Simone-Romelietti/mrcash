@@ -48,15 +48,15 @@
 
     End Sub
 
-    Private Sub bDN_Click(sender As Object, e As Windows.RoutedEventArgs) Handles bDN.Click
+    Private Sub bDN_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles bDN.Click
         inizio = inizio.AddDays(7) : Popola()
     End Sub
 
-    Private Sub bUP_Click(sender As Object, e As Windows.RoutedEventArgs) Handles bUP.Click
+    Private Sub bUP_Click(sender As Object, e As System.Windows.RoutedEventArgs) Handles bUP.Click
         inizio = inizio.AddDays(-7) : Popola()
     End Sub
 
-    Private Sub Cliccato(sender As Object, e As Windows.RoutedEventArgs)
+    Private Sub Cliccato(sender As Object, e As System.Windows.RoutedEventArgs)
         Dim b = DirectCast(sender, System.Windows.Controls.Button)
         Dim R = DirectCast(b.DataContext, mrCash_DAL.V_Giornalieri)
 

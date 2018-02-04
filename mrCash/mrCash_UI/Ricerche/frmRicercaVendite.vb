@@ -42,7 +42,7 @@ Public Class frmRicercaVendite
 
         If Selezione Then
             _IDVendita = X.IDVendita
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()
             Exit Sub
         End If

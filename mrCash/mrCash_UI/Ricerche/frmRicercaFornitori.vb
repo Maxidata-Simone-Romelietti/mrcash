@@ -28,7 +28,7 @@ Public Class frmRicercaFornitori
         If N = "NOME" And _Inversione Then qry = From z In qry Order By z.Nome Descending
         If N = "NOME" And Not _Inversione Then qry = From z In qry Order By z.Nome Ascending
 
-        FornitoriBindingSource.DataSource = qry
+        FornitoriBindingSource.DataSource = qry.ToList
     End Function
 
     Private Sub FornitoriDataGridView_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles FornitoriDataGridView.CellDoubleClick
@@ -39,7 +39,7 @@ Public Class frmRicercaFornitori
 
         If Selezione Then
             _IDFornitore = X.IDFornitore
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()
             Exit Sub
         End If
@@ -64,11 +64,11 @@ Public Class frmRicercaFornitori
             F.ShowDialog()
             Me.Visible = True
 
-            If IsNuovo And F.DialogResult = Windows.Forms.DialogResult.OK Then
+            If IsNuovo And F.DialogResult = System.Windows.Forms.DialogResult.OK Then
 
                 ' Seleziona il fornitore che ho appena inserito ed esce
                 _IDFornitore = F.IDFornitoreScelto
-                Me.DialogResult = Windows.Forms.DialogResult.OK
+                Me.DialogResult = System.Windows.Forms.DialogResult.OK
                 Me.Close()
                 Exit Sub
 

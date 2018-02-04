@@ -12,3 +12,7 @@ C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.exe
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.xml
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.pdb
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.exe.config
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.dll
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.SqlServer.dll
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.xml
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\EntityFramework.SqlServer.xml

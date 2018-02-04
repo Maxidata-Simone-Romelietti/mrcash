@@ -57,7 +57,7 @@ Public Class Inventario_Controller
             Next
         Next
 
-        Dim context = New mrCash_DAL.MRCashEntities(ContextConnectionString)
+        Dim context = New mrCash_DAL.MRCashEntities()
         Dim qry = From f As Oggetti In context.Oggetti.Include("Vendite").Include("Acquisti") Select f
 
         For Each f In qry

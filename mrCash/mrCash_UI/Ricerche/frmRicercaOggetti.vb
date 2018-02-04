@@ -79,7 +79,7 @@ Public Class frmRicercaOggetti
         If N = "PREZZOSTIMATO" And _Inversione Then qry = From z In qry Order By z.PrezzoStimato Descending
         If N = "PREZZOSTIMATO" And Not _Inversione Then qry = From z In qry Order By z.PrezzoStimato Ascending
 
-        OggettiBindingSource.DataSource = qry
+        OggettiBindingSource.DataSource = qry.ToList
     End Function
 
 
@@ -91,7 +91,7 @@ Public Class frmRicercaOggetti
 
         If Selezione Then
             _IDOggetto = X.IDOggetto
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()
             Exit Sub
         End If

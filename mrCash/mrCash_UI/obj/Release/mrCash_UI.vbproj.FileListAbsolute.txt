@@ -36,3 +36,7 @@ C:\GitHub\mrcash\mrCash\mrCash_UI\obj\Release\mrCash_UI.vbproj.GenerateResource.
 C:\GitHub\mrcash\mrCash\mrCash_UI\obj\Release\mrCash_UI.exe
 C:\GitHub\mrcash\mrCash\mrCash_UI\obj\Release\mrCash_UI.xml
 C:\GitHub\mrcash\mrCash\mrCash_UI\obj\Release\mrCash_UI.pdb
+C:\GitHub\mrcash\mrCash\mrCash_UI\bin\EntityFramework.dll
+C:\GitHub\mrcash\mrCash\mrCash_UI\bin\EntityFramework.SqlServer.dll
+C:\GitHub\mrcash\mrCash\mrCash_UI\bin\EntityFramework.xml
+C:\GitHub\mrcash\mrCash\mrCash_UI\bin\EntityFramework.SqlServer.xml

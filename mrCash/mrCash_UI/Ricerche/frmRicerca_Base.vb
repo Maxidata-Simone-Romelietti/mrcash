@@ -23,7 +23,7 @@ Public Class frmRicerca_Base
         If IsInDesignMode() Then Exit Sub
 
         ' Add any initialization after the InitializeComponent() call.
-        context = New mrCash_DAL.MRCashEntities(ContextConnectionString)
+        context = New mrCash_DAL.MRCashEntities()
     End Sub
 
     Private Sub frmRicerca_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing

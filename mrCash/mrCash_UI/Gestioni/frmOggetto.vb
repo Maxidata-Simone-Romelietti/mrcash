@@ -1,6 +1,5 @@
 ﻿Imports mrCash_DAL
 Imports System.Linq
-Imports System.Data.Objects.DataClasses
 
 Public Class frmOggetto
 
@@ -20,14 +19,14 @@ Public Class frmOggetto
     End Sub
 
     Protected Overrides Sub OP_ANNULLA()
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 
     Protected Overrides Sub OP_CONFERMA()
         context.SaveChanges()
 
-        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 

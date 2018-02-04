@@ -1,19 +1,19 @@
 ﻿Imports mrCash_DAL
 Imports System.Linq
-Imports System.Data.Objects.DataClasses
+Imports System.Collections.ObjectModel
 
 Public Class frmAcquisto
 
     Dim Dato As Acquisti
     Dim oggettiIniziali() As Oggetti
     Dim mem_PrzAcq As Decimal
-    Dim Ordinatore As LinqEntityBinding(Of Oggetti)
+    Dim Lista As New List(Of Oggetti)
 
     Protected Overrides Sub OP_LOAD()
 
         If ID = -1 Then
             Dato = New Acquisti
-            context.AddToAcquisti(Dato)
+            context.Acquisti.add(Dato)
         Else
             ' rileggo l' acquisto con inclusi gli oggetti
             Dim V = From Q As Acquisti In context.Acquisti.Include("Fornitori").Include("Oggetti") Where Q.IDAcquisto = ID
@@ -33,18 +33,23 @@ Public Class frmAcquisto
             Dato.Transazione += 1
         End If
 
-        Ordinatore = New LinqEntityBinding(Of Oggetti)(context, Dato.Oggetti, Dato.Oggetti.OrderBy(Function(o) o.RigaAcquisto).ToList(), True)
-        oggettiIniziali = Ordinatore.ToArray
+        'Ordinatore = New LinqEntityBinding(Of Oggetti)(context, Dato.Oggetti, Dato.Oggetti.OrderBy(Function(o) o.RigaAcquisto).ToList(), True)
+        Lista.Clear()
+        For Each y In (From x In Dato.Oggetti).OrderBy(Function(o) o.RigaVendita).ToList
+            Lista.Add(y)
+        Next
+        oggettiIniziali = Lista.ToArray
 
+        OggettiBindingSource.DataSource = Lista
         AcquistiBindingSource.DataSource = Dato
-        OggettiBindingSource.DataSource = Ordinatore
+
 
         If Dato.Fornitori IsNot Nothing Then _
            FornitoriBindingSource.DataSource = Dato.Fornitori
     End Sub
 
     Protected Overrides Sub OP_ANNULLA()
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 
@@ -52,7 +57,7 @@ Public Class frmAcquisto
 
         If Not Salva() Then Exit Sub
 
-        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 
@@ -61,14 +66,14 @@ Public Class frmAcquisto
 
         ' Cancello tutti gli oggetti
         For Each o As Oggetti In oggettiIniziali
-            context.DeleteObject(o)
+            context.Oggetti.Remove(o)
         Next
 
         ' cancello l'acquisto
-        context.DeleteObject(Dato)
+        context.Acquisti.Remove(Dato)
         context.SaveChanges()
 
-        Me.DialogResult = Windows.Forms.DialogResult.No
+        Me.DialogResult = System.Windows.Forms.DialogResult.No
         Me.Close()
     End Sub
 
@@ -77,7 +82,7 @@ Public Class frmAcquisto
         Using F As New frmRicercaFornitori
             F.Selezione = True
 
-            If F.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            If F.ShowDialog() = System.Windows.Forms.DialogResult.OK Then
 
                 Dato.Fornitori _
                 = (From c As Fornitori In context.Fornitori Where c.IDFornitore = F.IDFornitore Select c).First
@@ -114,7 +119,7 @@ Public Class frmAcquisto
                 Y.PrezzoAcquisto = X.PrezzoAcquisto
                 Y.PrezzoStimato = X.PrezzoStimato
 
-                Ordinatore.AddCorretto(Y)
+                Lista.Add(Y)
             Next
 
 
@@ -150,8 +155,9 @@ Public Class frmAcquisto
 
     Private Sub OggettiDataGridView_CellFormatting(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellFormattingEventArgs) Handles OggettiDataGridView.CellFormatting
 
-        Dim X As Oggetti _
-        = DirectCast(OggettiDataGridView.Rows(e.RowIndex).DataBoundItem, Oggetti)
+        Dim w = OggettiDataGridView.Rows(e.RowIndex).DataBoundItem
+
+        Dim X As Oggetti = DirectCast(w, Oggetti)
 
         If OggettiDataGridView.Columns(e.ColumnIndex) Is Codice Then _
             Tools.FormattoOggetti(context, X, sender, e)
@@ -194,7 +200,7 @@ Public Class frmAcquisto
     ''' <returns></returns>
     ''' <remarks></remarks>
     Private Function ConvalidaCodici() As Boolean
-        Dim query = From o In Ordinatore Group o By o.Codice Into Count() Select Codice, Count
+        Dim query = From o In Lista Group o By o.Codice Into Count() Select Codice, Count
 
         Dim Doppi = From d In query Where d.Count > 1 And d.Codice.Trim <> "" Select d.Codice, d.Count
 
@@ -215,10 +221,12 @@ Public Class frmAcquisto
 
         ' formattazione a 5 cifre e rinumerazione
         Dim Riga As Integer
-        For Each o As Oggetti In Ordinatore
+        Dato.Oggetti.Clear()
+        For Each o As Oggetti In Lista
             If o.Codice_Numerico > 0 Then o.Codice = o.Codice.ToCodice
 
             Riga += 1 : o.RigaAcquisto = Riga
+            Dato.Oggetti.Add(o)
         Next
 
     End Sub
@@ -229,7 +237,8 @@ Public Class frmAcquisto
         Dim T As Decimal
         Dim N As Integer
         For Each r As DataGridViewRow In OggettiDataGridView.Rows
-            If CStr(r.Cells("DESCRIZIONE").Value) <> "" Then
+            Dim s = CStr(r.Cells("DESCRIZIONE").Value)
+            If s IsNot Nothing AndAlso s.Trim <> "" Then
                 T += CDec(r.Cells("PrezzoAcquisto").Value)
                 N += 1
             End If
@@ -258,7 +267,7 @@ Public Class frmAcquisto
 
         ' DAti obbligatori
         Dim Valido As Boolean = True
-        For Each o As Oggetti In Ordinatore
+        For Each o As Oggetti In Lista
 
             Valido = Valido And (o.Descrizione.Trim <> "")
             If Not Valido Then
@@ -277,8 +286,8 @@ Public Class frmAcquisto
 
                 ' Oggetti con lo stesso codice mio ma che non sono il mio oggetto
                 Dim Presenti _
-                = From P In CodiciPresenti _
-                Where P.IDOggetto <> X.IDOggetto _
+                = From P In CodiciPresenti
+                  Where P.IDOggetto <> X.IDOggetto _
                   And P.Codice = X.Codice
 
                 If Presenti.Count > 0 Then
@@ -295,8 +304,8 @@ Public Class frmAcquisto
         ' cancella gli oggetti non più presenti
         For Each o As Oggetti In oggettiIniziali
 
-            If Not Ordinatore.Contains(o) Then
-                context.DeleteObject(o)
+            If Not Lista.Contains(o) Then
+                context.Oggetti.Remove(o)
             End If
 
         Next

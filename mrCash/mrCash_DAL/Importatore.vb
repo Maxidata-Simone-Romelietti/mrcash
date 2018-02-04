@@ -30,7 +30,7 @@ Namespace Data
             Dim culture = New CultureInfo(Selezioni.CulturaDate, True)
 
             _NumeroOggettiImportati = 0
-            Using context As New MRCashEntities(ContextConnectionString)
+            Using context As New MRCashEntities()
 
                 Dim F_For As String = My.Computer.FileSystem.ReadAllText("c:\Importatore\Fornitori.txt").Replace(vbLf, "")
                 Dim P_For() As String = F_For.Split(ControlChars.Cr)
@@ -59,8 +59,7 @@ Namespace Data
                             If N.DataNascita.Year = 1900 Or N.DataRilascio.Year = 1900 Then
                                 SbErr.AppendLine(P(1))
                             End If
-
-                            context.AddToFornitori(N)
+                            context.Fornitori.Add(N)
                             context.SaveChanges()
 
                         Catch ex As Exception
@@ -120,7 +119,7 @@ Namespace Data
             Dim PrevTransazione As Integer = Integer.MinValue
             Dim AcqCorrente As Acquisti = Nothing
 
-            Using context As New MRCashEntities(ContextConnectionString)
+            Using context As New MRCashEntities()
 
                 Dim NEGO = (From c As Fornitori In context.Fornitori Where c.IDFornitore = Selezioni.IDFornitoreAssoluto Select c).FirstOrDefault
 
@@ -143,7 +142,7 @@ Namespace Data
                         AcqCorrente.Data = Des.DataAcquisto
                         AcqCorrente.Transazione = -Des.Transazione
                         AcqCorrente.Fornitori = Fornitore
-                        context.AddToAcquisti(AcqCorrente)
+                        context.Acquisti.Add(AcqCorrente)
 
                     End If
 
@@ -166,7 +165,7 @@ Namespace Data
 
                     Catch ex As Exception
                         MsgBox(ex.Message & " : " & X.IDOggetto & " " & AcqCorrente.Data.ToString("dd/MM/yyyy"))
-                        context.DeleteObject(X)
+                        DirectCast(context, System.Data.Entity.Infrastructure.IObjectContextAdapter).ObjectContext.DeleteObject(X)
                         context.SaveChanges()
 
                     End Try
@@ -178,7 +177,7 @@ Namespace Data
 
                 ' Scarico finale degli oggetti non più in magazzino
                 Dim Scarico As New Vendite
-                context.AddToVendite(Scarico)
+                context.Vendite.Add(Scarico)
 
                 Scarico.Data = New DateTime(2010, 12, 31)
                 For Each x As Oggetti In Scaricati

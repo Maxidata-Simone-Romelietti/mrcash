@@ -7,7 +7,6 @@ Imports System.Text
 Imports System.Runtime.CompilerServices
 Imports System.Collections.Generic
 Imports System.Linq
-Imports System.Data.Objects.DataClasses
 Imports System.Collections
 Imports System.Reflection
 
@@ -27,7 +26,7 @@ Public Class frmLogin
 
         If hash = X Then
             SettaConnessioni(TextBox1.Text)
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()
         Else
             MsgBox("Password Errata")

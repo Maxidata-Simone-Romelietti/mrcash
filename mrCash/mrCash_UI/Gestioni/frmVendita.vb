@@ -1,11 +1,11 @@
 ﻿Imports mrCash_DAL
 Imports System.Linq
-Imports System.Data.Objects.DataClasses
+Imports System.Collections.ObjectModel
 
 Public Class frmVendita
 
     Dim Dato As Vendite
-    Dim Ordinatore As LinqEntityBinding(Of Oggetti)
+    Dim Lista As New ObservableCollection(Of Oggetti)
     Dim MemTotale As Decimal
 
     Protected Overrides Sub OP_LOAD()
@@ -15,16 +15,19 @@ Public Class frmVendita
 
         If Dato Is Nothing Then
             Dato = New Vendite With {.Data = DataVendita}
-            context.AddToVendite(Dato)
+            context.Vendite.Add(Dato)
         End If
 
         If Dato.Data.Ticks = 0 Then _
            Dato.Data = Date.Now.Date
 
-        Ordinatore = New LinqEntityBinding(Of Oggetti)(context, Dato.Oggetti, Dato.Oggetti.OrderBy(Function(o) o.RigaVendita).ToList(), False)
+        Lista.Clear()
+        For Each y In (From x In Dato.Oggetti).OrderBy(Function(o) o.RigaVendita).ToList
+            Lista.Add(y)
+        Next
 
         VenditeBindingSource.DataSource = Dato
-        OggettiBindingSource.DataSource = Ordinatore
+        OggettiBindingSource.DataSource = Lista
 
         MemTotale = Dato.Totale
         AggiornaTotale()
@@ -39,7 +42,7 @@ Public Class frmVendita
     End Sub
 
     Protected Overrides Sub OP_ANNULLA()
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 
@@ -48,23 +51,25 @@ Public Class frmVendita
         Dato.Data = Dato.Data.SenzaOra
 
         Dim Riga As Integer
-        For Each o As Oggetti In Ordinatore
-            Riga += 1 : o.RigaVendita = Riga
-        Next
+        Dato.Oggetti.Clear()
 
+        For Each o As Oggetti In Lista
+            Riga += 1 : o.RigaVendita = Riga
+            Dato.Oggetti.Add(o)
+        Next
         context.SaveChanges()
 
-        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 
     Protected Overrides Sub OP_ELIMINA()
         If Not ConfermaEliminazione("Confermi cancellazione di TUTTA la vendita ?") Then Exit Sub
 
-        context.DeleteObject(Dato)
+        context.Vendite.Remove(Dato)
         context.SaveChanges()
 
-        Me.DialogResult = Windows.Forms.DialogResult.No
+        Me.DialogResult = System.Windows.Forms.DialogResult.No
         Me.Close()
     End Sub
 
@@ -75,12 +80,16 @@ Public Class frmVendita
             Try
                 Dim N As Oggetti = Dato.TrovaCodice(context, txtCodice.Text.ToCodice)
 
-                If N IsNot Nothing Then Ordinatore.AddCorretto(N)
+                If N IsNot Nothing Then Lista.Add(N)
 
                 AggiornaTotale()
 
+                OggettiBindingSource.DataSource = Nothing
+                OggettiBindingSource.DataSource = Lista
+
                 With OggettiDataGridView
-                    .CurrentCell = .Rows(.Rows.GetLastRow(DataGridViewElementStates.None)).Cells("PrezzoVendita")
+                    Dim lr = .Rows.GetLastRow(DataGridViewElementStates.None)
+                    .CurrentCell = .Rows(lr).Cells("PrezzoVendita")
                     .Focus()
                 End With
 
@@ -97,8 +106,9 @@ Public Class frmVendita
     End Sub
 
     Public Sub AggiornaTotale()
-        txtTotale.Valore = Dato.Totale
-        txtParziale.Valore = Dato.Totale - MemTotale
+        Dim tot = (From x In Lista Select x.PrezzoVendita).Sum
+        txtTotale.Valore = tot
+        txtParziale.Valore = tot - MemTotale
     End Sub
 
     Private Sub OggettiDataGridView_CellLeave(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles OggettiDataGridView.CellEndEdit
@@ -115,7 +125,7 @@ Public Class frmVendita
 
         ' formattazione a 5 cifre e rinumerazione
         Dim Riga As Integer
-        For Each o As Oggetti In Ordinatore
+        For Each o As Oggetti In Lista
             Riga += 1 : o.RigaAcquisto = Riga
         Next
 

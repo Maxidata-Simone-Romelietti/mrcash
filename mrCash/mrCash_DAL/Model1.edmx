@@ -1,46 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
   <!-- EF Runtime content -->
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="MRCashModelStoreContainer">
-          <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
-          <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.Store.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_AcquistiGiornalieri" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [V_AcquistiGiornalieri].[Data] AS [Data], 
-      [V_AcquistiGiornalieri].[Totale] AS [Totale]
-      FROM [dbo].[V_AcquistiGiornalieri] AS [V_AcquistiGiornalieri]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
-            <DefiningQuery>SELECT 
-      [V_Giornalieri].[IDVendita] AS [IDVendita], 
-      [V_Giornalieri].[Data] AS [Data], 
-      [V_Giornalieri].[Totale] AS [Totale]
-      FROM [dbo].[V_Giornalieri] AS [V_Giornalieri]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_Acquisti_Fornitori" Association="MRCashModel.Store.FK_Acquisti_Fornitori">
-            <End Role="Fornitori" EntitySet="Fornitori" />
-            <End Role="Acquisti" EntitySet="Acquisti" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Oggetti_Acquisti" Association="MRCashModel.Store.FK_Oggetti_Acquisti">
-            <End Role="Acquisti" EntitySet="Acquisti" />
-            <End Role="Oggetti" EntitySet="Oggetti" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Oggetti_Vendite" Association="MRCashModel.Store.FK_Oggetti_Vendite">
-            <End Role="Vendite" EntitySet="Vendite" />
-            <End Role="Oggetti" EntitySet="Oggetti" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="MRCashModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Acquisti">
           <Key>
             <PropertyRef Name="IDAcquisto" />
           </Key>
-          <Property Name="IDAcquisto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDAcquisto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
           <Property Name="IDFornitore" Type="int" Nullable="false" />
           <Property Name="Transazione" Type="int" Nullable="false" />
@@ -49,27 +18,27 @@
           <Key>
             <PropertyRef Name="IDFornitore" />
           </Key>
-          <Property Name="IDFornitore" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Cognome" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Nome" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="RifDoc" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Indirizzo" Type="nvarchar" Nullable="false" MaxLength="100" />
-          <Property Name="Citta" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Provincia" Type="nvarchar" Nullable="false" MaxLength="2" />
-          <Property Name="Telefono" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Cap" Type="nvarchar" Nullable="false" MaxLength="10" />
-          <Property Name="TipoDoc" Type="nvarchar" Nullable="false" MaxLength="10" />
+          <Property Name="IDFornitore" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cognome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="RifDoc" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Indirizzo" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Citta" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Provincia" Type="nvarchar" MaxLength="2" Nullable="false" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Cap" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="TipoDoc" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="DataRilascio" Type="datetime" Nullable="false" />
           <Property Name="DataNascita" Type="datetime" Nullable="false" />
-          <Property Name="Note" Type="nvarchar" Nullable="false" MaxLength="1000" />
+          <Property Name="Note" Type="nvarchar" MaxLength="1000" Nullable="false" />
         </EntityType>
         <EntityType Name="Oggetti">
           <Key>
             <PropertyRef Name="IDOggetto" />
           </Key>
-          <Property Name="IDOggetto" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="Codice" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Descrizione" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="IDOggetto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Codice" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Descrizione" Type="nvarchar" MaxLength="100" Nullable="false" />
           <Property Name="PrezzoAcquisto" Type="money" Nullable="false" />
           <Property Name="PrezzoStimato" Type="money" Nullable="false" />
           <Property Name="PrezzoVendita" Type="money" Nullable="false" />
@@ -88,12 +57,11 @@
           <Key>
             <PropertyRef Name="IDVendita" />
           </Key>
-          <Property Name="IDVendita" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IDVendita" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Data" Type="datetime" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'MrCash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'mrcash.dbo.V_AcquistiGiornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_AcquistiGiornalieri">
           <Key>
             <PropertyRef Name="Totale" />
@@ -103,8 +71,7 @@
           <Property Name="Totale" Type="money" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'MrCash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'mrcash.dbo.V_Giornalieri' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="V_Giornalieri">
           <Key>
             <PropertyRef Name="IDVendita" />
@@ -116,8 +83,8 @@
           <Property Name="Totale" Type="money" Nullable="false" />
         </EntityType>
         <Association Name="FK_Acquisti_Fornitori">
-          <End Role="Fornitori" Type="MRCashModel.Store.Fornitori" Multiplicity="1" />
-          <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="*" />
+          <End Role="Fornitori" Type="Self.Fornitori" Multiplicity="1" />
+          <End Role="Acquisti" Type="Self.Acquisti" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Fornitori">
               <PropertyRef Name="IDFornitore" />
@@ -128,8 +95,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Oggetti_Acquisti">
-          <End Role="Acquisti" Type="MRCashModel.Store.Acquisti" Multiplicity="1" />
-          <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+          <End Role="Acquisti" Type="Self.Acquisti" Multiplicity="1" />
+          <End Role="Oggetti" Type="Self.Oggetti" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Acquisti">
               <PropertyRef Name="IDAcquisto" />
@@ -140,8 +107,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Oggetti_Vendite">
-          <End Role="Vendite" Type="MRCashModel.Store.Vendite" Multiplicity="0..1" />
-          <End Role="Oggetti" Type="MRCashModel.Store.Oggetti" Multiplicity="*" />
+          <End Role="Vendite" Type="Self.Vendite" Multiplicity="0..1" />
+          <End Role="Oggetti" Type="Self.Oggetti" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Vendite">
               <PropertyRef Name="IDVendita" />
@@ -151,10 +118,41 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityContainer Name="MRCashModelStoreContainer">
+          <EntitySet Name="Acquisti" EntityType="Self.Acquisti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fornitori" EntityType="Self.Fornitori" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Oggetti" EntityType="Self.Oggetti" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vendite" EntityType="Self.Vendite" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="V_AcquistiGiornalieri" EntityType="Self.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_AcquistiGiornalieri].[Data] AS [Data], 
+    [V_AcquistiGiornalieri].[Totale] AS [Totale]
+    FROM [dbo].[V_AcquistiGiornalieri] AS [V_AcquistiGiornalieri]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="V_Giornalieri" EntityType="Self.V_Giornalieri" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [V_Giornalieri].[IDVendita] AS [IDVendita], 
+    [V_Giornalieri].[Data] AS [Data], 
+    [V_Giornalieri].[Totale] AS [Totale]
+    FROM [dbo].[V_Giornalieri] AS [V_Giornalieri]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Acquisti_Fornitori" Association="Self.FK_Acquisti_Fornitori">
+            <End Role="Fornitori" EntitySet="Fornitori" />
+            <End Role="Acquisti" EntitySet="Acquisti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Acquisti" Association="Self.FK_Oggetti_Acquisti">
+            <End Role="Acquisti" EntitySet="Acquisti" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Oggetti_Vendite" Association="Self.FK_Oggetti_Vendite">
+            <End Role="Vendite" EntitySet="Vendite" />
+            <End Role="Oggetti" EntitySet="Oggetti" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+      <Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
         <EntityContainer Name="MRCashEntities">
           <EntitySet Name="Acquisti" EntityType="MRCashModel.Acquisti" />
           <EntitySet Name="Fornitori" EntityType="MRCashModel.Fornitori" />
@@ -264,7 +262,7 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="MRCashModelStoreContainer" CdmEntityContainer="MRCashEntities">
           <EntitySetMapping Name="Acquisti">
             <EntityTypeMapping TypeName="IsTypeOf(MRCashModel.Acquisti)">
@@ -371,20 +369,22 @@
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <edmx:Designer>
     <edmx:Connection>
-      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
       </DesignerInfoPropertySet>
     </edmx:Connection>
     <edmx:Options>
-      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+      <DesignerInfoPropertySet xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
       </DesignerInfoPropertySet>
     </edmx:Options>
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram Name="Model1" ZoomLevel="95" xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+      <Diagram Name="Model1" ZoomLevel="95" xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
         <EntityTypeShape EntityType="MRCashModel.Acquisti" Width="1.5" PointX="3" PointY="1.75" Height="1.5923063151041665" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Fornitori" Width="1.5" PointX="0.75" PointY="1" Height="3.0714322916666661" IsExpanded="true" />
         <EntityTypeShape EntityType="MRCashModel.Oggetti" Width="1.5" PointX="5.25" PointY="1.25" Height="4.0956022135416656" IsExpanded="true" />

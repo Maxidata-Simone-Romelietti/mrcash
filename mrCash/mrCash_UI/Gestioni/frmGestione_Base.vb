@@ -5,7 +5,7 @@
     Private Sub frmGestione_Base_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
 
         If Not Me.DesignMode Then _
-           context = New mrCash_DAL.MRCashEntities(ContextConnectionString)
+           context = New mrCash_DAL.MRCashEntities()
 
         OP_LOAD()
     End Sub

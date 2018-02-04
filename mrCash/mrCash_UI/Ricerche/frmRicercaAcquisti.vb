@@ -47,7 +47,7 @@ Public Class frmRicercaAcquisti
         If N = "TRANSAZIONE" And _Inversione Then qry = From z In qry Order By z.Transazione Descending
         If N = "TRANSAZIONE" And Not _Inversione Then qry = From z In qry Order By z.Transazione Ascending
 
-        AcquistiBindingSource.DataSource = qry
+        AcquistiBindingSource.DataSource = qry.ToList
 
         lblWarning.Text = frmMain.CodiciMancanti()
 
@@ -61,7 +61,7 @@ Public Class frmRicercaAcquisti
 
         If Selezione Then
             _IDAcquisto = X.IDAcquisto
-            Me.DialogResult = Windows.Forms.DialogResult.OK
+            Me.DialogResult = System.Windows.Forms.DialogResult.OK
             Me.Close()
             Exit Sub
         End If

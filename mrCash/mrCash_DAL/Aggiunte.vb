@@ -142,16 +142,16 @@ End Class
 ''' </summary>
 ''' <typeparam name="T"></typeparam>
 ''' <remarks></remarks>
-Public Class LinqEntityBinding(Of T As System.Data.Objects.DataClasses.EntityObject)
+Public Class LinqEntityBinding(Of T As System.Data.Entity.Core.Objects.DataClasses.EntityObject)
     Inherits System.ComponentModel.BindingList(Of T)
-    Public Sub New(ByVal context As System.Data.Objects.ObjectContext, ByVal collection As System.Data.Objects.DataClasses.EntityCollection(Of T), ByVal list As IList(Of T), ByVal EliminaSubito As Boolean)
+    Public Sub New(ByVal context As System.Data.Entity.Core.Objects.ObjectContext, ByVal collection As System.Data.Entity.Core.Objects.DataClasses.EntityCollection(Of T), ByVal list As IList(Of T), ByVal EliminaSubito As Boolean)
         MyBase.New(list)
         _context = context
         _collection = collection
         _EliminaSubito = EliminaSubito
     End Sub
-    Private _context As System.Data.Objects.ObjectContext
-    Private _collection As System.Data.Objects.DataClasses.EntityCollection(Of T)
+    Private _context As System.Data.Entity.Core.Objects.ObjectContext
+    Private _collection As System.Data.Entity.Core.Objects.DataClasses.EntityCollection(Of T)
     Private _EliminaSubito As Boolean
 
     Protected Overrides Function AddNewCore() As Object
@@ -174,7 +174,7 @@ Public Class LinqEntityBinding(Of T As System.Data.Objects.DataClasses.EntityObj
     Public Overrides Sub CancelNew(ByVal itemIndex As Integer)
         Dim obj As Object = Items(itemIndex)
         _collection.Remove(DirectCast(obj, T))
-        If _EliminaSubito And DirectCast(obj, T).EntityState <> System.Data.EntityState.Detached Then
+        If _EliminaSubito And DirectCast(obj, T).EntityState <> System.Data.Entity.EntityState.Detached Then
             _context.DeleteObject(obj)
         End If
         MyBase.CancelNew(itemIndex)
@@ -183,7 +183,7 @@ Public Class LinqEntityBinding(Of T As System.Data.Objects.DataClasses.EntityObj
     Protected Overrides Sub RemoveItem(ByVal index As Integer)
         Dim obj As Object = Items(index)
         _collection.Remove(DirectCast(obj, T))
-        If _EliminaSubito And DirectCast(obj, T).EntityState <> System.Data.EntityState.Detached Then
+        If _EliminaSubito And DirectCast(obj, T).EntityState <> System.Data.Entity.EntityState.Detached Then
             _context.DeleteObject(obj)
         End If
         MyBase.RemoveItem(index)

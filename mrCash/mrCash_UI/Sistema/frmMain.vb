@@ -59,7 +59,7 @@ Public Class frmMain
     End Sub
 
     Private Sub frmMain_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
-        If frmLogin.ShowDialog() <> Windows.Forms.DialogResult.OK Then
+        If frmLogin.ShowDialog() <> System.Windows.Forms.DialogResult.OK Then
             Me.Close()
         End If
     End Sub

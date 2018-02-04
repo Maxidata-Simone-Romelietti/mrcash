@@ -8,7 +8,7 @@ Public Class frmFornitore
 
         If ID = -1 Then
             Dato = New Fornitori
-            context.AddToFornitori(Dato)
+            context.Fornitori.add(Dato)
 
             Dato.TipoDoc = "C.I."
         Else
@@ -22,27 +22,27 @@ Public Class frmFornitore
     End Sub
 
     Protected Overrides Sub OP_ANNULLA()
-        Me.DialogResult = Windows.Forms.DialogResult.Cancel
+        Me.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.Close()
     End Sub
 
     Protected Overrides Sub OP_CONFERMA()
         context.SaveChanges()
 
-        Me.DialogResult = Windows.Forms.DialogResult.OK
+        Me.DialogResult = System.Windows.Forms.DialogResult.OK
         Me.Close()
     End Sub
 
     Protected Overrides Sub OP_ELIMINA()
         If Not ConfermaEliminazione("Confermi cancellazione del fornitore ?") Then Exit Sub
 
-        context.DeleteObject(Dato)
+        context.Fornitori.Remove(Dato)
         Try
             context.SaveChanges()
-            Me.DialogResult = Windows.Forms.DialogResult.No
+            Me.DialogResult = System.Windows.Forms.DialogResult.No
             Me.Close()
 
-        Catch ex As UpdateException
+        Catch ex As exception
             MsgBox("Problemi incontrati durante la cancellazione." & vbCrLf & " Verificare che il fornitore non sia usato in alcun acquisto.", MsgBoxStyle.Exclamation)
 
         End Try
