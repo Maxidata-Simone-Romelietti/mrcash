@@ -11,3 +11,4 @@ C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.vbproj.Generat
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.exe
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.xml
 C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\obj\Release\mrCash_PISTOLA.pdb
+C:\GitHub\mrcash\mrCash\mrCash_PISTOLA\bin\mrCash_PISTOLA.exe.config
