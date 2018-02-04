@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2006/04/edm/ssdl">
+<Schema Namespace="MRCashModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2005" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="MRCashModelStoreContainer">
-    <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.Store.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_AcquistiGiornalieri">
+    <EntitySet Name="Acquisti" EntityType="MRCashModel.Store.Acquisti" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Fornitori" EntityType="MRCashModel.Store.Fornitori" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Oggetti" EntityType="MRCashModel.Store.Oggetti" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="Vendite" EntityType="MRCashModel.Store.Vendite" store:Type="Tables" Schema="dbo" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" />
+    <EntitySet Name="V_AcquistiGiornalieri" EntityType="MRCashModel.Store.V_AcquistiGiornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_AcquistiGiornalieri" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_AcquistiGiornalieri].[Data] AS [Data], 
       [V_AcquistiGiornalieri].[Totale] AS [Totale]
       FROM [dbo].[V_AcquistiGiornalieri] AS [V_AcquistiGiornalieri]</DefiningQuery>
     </EntitySet>
-    <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri">
+    <EntitySet Name="V_Giornalieri" EntityType="MRCashModel.Store.V_Giornalieri" store:Type="Views" store:Schema="dbo" store:Name="V_Giornalieri" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator">
       <DefiningQuery>SELECT 
       [V_Giornalieri].[IDVendita] AS [IDVendita], 
       [V_Giornalieri].[Data] AS [Data], 

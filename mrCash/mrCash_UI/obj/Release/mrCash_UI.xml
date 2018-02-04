@@ -29,6 +29,21 @@ mrCash_UI
   resource lookups using this strongly typed resource class.
 </summary>
 </member>
+<member name="P:mrCash_UI.My.Resources.Resources.Dollar">
+<summary>
+  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+</summary>
+</member>
+<member name="P:mrCash_UI.My.Resources.Resources.Inventario">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
+<member name="P:mrCash_UI.My.Resources.Resources.Margini">
+<summary>
+  Looks up a localized resource of type System.Byte[].
+</summary>
+</member>
 <member name="M:mrCash_UI.Tools.creaTMP(System.Boolean)">
  <summary>
  Crea un file temporaneo readonly di tipo Excel con il file passato

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2006/04/edm">
+<Schema Namespace="MRCashModel" Alias="Self" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="MRCashEntities">
     <EntitySet Name="Acquisti" EntityType="MRCashModel.Acquisti" />
     <EntitySet Name="Fornitori" EntityType="MRCashModel.Fornitori" />
