@@ -1,4 +1,3 @@
-**/bin
-**/obj
-**/.vs
-**/.suo
+/mrCash/*/bin
+/mrCash/*/obj
+/mrCash/*/.vs
