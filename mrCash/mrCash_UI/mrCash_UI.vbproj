@@ -92,9 +92,8 @@
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="UIAutomationProvider" />
-    <Reference Include="UltraDateTimePicker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\UltraDateTimePicker\bin\UltraDateTimePicker.dll</HintPath>
+    <Reference Include="UltraDateTimePicker">
+      <HintPath>externals\UltraDateTimePicker.dll</HintPath>
     </Reference>
     <Reference Include="WindowsBase" />
     <Reference Include="WindowsFormsIntegration" />
