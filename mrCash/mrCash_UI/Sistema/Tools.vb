@@ -31,8 +31,14 @@ Module Tools
     Public Sub SettaConnessioni(ByVal password As String)
         password = password.ToLower
         Dim CS As ConnectionStringSettings = ConfigurationManager.ConnectionStrings("MRCashEntities")
-        mrCash_DAL.Variabili.ContextConnectionString = CS.ConnectionString.Replace("User ID=sa", "User ID=sa;Password=" & password)
-        mrCash_DAL.Variabili.ExcelConnectionString = My.Settings.ConnessioneExcel.Replace("User ID=sa", "User ID=sa;Password=" & password)
+
+        Dim s = CS.ConnectionString
+        If Not s.Contains("Password=") Then s = s.Replace("User ID=sa", "User ID=sa;Password=" & password)
+        mrCash_DAL.Variabili.ContextConnectionString = s
+
+        s = My.Settings.ConnessioneExcel
+        If Not s.Contains("Password=") Then s = s.Replace("User ID=sa", "User ID=sa;Password=" & password)
+        mrCash_DAL.Variabili.ExcelConnectionString = s
     End Sub
 
     Public Sub AfterKeyDown(ByVal F As Form, ByVal e As System.Windows.Forms.KeyEventArgs)
